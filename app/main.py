@@ -178,9 +178,32 @@ class DashboardApp(NestServer):
             local_data_loader=self.local_data_loader
         )
         
-        # Serve frontend static files
-        frontend_path = Path(__file__).parent.parent / 'frontend'
-        if frontend_path.exists():
+        # Try to serve React build first, fall back to legacy frontend
+        react_frontend_path = Path(__file__).parent.parent / 'frontend-react' / 'dist'
+        legacy_frontend_path = Path(__file__).parent.parent / 'frontend'
+        
+        # Determine which frontend to use
+        if react_frontend_path.exists():
+            # Serve React build (production)
+            frontend_path = react_frontend_path
+            assets_path = react_frontend_path / "assets"
+            
+            if assets_path.exists():
+                self.app.mount(
+                    "/assets",
+                    StaticFiles(directory=assets_path),
+                    name="assets"
+                )
+            
+            # Serve other static files from React build
+            self.app.mount(
+                "/static",
+                StaticFiles(directory=react_frontend_path),
+                name="static"
+            )
+        elif legacy_frontend_path.exists():
+            # Fall back to legacy vanilla JS frontend
+            frontend_path = legacy_frontend_path
             static_path = frontend_path / "static"
             if static_path.exists():
                 self.app.mount(
@@ -188,13 +211,39 @@ class DashboardApp(NestServer):
                     StaticFiles(directory=static_path),
                     name="static"
                 )
+        else:
+            frontend_path = None
         
         # Dashboard home (serves index.html)
         @self.app.get("/")
         async def dashboard_home():
-            index_path = frontend_path / "index.html"
-            if index_path.exists():
-                return FileResponse(index_path)
+            # Try React build first
+            if react_frontend_path.exists():
+                index_path = react_frontend_path / "index.html"
+                if index_path.exists():
+                    return FileResponse(index_path)
+            
+            # Fall back to legacy frontend
+            if legacy_frontend_path.exists():
+                index_path = legacy_frontend_path / "index.html"
+                if index_path.exists():
+                    return FileResponse(index_path)
+            
+            return {"message": "Kastrel Dashboard", "status": "running"}
+        
+        # Catch-all route for React Router (SPA support)
+        @self.app.get("/{full_path:path}")
+        async def serve_spa(full_path: str):
+            # Don't catch API routes
+            if full_path.startswith(("api/", "dashboard/", "static/", "assets/")):
+                return {"error": "Not found"}, 404
+            
+            # Serve React app for all other routes (SPA routing)
+            if react_frontend_path.exists():
+                index_path = react_frontend_path / "index.html"
+                if index_path.exists():
+                    return FileResponse(index_path)
+            
             return {"message": "Kastrel Dashboard", "status": "running"}
         
         # Override health to include dashboard info
