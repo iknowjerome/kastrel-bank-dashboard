@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kastrel Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>🦅 Kastrel Dashboard</h1>
+            <div id="status">Connecting...</div>
+        </header>
+        
+        <main>
+            <section id="agents">
+                <h2>Connected Perches</h2>
+                <div id="agent-list">Loading...</div>
+            </section>
+            
+            <section id="traces">
+                <h2>Recent Traces</h2>
+                <div id="trace-list">Loading...</div>
+            </section>
+            
+            <section id="stats">
+                <h2>Statistics</h2>
+                <div id="stats-display">Loading...</div>
+            </section>
+        </main>
+        
+        <footer>
+            <button id="load-demo-data">Load Demo Data</button>
+        </footer>
+    </div>
+    
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>
+

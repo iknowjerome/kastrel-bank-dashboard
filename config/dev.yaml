@@ -1,0 +1,21 @@
+# Development configuration
+dashboard:
+  host: 127.0.0.1
+  port: 8888
+  debug: false  # Set to true for auto-reload (requires full disk access on macOS)
+
+# Inherits Nest config structure
+nest:
+  storage_path: ~/.kastrel-dashboard/data/
+  encryption_key: dev-key-not-for-production
+
+# Dashboard-specific
+database:
+  url: sqlite+aiosqlite:///~/.kastrel-dashboard/dashboard.db
+
+demo:
+  local_data_path: ./demo_data/
+  enable_mock_perches: true
+
+logging:
+  level: DEBUG

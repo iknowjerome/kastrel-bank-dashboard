@@ -1,0 +1,37 @@
+# Core - Kastrel API (provides Nest)
+# For local dev, install separately: pip install -e ../kastrel-api
+# For Docker/CI, uncomment one of:
+# git+https://github.com/YOUR_ORG/kastrel-api.git@main#egg=kastrel-api
+# kastrel-api  # if using private PyPI
+
+# ML dependencies (pinned for Apple Silicon compatibility)
+torch>=2.0.0,<2.2.0  # 2.2+ has bus errors on Apple Silicon
+transformers>=4.30.0,<4.40.0
+numpy>=1.24.0,<2.0.0  # numpy 2.x causes ABI incompatibility with torch
+
+# Web framework (kastrel-api already has FastAPI, but pin version)
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# Real-time
+websockets>=12.0
+
+# Database (for dashboard-specific data persistence)
+sqlalchemy>=2.0.0
+aiosqlite>=0.19.0
+
+# Config
+pyyaml>=6.0
+python-dotenv>=1.0.0
+
+# Frontend serving
+aiofiles>=23.0.0
+jinja2>=3.1.0
+
+# HTTP client (for testing/perch simulation)
+aiohttp>=3.9.0
+httpx>=0.25.0
+
+# Dev/testing
+pytest>=7.0.0
+pytest-asyncio>=0.21.0

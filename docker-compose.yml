@@ -1,0 +1,54 @@
+# Kastrel Dashboard - Development Environment
+#
+# This simulates the production AMI environment using Docker.
+# Much faster than Vagrant, and the standard modern approach.
+#
+# Usage:
+#   docker compose up        # Start dashboard
+#   docker compose up -d     # Start in background
+#   docker compose logs -f   # View logs
+#   docker compose down      # Stop everything
+#
+# Dashboard: http://localhost:8080
+
+services:
+  dashboard:
+    build:
+      context: .
+      dockerfile: deployment/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - KASTREL_ENV=development
+      - KASTREL_LOG_LEVEL=debug
+    volumes:
+      # Live code reload - changes reflect immediately
+      - ./app:/app/app:ro
+      - ./frontend:/app/frontend:ro
+      - ./config:/app/config:ro
+      # Persistent data
+      - kastrel-data:/var/lib/kastrel
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/v1/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+
+  # Optional: Run simulated perches
+  perch-simulator:
+    build:
+      context: .
+      dockerfile: deployment/Dockerfile.perch-sim
+    environment:
+      - DASHBOARD_URL=http://dashboard:8080
+      - NUM_PERCHES=3
+    depends_on:
+      dashboard:
+        condition: service_healthy
+    profiles:
+      - with-perches  # Only starts with: docker compose --profile with-perches up
+
+volumes:
+  kastrel-data:
+

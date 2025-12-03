@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Environment
+.env
+.env.local
+
+# Data
+*.db
+demo_data/
+~/.kastrel-dashboard/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Downloaded installers
+AWSCLIV2.pkg
+awscli-extract/
+

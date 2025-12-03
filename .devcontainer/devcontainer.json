@@ -1,0 +1,27 @@
+{
+  "name": "Kastrel Dashboard Dev",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "dashboard",
+  "workspaceFolder": "/app",
+  
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "charliermarsh.ruff",
+        "bradlc.vscode-tailwindcss"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.linting.enabled": true
+      }
+    }
+  },
+
+  "forwardPorts": [8080],
+  "postStartCommand": "echo 'Dashboard running at http://localhost:8080'",
+  
+  "remoteUser": "root"
+}
+

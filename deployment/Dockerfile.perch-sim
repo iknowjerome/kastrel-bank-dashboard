@@ -1,0 +1,19 @@
+# Dockerfile for perch simulator
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install dependencies
+RUN pip install --no-cache-dir aiohttp
+
+# Copy simulator script
+COPY dev/simulate_perches.py .
+
+# Default environment
+ENV DASHBOARD_URL=http://dashboard:8080
+ENV AGENT_ID=perch-simulator
+ENV ITERATIONS=10
+
+# Run simulator
+CMD python simulate_perches.py --url $DASHBOARD_URL --num-perches 1 --iterations $ITERATIONS
+

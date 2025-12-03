@@ -1,0 +1,19 @@
+dashboard:
+  host: 0.0.0.0
+  port: 8080
+  debug: false
+
+nest:
+  storage_path: /var/lib/kastrel/data/
+  encryption_key: ${KASTREL_ENCRYPTION_KEY}  # From env/secrets
+
+database:
+  url: ${DATABASE_URL}  # From env
+
+demo:
+  local_data_path: /var/lib/kastrel/demo_data/
+  enable_mock_perches: false
+
+logging:
+  level: INFO
+  format: json

@@ -1,0 +1,50 @@
+# Docker Compose for local testing with simulated perches
+version: '3.8'
+
+services:
+  # The Dashboard (what clients will run)
+  dashboard:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - KASTREL_ENV=dev
+    volumes:
+      - dashboard-data:/var/lib/kastrel
+    networks:
+      - kastrel-net
+
+  # Simulated perch 1
+  perch-1:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile.perch-sim
+    environment:
+      - DASHBOARD_URL=http://dashboard:8080
+      - AGENT_ID=perch-client-1
+    depends_on:
+      - dashboard
+    networks:
+      - kastrel-net
+
+  # Simulated perch 2
+  perch-2:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile.perch-sim
+    environment:
+      - DASHBOARD_URL=http://dashboard:8080
+      - AGENT_ID=perch-client-2
+    depends_on:
+      - dashboard
+    networks:
+      - kastrel-net
+
+volumes:
+  dashboard-data:
+
+networks:
+  kastrel-net:
+    driver: bridge

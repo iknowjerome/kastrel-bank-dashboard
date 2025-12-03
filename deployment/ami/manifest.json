@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "name": "kastrel_dashboard",
+      "builder_type": "amazon-ebs",
+      "build_time": 1764769653,
+      "files": null,
+      "artifact_id": "ca-central-1:ami-0cd504b8613147dd7",
+      "packer_run_uuid": "ced28fb2-1051-4b7f-7024-3806d99af356",
+      "custom_data": null
+    }
+  ],
+  "last_run_uuid": "ced28fb2-1051-4b7f-7024-3806d99af356"
+}

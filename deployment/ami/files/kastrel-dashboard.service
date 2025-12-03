@@ -1,0 +1,45 @@
+[Unit]
+Description=Kastrel Dashboard
+Documentation=https://kastrel.io/docs
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=kastrel
+Group=kastrel
+WorkingDirectory=/opt/kastrel/dashboard
+
+# Environment
+Environment=KASTREL_ENV=production
+Environment=PYTHONUNBUFFERED=1
+EnvironmentFile=-/etc/kastrel/environment
+
+# Start command
+ExecStart=/opt/kastrel/venv/bin/python -m app.main --host 0.0.0.0 --port 8080
+
+# Restart policy
+Restart=always
+RestartSec=5
+StartLimitInterval=60
+StartLimitBurst=3
+
+# Security hardening
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+ReadWritePaths=/var/lib/kastrel
+
+# Resource limits
+MemoryMax=1G
+CPUQuota=80%
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=kastrel-dashboard
+
+[Install]
+WantedBy=multi-user.target
+
