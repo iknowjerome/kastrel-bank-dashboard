@@ -34,9 +34,9 @@ fi
 
 # Build React frontend first
 echo "📦 Building React frontend..."
-REACT_DIR="../../frontend-react"
-if [ -d "$REACT_DIR" ]; then
-    cd "$REACT_DIR"
+FRONTEND_DIR="../../frontend"
+if [ -d "$FRONTEND_DIR" ]; then
+    cd "$FRONTEND_DIR"
     if [ -f "package.json" ]; then
         if command -v npm &> /dev/null; then
             echo "   Running npm install..."
@@ -46,14 +46,14 @@ if [ -d "$REACT_DIR" ]; then
             echo "   ✅ React build complete"
         else
             echo "   ⚠️  npm not found, skipping React build"
-            echo "   Make sure frontend-react/dist is up to date!"
+            echo "   Make sure frontend/dist is up to date!"
         fi
     else
-        echo "   ⚠️  No package.json found in frontend-react"
+        echo "   ⚠️  No package.json found in frontend"
     fi
     cd "$SCRIPT_DIR"
 else
-    echo "   ⚠️  frontend-react directory not found, skipping build"
+    echo "   ⚠️  frontend directory not found, skipping build"
 fi
 echo ""
 

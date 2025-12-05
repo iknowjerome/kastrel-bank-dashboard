@@ -8,9 +8,9 @@ echo "=== Installing Kastrel Dashboard v${KASTREL_VERSION} ==="
 echo "Updating system packages..."
 sudo dnf update -y
 
-# Install Python 3.11 and dependencies
-echo "Installing Python and dependencies..."
-sudo dnf install -y python3.11 python3.11-pip python3.11-devel gcc git
+# Install Python 3.11, Node.js, and dependencies
+echo "Installing Python, Node.js, and dependencies..."
+sudo dnf install -y python3.11 python3.11-pip python3.11-devel gcc git nodejs npm
 
 # Clean up dnf cache to free space
 echo "Cleaning up package manager cache..."
@@ -33,14 +33,21 @@ sudo mkdir -p /etc/kastrel
 # Install application
 echo "Installing application..."
 sudo cp -r /tmp/app /opt/kastrel/dashboard/
-sudo cp -r /tmp/frontend /opt/kastrel/dashboard/
-# Copy React frontend build (app looks for frontend-react/dist relative to dashboard root)
-if [ -d "/tmp/frontend-react-dist" ]; then
-    sudo mkdir -p /opt/kastrel/dashboard/frontend-react/dist
-    sudo cp -r /tmp/frontend-react-dist/* /opt/kastrel/dashboard/frontend-react/dist/
-fi
 sudo cp -r /tmp/config /opt/kastrel/dashboard/
 sudo cp /tmp/requirements.txt /opt/kastrel/dashboard/
+
+# Build React frontend
+echo "Building React frontend..."
+if [ -d "/tmp/frontend" ]; then
+    cd /tmp/frontend
+    sudo npm ci
+    sudo npm run build
+    sudo mkdir -p /opt/kastrel/dashboard/frontend
+    sudo cp -r /tmp/frontend/dist /opt/kastrel/dashboard/frontend/
+    echo "React frontend built successfully"
+else
+    echo "⚠️  Warning: /tmp/frontend not found"
+fi
 
 # Copy service files and demo_data to safe location before cleaning /tmp
 echo "Copying service files and demo data..."

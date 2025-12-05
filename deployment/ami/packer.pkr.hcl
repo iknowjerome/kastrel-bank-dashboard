@@ -103,11 +103,6 @@ build {
   }
 
   provisioner "file" {
-    source      = "../../frontend-react/dist"
-    destination = "/tmp/frontend-react-dist"
-  }
-
-  provisioner "file" {
     source      = "../../config"
     destination = "/tmp/config"
   }

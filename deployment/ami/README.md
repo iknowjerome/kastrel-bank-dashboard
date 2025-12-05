@@ -82,7 +82,7 @@ sudo systemctl restart kastrel-dashboard
 ├── venv/                    # Python virtual environment
 ├── dashboard/
 │   ├── app/                 # Application code
-│   ├── frontend/            # Web UI
+│   ├── frontend/             # React frontend (built)
 │   └── config/              # Configuration files
 └── kastrel-config.sh        # First-boot script
 
