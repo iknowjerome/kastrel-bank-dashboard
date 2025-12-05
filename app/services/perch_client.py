@@ -63,6 +63,7 @@ class PerchServiceClient:
         }
         
         logger.info(f"Requesting summary from perch service: {url}")
+        logger.info(f"Prompt being sent: '{prompt}'")
         logger.info(f"Payload summary: customer_id={customer_data.get('customer_id')}, "
                     f"num_documents={len(documents)}, num_messages={len(messages)}")
         logger.debug(f"Full payload: {json.dumps(payload, indent=2, default=str)[:500]}...")

@@ -17,3 +17,4 @@ ENV ITERATIONS=10
 # Run simulator
 CMD python simulate_perches.py --url $DASHBOARD_URL --num-perches 1 --iterations $ITERATIONS
 
+

@@ -11,7 +11,12 @@ from typing import List, Dict, Any, Optional
 from .websocket import ConnectionManager
 from ..demo.local_data import LocalDataLoader
 from ..services.perch_client import PerchServiceClient, PerchServiceError
-from ..services.data_aggregator import aggregate_client_data_for_summary
+from ..services.data_aggregator import (
+    aggregate_client_data_for_summary,
+    load_prompt_from_file,
+    save_prompt_to_file,
+    get_data_context_metadata
+)
 
 logger = logging.getLogger(__name__)
 
@@ -108,24 +113,62 @@ def setup_dashboard_routes(
     @app.get("/dashboard/api/agents")
     async def list_agents():
         """List all connected/known agents (perches)."""
-        agents = set()
-        for entry in aggregator.trace_history:
-            agents.add(entry.get('agent_id'))
+        # Start with all registered agents
+        agents_dict = {}
         
-        agent_list = []
-        for agent_id in agents:
-            # Get latest trace for this agent
-            latest = None
-            for entry in reversed(aggregator.trace_history):
-                if entry.get('agent_id') == agent_id:
-                    latest = entry
-                    break
-            
-            agent_list.append({
+        # Add all registered agents
+        for agent_id, info in aggregator.registered_agents.items():
+            agents_dict[agent_id] = {
                 "agent_id": agent_id,
-                "last_seen": latest.get('metadata', {}).get('timestamp') if latest else None,
-                "model_info": latest.get('metadata', {}).get('model_info') if latest else None
-            })
+                "registered_at": info.get('registered_at'),
+                "model_info": info.get('model_info'),
+                "last_seen": None  # Will be updated if they've sent traces
+            }
+        
+        # Update with trace information
+        for entry in aggregator.trace_history:
+            agent_id = entry.get('agent_id')
+            if agent_id not in agents_dict:
+                # Agent sent traces but never registered (shouldn't happen, but handle it)
+                agents_dict[agent_id] = {
+                    "agent_id": agent_id,
+                    "registered_at": None,
+                    "model_info": None,
+                    "last_seen": None
+                }
+            
+            # Update last_seen and model_info from most recent trace
+            timestamp = entry.get('metadata', {}).get('timestamp')
+            # Ensure timestamp is a valid number
+            if timestamp is not None:
+                try:
+                    timestamp = float(timestamp)
+                    if agents_dict[agent_id]['last_seen'] is None or timestamp > agents_dict[agent_id]['last_seen']:
+                        agents_dict[agent_id]['last_seen'] = timestamp
+                except (ValueError, TypeError):
+                    # Invalid timestamp, skip it
+                    pass
+            
+            # Update model_info from traces if not set from registration
+            if not agents_dict[agent_id]['model_info']:
+                agents_dict[agent_id]['model_info'] = entry.get('metadata', {}).get('model_info')
+        
+        # Use registered_at as fallback for last_seen if no traces sent yet
+        for agent_id, agent_info in agents_dict.items():
+            if agent_info['last_seen'] is None and agent_info['registered_at'] is not None:
+                try:
+                    # Ensure registered_at is a valid float before using as fallback
+                    agent_info['last_seen'] = float(agent_info['registered_at'])
+                except (ValueError, TypeError):
+                    # If registered_at is invalid, leave last_seen as None
+                    pass
+        
+        agent_list = list(agents_dict.values())
+        
+        # Debug logging
+        from app.main import logger
+        for agent in agent_list:
+            logger.debug(f"Agent {agent['agent_id']}: last_seen={agent['last_seen']} (type: {type(agent['last_seen'])})")
         
         return {"agents": agent_list, "count": len(agent_list)}
     
@@ -158,6 +201,14 @@ def setup_dashboard_routes(
                     entry.get('traces', {}),
                     entry.get('metadata', {})
                 )
+            
+            # Broadcast update to WebSocket clients
+            await ws_manager.broadcast({
+                "type": "trace_update",
+                "agent_id": "demo-agent",
+                "loaded": len(data)
+            })
+            
             return {"status": "ok", "loaded": len(data)}
         except Exception as e:
             return {"status": "error", "message": str(e)}
@@ -292,12 +343,15 @@ def setup_dashboard_routes(
         customer_msgs = [m for m in messages if m['customer_id'] == customer_id]
         customer_msgs.sort(key=lambda x: x['message_time'])
         
-        # Aggregate data
+        # Aggregate data - let Perch service handle context management
         prompt, customer_data, docs, msgs = aggregate_client_data_for_summary(
-            customer, customer_docs, customer_msgs
+            customer, customer_docs, customer_msgs,
+            max_documents=None,   # Send all documents
+            max_messages=None     # Send all messages
         )
         
         logger.info(f"Requesting summary from perch service for customer {customer_id}")
+        logger.info(f"Using prompt: {prompt[:100]}...")  # Log first 100 chars of prompt
         
         # Define async generator for SSE streaming
         async def event_stream():
@@ -418,3 +472,57 @@ def setup_dashboard_routes(
             "segments": segments,
             "industries": industries,
         }
+    
+    @app.get("/api/banking/prompt")
+    async def get_prompt():
+        """Get the current AI summarization prompt."""
+        try:
+            prompt = load_prompt_from_file()
+            return {"prompt": prompt}
+        except Exception as e:
+            logger.error(f"Failed to load prompt: {e}")
+            raise HTTPException(status_code=500, detail=f"Failed to load prompt: {str(e)}")
+    
+    @app.post("/api/banking/prompt")
+    async def save_prompt(data: dict):
+        """Save a new AI summarization prompt."""
+        try:
+            prompt = data.get('prompt', '')
+            if not prompt:
+                raise HTTPException(status_code=400, detail="Prompt cannot be empty")
+            
+            save_prompt_to_file(prompt)
+            return {"message": "Prompt saved successfully", "prompt": prompt}
+        except Exception as e:
+            logger.error(f"Failed to save prompt: {e}")
+            raise HTTPException(status_code=500, detail=f"Failed to save prompt: {str(e)}")
+    
+    @app.get("/api/banking/customers/{customer_id}/context-metadata")
+    async def get_customer_context_metadata(customer_id: str):
+        """
+        Get metadata about what data will be sent to the AI model for this customer.
+        This shows which documents, messages, and profile sections will be included
+        without showing the actual content.
+        """
+        # Get customer profile
+        raw_customers = load_csv_data('banking_churn_customers_1000.csv')
+        customers = [parse_customer(row) for row in raw_customers]
+        customer = next((c for c in customers if c['customer_id'] == customer_id), None)
+        
+        if not customer:
+            raise HTTPException(status_code=404, detail=f"Customer {customer_id} not found")
+        
+        # Get documents
+        raw_docs = load_csv_data('banking_churn_documents_1000.csv')
+        documents = [parse_document(row) for row in raw_docs]
+        customer_docs = [d for d in documents if d['customer_id'] == customer_id]
+        
+        # Get messages
+        raw_msgs = load_csv_data('banking_churn_messages_1000.csv')
+        messages = [parse_message(row) for row in raw_msgs]
+        customer_msgs = [m for m in messages if m['customer_id'] == customer_id]
+        
+        # Get metadata
+        metadata = get_data_context_metadata(customer, customer_docs, customer_msgs)
+        
+        return metadata

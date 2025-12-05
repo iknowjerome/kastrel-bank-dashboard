@@ -1,10 +1,15 @@
 import { FC, useState, useEffect, useCallback } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Skeleton } from '@/components/ui/skeleton'
 import { cn } from '@/lib/utils'
-import { Bird, Loader2, Activity, Users, Layers, Database } from 'lucide-react'
+import { 
+  Bird, 
+  Activity, 
+  Users, 
+  Layers, 
+  Database
+} from 'lucide-react'
 
 interface Agent {
   agent_id: string
@@ -17,6 +22,10 @@ interface Agent {
 interface Trace {
   agent_id: string
   traces: Record<string, unknown>
+  metadata?: {
+    timestamp?: number
+    [key: string]: unknown
+  }
 }
 
 interface Stats {
@@ -64,19 +73,6 @@ export const KastrelDashboard: FC = () => {
     }
   }, [])
 
-  const loadDemoData = async () => {
-    try {
-      const response = await fetch(`${API_BASE}/demo/load-local-data`, { method: 'POST' })
-      const data = await response.json()
-      alert(`Loaded ${data.loaded} trace entries`)
-      loadTraces()
-      loadStats()
-      loadAgents()
-    } catch (error) {
-      console.error('Failed to load demo data:', error)
-    }
-  }
-
   useEffect(() => {
     const loadAll = async () => {
       setLoading(true)
@@ -92,7 +88,7 @@ export const KastrelDashboard: FC = () => {
     ws.onopen = () => setConnected(true)
     ws.onmessage = (event) => {
       const data = JSON.parse(event.data)
-      if (data.type === 'trace_update') {
+      if (data.type === 'trace_update' || data.type === 'agent_registered') {
         loadTraces()
         loadStats()
         loadAgents()
@@ -126,8 +122,8 @@ export const KastrelDashboard: FC = () => {
       </header>
 
       {loading ? (
-        <div className="grid grid-cols-3 gap-6">
-          {[...Array(3)].map((_, i) => (
+        <div className="grid grid-cols-2 gap-6">
+          {[...Array(2)].map((_, i) => (
             <Card key={i}>
               <CardHeader className="pb-4">
                 <Skeleton className="h-4 w-32" />
@@ -140,7 +136,7 @@ export const KastrelDashboard: FC = () => {
           ))}
         </div>
       ) : (
-        <main className="grid grid-cols-3 gap-6">
+        <main className="grid grid-cols-2 gap-6">
           {/* Connected Perches */}
           <Card>
             <CardHeader className="pb-4">
@@ -211,26 +207,8 @@ export const KastrelDashboard: FC = () => {
             </CardContent>
           </Card>
 
-          {/* Demo Actions */}
-          <Card>
-            <CardHeader className="pb-4">
-              <CardTitle className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                Actions
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Button onClick={loadDemoData} className="w-full gap-2">
-                <Loader2 className="w-4 h-4" />
-                Load Demo Data
-              </Button>
-              <p className="text-muted-foreground text-xs mt-3">
-                Load sample trace data for demonstration purposes.
-              </p>
-            </CardContent>
-          </Card>
-
           {/* Recent Traces - spans full width */}
-          <Card className="col-span-3">
+          <Card className="col-span-2">
             <CardHeader className="pb-4">
               <CardTitle className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
                 Recent Traces
@@ -249,9 +227,14 @@ export const KastrelDashboard: FC = () => {
                       <span className="text-primary font-medium text-sm block mb-1">
                         {trace.agent_id}
                       </span>
-                      <span className="text-muted-foreground text-xs">
+                      <span className="text-muted-foreground text-xs block">
                         Layers: {Object.keys(trace.traces || {}).length}
                       </span>
+                      {trace.metadata?.timestamp && (
+                        <span className="text-muted-foreground text-xs block mt-1">
+                          {new Date(trace.metadata.timestamp * 1000).toLocaleTimeString()}
+                        </span>
+                      )}
                     </div>
                   ))}
                 </div>

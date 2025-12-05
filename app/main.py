@@ -40,6 +40,15 @@ class TraceAggregator:
     
     def __init__(self):
         self.trace_history = []
+        self.registered_agents = {}  # Track registered agents: {agent_id: {model_info, registered_at}}
+    
+    def register_agent(self, agent_id: str, model_info: dict):
+        """Register an agent (perch)."""
+        import time
+        self.registered_agents[agent_id] = {
+            'model_info': model_info,
+            'registered_at': time.time()
+        }
     
     def add_traces(self, agent_id: str, traces: dict, metadata: dict = None):
         """Add traces to history."""
@@ -73,8 +82,9 @@ class NestServer:
     Replace with: from services.nest.server import NestServer
     """
     
-    def __init__(self, config: Dict[str, Any] = None):
+    def __init__(self, config: Dict[str, Any] = None, ws_manager=None):
         self.config = config or {}
+        self.ws_manager = ws_manager
         self.app = FastAPI(
             title="Kastrel Nest",
             version="0.1.0"
@@ -101,6 +111,18 @@ class NestServer:
             """Register a perch - same API as Nest"""
             logger.info(f"🦅 PERCH REGISTERED: {request.agent_id}")
             logger.info(f"   Model: {request.model_info.get('model_name', 'unknown')}")
+            
+            # Store the registered agent
+            self.aggregator.register_agent(request.agent_id, request.model_info)
+            
+            # Broadcast to WebSocket clients if ws_manager is available
+            if self.ws_manager:
+                await self.ws_manager.broadcast({
+                    "type": "agent_registered",
+                    "agent_id": request.agent_id,
+                    "model_info": request.model_info
+                })
+            
             return {
                 "status": "registered",
                 "message": "Agent registered with Dashboard",
@@ -111,12 +133,37 @@ class NestServer:
         @self.app.post("/api/v1/traces")
         async def receive_traces(request: TraceRequest):
             """Receive traces from perch - same API as Nest"""
+            import time
+            
+            # Add timestamp to metadata if not present
+            metadata = dict(request.metadata) if request.metadata else {}
+            if 'timestamp' not in metadata:
+                metadata['timestamp'] = time.time()
+            else:
+                # Ensure timestamp is a float (in case it comes as string or int)
+                try:
+                    metadata['timestamp'] = float(metadata['timestamp'])
+                except (ValueError, TypeError):
+                    logger.warning(f"Invalid timestamp in metadata: {metadata.get('timestamp')}, using current time")
+                    metadata['timestamp'] = time.time()
+            
+            logger.info(f"Received traces from {request.agent_id} ({len(request.traces)} layers)")
+            logger.debug(f"Metadata timestamp: {metadata.get('timestamp')} (type: {type(metadata.get('timestamp'))})")
+            
             self.aggregator.add_traces(
                 request.agent_id,
                 request.traces,
-                request.metadata
+                metadata
             )
-            logger.info(f"Received traces from {request.agent_id} ({len(request.traces)} layers)")
+            
+            # Broadcast to WebSocket clients if ws_manager is available
+            if self.ws_manager:
+                await self.ws_manager.broadcast({
+                    "type": "trace_update",
+                    "agent_id": request.agent_id,
+                    "layers": len(request.traces)
+                })
+            
             return {"status": "ok", "message": "Traces received"}
         
         @self.app.get("/api/v1/health")
@@ -154,12 +201,18 @@ class DashboardApp(NestServer):
         if config is None:
             config = load_config()
         
-        # Initialize parent Nest
-        super().__init__(config)
-        
         self.dashboard_config = config.get('dashboard', {})
         self.demo_config = config.get('demo', {})
         self.dashboard_password = self.dashboard_config.get('password')
+        
+        # Dashboard-specific components (create before parent init)
+        ws_manager = ConnectionManager()
+        self.local_data_loader = LocalDataLoader(
+            self.demo_config.get('local_data_path', './demo_data/')
+        )
+        
+        # Initialize parent Nest with ws_manager for real-time updates
+        super().__init__(config, ws_manager=ws_manager)
         
         # Add authentication middleware first (protects routes but allows /api/v1/*)
         # Note: Middleware runs in reverse order, so this will run AFTER SessionMiddleware
@@ -177,12 +230,6 @@ class DashboardApp(NestServer):
             SessionMiddleware,
             secret_key=session_secret,
             max_age=86400  # 24 hours
-        )
-        
-        # Dashboard-specific components
-        self.ws_manager = ConnectionManager()
-        self.local_data_loader = LocalDataLoader(
-            self.demo_config.get('local_data_path', './demo_data/')
         )
         
         # Initialize Perch AI Service client
@@ -283,19 +330,6 @@ class DashboardApp(NestServer):
                 "websocket_clients": len(self.ws_manager.active_connections),
                 "demo_mode": self.demo_config.get('enable_mock_perches', False)
             }
-    
-    def _broadcast_trace_update(self, agent_id: str, trace_data: dict):
-        """Broadcast trace updates to WebSocket clients."""
-        # Override or hook into parent's trace handling to broadcast
-        # This enables real-time updates in the dashboard
-        import asyncio
-        asyncio.create_task(
-            self.ws_manager.broadcast({
-                "type": "trace_update",
-                "agent_id": agent_id,
-                "data": trace_data
-            })
-        )
 
 
 def create_app():

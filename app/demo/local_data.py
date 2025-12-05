@@ -46,3 +46,4 @@ class LocalDataLoader:
         with open(file_path, 'w') as f:
             json.dump(data, f, indent=2)
 
+
