@@ -12,6 +12,14 @@ sudo dnf update -y
 echo "Installing Python and dependencies..."
 sudo dnf install -y python3.11 python3.11-pip python3.11-devel gcc git
 
+# Clean up dnf cache to free space
+echo "Cleaning up package manager cache..."
+sudo dnf clean all
+
+# Check disk space
+echo "Disk space after system package installation:"
+df -h /
+
 # Create application user
 echo "Creating kastrel user..."
 sudo useradd -r -s /bin/false kastrel || true
@@ -26,23 +34,64 @@ sudo mkdir -p /etc/kastrel
 echo "Installing application..."
 sudo cp -r /tmp/app /opt/kastrel/dashboard/
 sudo cp -r /tmp/frontend /opt/kastrel/dashboard/
+# Copy React frontend build (app looks for frontend-react/dist relative to dashboard root)
+if [ -d "/tmp/frontend-react-dist" ]; then
+    sudo mkdir -p /opt/kastrel/dashboard/frontend-react/dist
+    sudo cp -r /tmp/frontend-react-dist/* /opt/kastrel/dashboard/frontend-react/dist/
+fi
 sudo cp -r /tmp/config /opt/kastrel/dashboard/
 sudo cp /tmp/requirements.txt /opt/kastrel/dashboard/
+
+# Copy service files and demo_data to safe location before cleaning /tmp
+echo "Copying service files and demo data..."
+sudo cp /tmp/kastrel-dashboard.service /opt/kastrel/ 2>/dev/null || true
+sudo cp /tmp/kastrel-config.sh /opt/kastrel/ 2>/dev/null || true
+
+# Copy demo_data files
+if [ -d "/tmp/demo_data" ] && [ "$(ls -A /tmp/demo_data 2>/dev/null)" ]; then
+    echo "Copying demo_data files..."
+    sudo cp -r /tmp/demo_data/* /var/lib/kastrel/demo_data/
+    echo "Demo data files copied:"
+    sudo ls -la /var/lib/kastrel/demo_data/
+else
+    echo "⚠️  Warning: /tmp/demo_data is empty or doesn't exist"
+    ls -la /tmp/ | grep demo || echo "No demo_data in /tmp"
+fi
 
 # Create Python virtual environment
 echo "Setting up Python environment..."
 sudo python3.11 -m venv /opt/kastrel/venv
-sudo /opt/kastrel/venv/bin/pip install --upgrade pip
-sudo /opt/kastrel/venv/bin/pip install -r /opt/kastrel/dashboard/requirements.txt
+sudo /opt/kastrel/venv/bin/pip install --upgrade pip --no-cache-dir
+
+# Clean up /tmp before installing large packages (but keep service files we copied)
+echo "Cleaning up temporary files..."
+sudo rm -rf /tmp/* /tmp/.* 2>/dev/null || true
+
+# Set TMPDIR to use root filesystem for more space
+export TMPDIR=/opt/kastrel/tmp
+sudo mkdir -p $TMPDIR
+sudo chmod 1777 $TMPDIR
+
+echo "Installing Python packages (this may take a while)..."
+sudo TMPDIR=$TMPDIR /opt/kastrel/venv/bin/pip install --no-cache-dir -r /opt/kastrel/dashboard/requirements.txt
+
+# Clean up pip cache and temporary files
+echo "Cleaning up pip cache and temporary files..."
+sudo rm -rf /root/.cache/pip
+sudo rm -rf $TMPDIR/pip-* /tmp/pip-* 2>/dev/null || true
+sudo rm -rf $TMPDIR
+
+# Check disk space after Python installation
+echo "Disk space after Python package installation:"
+df -h /
 
 # Install systemd service
 echo "Installing systemd service..."
-sudo cp /tmp/kastrel-dashboard.service /etc/systemd/system/
+sudo cp /opt/kastrel/kastrel-dashboard.service /etc/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl enable kastrel-dashboard
 
 # Install configuration script (runs on first boot)
-sudo cp /tmp/kastrel-config.sh /opt/kastrel/
 sudo chmod +x /opt/kastrel/kastrel-config.sh
 
 # Create first-boot service

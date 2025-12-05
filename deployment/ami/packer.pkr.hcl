@@ -76,9 +76,11 @@ source "amazon-ebs" "kastrel_dashboard" {
   }
 
   # Launch block device mappings
+  # 35GB: 30GB minimum required by base AMI snapshot + 5GB for PyTorch/CUDA
+  # package downloads and temporary extraction during pip install
   launch_block_device_mappings {
     device_name           = "/dev/xvda"
-    volume_size           = 30
+    volume_size           = 35
     volume_type           = "gp3"
     delete_on_termination = true
   }
@@ -101,6 +103,11 @@ build {
   }
 
   provisioner "file" {
+    source      = "../../frontend-react/dist"
+    destination = "/tmp/frontend-react-dist"
+  }
+
+  provisioner "file" {
     source      = "../../config"
     destination = "/tmp/config"
   }
@@ -108,6 +115,11 @@ build {
   provisioner "file" {
     source      = "../../requirements.txt"
     destination = "/tmp/requirements.txt"
+  }
+
+  provisioner "file" {
+    source      = "../../demo_data"
+    destination = "/tmp/demo_data"
   }
 
   provisioner "file" {
