@@ -22,6 +22,7 @@ from .dashboard.routes import setup_dashboard_routes
 from .dashboard.websocket import ConnectionManager
 from .dashboard.auth import AuthMiddleware, setup_auth_routes
 from .demo.local_data import LocalDataLoader
+from .services.perch_client import PerchServiceClient
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -184,6 +185,19 @@ class DashboardApp(NestServer):
             self.demo_config.get('local_data_path', './demo_data/')
         )
         
+        # Initialize Perch AI Service client
+        perch_config = config.get('perch_service', {})
+        if perch_config.get('url'):
+            self.perch_client = PerchServiceClient(
+                base_url=perch_config['url'],
+                timeout=perch_config.get('timeout', 60),
+                connection_timeout=perch_config.get('connection_timeout', 10)
+            )
+            logger.info(f"Perch AI Service client initialized: {perch_config['url']}")
+        else:
+            self.perch_client = None
+            logger.warning("Perch AI Service not configured - AI summarization will be unavailable")
+        
         # Set up dashboard routes and UI
         self._setup_dashboard()
         
@@ -200,7 +214,8 @@ class DashboardApp(NestServer):
             app=self.app,
             aggregator=self.aggregator,
             ws_manager=self.ws_manager,
-            local_data_loader=self.local_data_loader
+            local_data_loader=self.local_data_loader,
+            perch_client=self.perch_client
         )
         
         # Serve React frontend build

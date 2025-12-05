@@ -1,12 +1,19 @@
 """Dashboard-specific API routes."""
 import csv
 import os
+import json
+import logging
 from pathlib import Path
-from fastapi import APIRouter, WebSocket, WebSocketDisconnect, Query
+from fastapi import APIRouter, WebSocket, WebSocketDisconnect, Query, HTTPException
+from fastapi.responses import StreamingResponse
 from typing import List, Dict, Any, Optional
 
 from .websocket import ConnectionManager
 from ..demo.local_data import LocalDataLoader
+from ..services.perch_client import PerchServiceClient, PerchServiceError
+from ..services.data_aggregator import aggregate_client_data_for_summary
+
+logger = logging.getLogger(__name__)
 
 
 # =============================================================================
@@ -91,7 +98,8 @@ def setup_dashboard_routes(
     app,
     aggregator,
     ws_manager: ConnectionManager,
-    local_data_loader: LocalDataLoader
+    local_data_loader: LocalDataLoader,
+    perch_client: Optional[PerchServiceClient] = None
 ):
     """Add dashboard routes to the FastAPI app."""
     
@@ -247,6 +255,84 @@ def setup_dashboard_routes(
             "messages": customer_msgs,
             "count": len(customer_msgs)
         }
+    
+    @app.post("/api/banking/customers/{customer_id}/summarize")
+    async def summarize_customer(customer_id: str):
+        """
+        Generate AI-powered summary for a customer using the Perch AI Service.
+        Streams the response using Server-Sent Events (SSE).
+        """
+        # Check if perch client is configured
+        if perch_client is None:
+            logger.error("Perch service client not configured")
+            raise HTTPException(
+                status_code=503,
+                detail="AI summarization service is not configured"
+            )
+        
+        # Fetch customer data
+        logger.info(f"Fetching data for customer {customer_id}")
+        
+        # Get customer profile
+        raw_customers = load_csv_data('banking_churn_customers_1000.csv')
+        customers = [parse_customer(row) for row in raw_customers]
+        customer = next((c for c in customers if c['customer_id'] == customer_id), None)
+        
+        if not customer:
+            raise HTTPException(status_code=404, detail=f"Customer {customer_id} not found")
+        
+        # Get documents
+        raw_docs = load_csv_data('banking_churn_documents_1000.csv')
+        documents = [parse_document(row) for row in raw_docs]
+        customer_docs = [d for d in documents if d['customer_id'] == customer_id]
+        
+        # Get messages
+        raw_msgs = load_csv_data('banking_churn_messages_1000.csv')
+        messages = [parse_message(row) for row in raw_msgs]
+        customer_msgs = [m for m in messages if m['customer_id'] == customer_id]
+        customer_msgs.sort(key=lambda x: x['message_time'])
+        
+        # Aggregate data
+        prompt, customer_data, docs, msgs = aggregate_client_data_for_summary(
+            customer, customer_docs, customer_msgs
+        )
+        
+        logger.info(f"Requesting summary from perch service for customer {customer_id}")
+        
+        # Define async generator for SSE streaming
+        async def event_stream():
+            try:
+                async for token_data in perch_client.summarize_stream(
+                    prompt=prompt,
+                    customer_data=customer_data,
+                    documents=docs,
+                    messages=msgs
+                ):
+                    # Format as SSE: "data: {...}\n\n"
+                    yield f"data: {json.dumps(token_data)}\n\n"
+                
+                logger.info(f"Completed streaming summary for customer {customer_id}")
+                
+            except PerchServiceError as e:
+                logger.error(f"Perch service error: {e}")
+                # Send error as SSE event
+                error_data = {"type": "error", "message": str(e)}
+                yield f"data: {json.dumps(error_data)}\n\n"
+            except Exception as e:
+                logger.error(f"Unexpected error during summarization: {e}")
+                error_data = {"type": "error", "message": "An unexpected error occurred"}
+                yield f"data: {json.dumps(error_data)}\n\n"
+        
+        # Return streaming response
+        return StreamingResponse(
+            event_stream(),
+            media_type="text/event-stream",
+            headers={
+                "Cache-Control": "no-cache",
+                "Connection": "keep-alive",
+                "X-Accel-Buffering": "no"  # Disable nginx buffering
+            }
+        )
     
     @app.get("/api/banking/documents")
     async def get_all_documents(

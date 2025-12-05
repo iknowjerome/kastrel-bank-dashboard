@@ -3,7 +3,7 @@ dashboard:
   host: 127.0.0.1
   port: 8888
   debug: false  # Set to true for auto-reload (requires full disk access on macOS)
-  password: "kastrel" #null  # Set a password to protect dashboard (e.g., "my-secret-password"), null = no auth
+  password: "kastrel2025" #null  # Set a password to protect dashboard (e.g., "my-secret-password"), null = no auth
 
 # Inherits Nest config structure
 nest:
@@ -17,6 +17,12 @@ database:
 demo:
   local_data_path: ./demo_data/
   enable_mock_perches: true
+
+# Perch AI Service
+perch_service:
+  url: http://localhost:9000
+  timeout: 60  # seconds for model generation
+  connection_timeout: 10  # seconds for connection
 
 logging:
   level: DEBUG

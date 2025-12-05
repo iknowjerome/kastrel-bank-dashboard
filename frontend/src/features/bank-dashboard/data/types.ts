@@ -78,6 +78,13 @@ export type Token = {
   riskScore: number; // 0 to 1
 };
 
+// Streaming token data from the backend (SSE format)
+export type StreamingToken = {
+  order: number;
+  token: string;
+  hallucination_prob: number; // 0 to 1
+};
+
 export type AiSuggestion = {
   id: string;
   title: string;

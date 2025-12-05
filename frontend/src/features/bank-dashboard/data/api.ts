@@ -3,7 +3,7 @@
  * The backend loads data from CSV files in /demo_data/
  */
 
-import { Customer, Document, Message } from './types';
+import { Customer, Document, Message, StreamingToken, Token } from './types';
 
 // Base URL for API calls - uses relative path so it works with Vite proxy
 const API_BASE = '/api/banking';
@@ -94,5 +94,121 @@ export async function fetchCustomerData(customerId: string): Promise<{
     fetchCustomerMessages(customerId),
   ]);
   return { documents, messages };
+}
+
+// =============================================================================
+// AI Summary Streaming API
+// =============================================================================
+
+/**
+ * Stream AI summary for a customer using Server-Sent Events (SSE).
+ * 
+ * @param customerId - The customer ID to summarize
+ * @param onToken - Callback called for each token received
+ * @param onError - Callback called if an error occurs
+ * @param onComplete - Callback called when streaming is complete
+ * @returns A function to abort the stream
+ */
+export function streamAiSummary(
+  customerId: string,
+  onToken: (token: Token) => void,
+  onError: (error: string) => void,
+  onComplete: () => void
+): () => void {
+  const url = `${API_BASE}/customers/${customerId}/summarize`;
+  
+  // Use fetch with streaming instead of EventSource for POST support
+  const abortController = new AbortController();
+  
+  (async () => {
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Accept': 'text/event-stream',
+        },
+        signal: abortController.signal,
+      });
+      
+      if (!response.ok) {
+        throw new Error(`Failed to start summary stream: ${response.statusText}`);
+      }
+      
+      if (!response.body) {
+        throw new Error('Response body is null');
+      }
+      
+      // Read the stream
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = '';
+      
+      while (true) {
+        const { done, value } = await reader.read();
+        
+        if (done) {
+          onComplete();
+          break;
+        }
+        
+        // Decode the chunk and add to buffer
+        buffer += decoder.decode(value, { stream: true });
+        
+        // Process complete SSE messages (separated by \n\n)
+        const lines = buffer.split('\n\n');
+        
+        // Keep the last incomplete line in the buffer
+        buffer = lines.pop() || '';
+        
+        for (const line of lines) {
+          if (line.trim().startsWith('data: ')) {
+            const dataStr = line.trim().substring(6); // Remove "data: " prefix
+            
+            try {
+              const data = JSON.parse(dataStr);
+              
+              // Check for error messages
+              if (data.type === 'error') {
+                onError(data.message || 'Unknown error occurred');
+                reader.cancel();
+                return;
+              }
+              
+              // Process token data
+              if (typeof data.order === 'number' && data.token && typeof data.hallucination_prob === 'number') {
+                const streamingToken = data as StreamingToken;
+                
+                // Convert to Token format expected by the UI
+                const token: Token = {
+                  text: streamingToken.token,
+                  riskScore: streamingToken.hallucination_prob,
+                };
+                
+                onToken(token);
+              }
+            } catch (parseError) {
+              console.warn('Failed to parse SSE data:', dataStr, parseError);
+            }
+          }
+        }
+      }
+    } catch (error) {
+      if (error instanceof Error) {
+        if (error.name === 'AbortError') {
+          // Stream was aborted by user
+          console.log('Stream aborted');
+        } else {
+          onError(error.message);
+        }
+      } else {
+        onError('An unexpected error occurred');
+      }
+    }
+  })();
+  
+  // Return abort function
+  return () => {
+    abortController.abort();
+  };
 }
 

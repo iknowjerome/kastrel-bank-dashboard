@@ -26,13 +26,19 @@ def load_config(env: Optional[str] = None) -> Dict[str, Any]:
 
 
 def _expand_env_vars(config: Dict[str, Any]) -> Dict[str, Any]:
-    """Recursively expand ${VAR} patterns in config values."""
+    """Recursively expand ${VAR} or ${VAR:default} patterns in config values."""
     if isinstance(config, dict):
         return {k: _expand_env_vars(v) for k, v in config.items()}
     elif isinstance(config, list):
         return [_expand_env_vars(item) for item in config]
     elif isinstance(config, str) and config.startswith('${') and config.endswith('}'):
-        var_name = config[2:-1]
-        return os.getenv(var_name, config)
+        var_expr = config[2:-1]
+        # Support ${VAR:default} syntax
+        if ':' in var_expr:
+            var_name, default = var_expr.split(':', 1)
+            return os.getenv(var_name, default)
+        else:
+            var_name = var_expr
+            return os.getenv(var_name, config)
     return config
 

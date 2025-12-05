@@ -1,7 +1,7 @@
-import { FC, useState, useCallback } from 'react'
+import { FC, useState, useCallback, useRef } from 'react'
 import { useBankDashboard } from '../state/BankDashboardContext'
-import { fetchAiSummaryForClient } from '../data/mockAiSummaryService'
-import { AiSummaryResponse, AiSummaryStatus, Token, AiSuggestion, getRiskLevel } from '../data/types'
+import { streamAiSummary } from '../data/api'
+import { AiSummaryStatus, Token, getRiskLevel } from '../data/types'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -17,7 +17,6 @@ import {
   Loader2, 
   AlertTriangle,
   RefreshCw,
-  ChevronRight,
   Bot
 } from 'lucide-react'
 
@@ -83,83 +82,84 @@ const RiskToken: FC<RiskTokenProps> = ({ token }) => {
 }
 
 // =============================================================================
-// Suggestion Card Component
+// Suggestion Card Component (Reserved for future use)
 // =============================================================================
 
-interface SuggestionCardProps {
-  suggestion: AiSuggestion
-  index: number
-}
+// TODO: Implement suggestions feature when backend supports it
+// interface SuggestionCardProps {
+//   suggestion: AiSuggestion
+//   index: number
+// }
 
-const SuggestionCard: FC<SuggestionCardProps> = ({ suggestion, index }) => {
-  const handleClick = () => {
-    console.log('Suggestion clicked:', suggestion)
-  }
+// const SuggestionCard: FC<SuggestionCardProps> = ({ suggestion, index }) => {
+//   const handleClick = () => {
+//     console.log('Suggestion clicked:', suggestion)
+//   }
 
-  const getCategoryVariant = (category: string): 'success' | 'danger' | 'secondary' | 'warning' | 'outline' => {
-    switch (category.toLowerCase()) {
-      case 'retention':
-        return 'success'
-      case 'risk mitigation':
-        return 'danger'
-      case 'upsell':
-      case 'growth':
-        return 'secondary'
-      case 'relationship':
-      case 'engagement':
-        return 'secondary'
-      case 'documentation':
-      case 'compliance':
-        return 'warning'
-      default:
-        return 'outline'
-    }
-  }
+//   const getCategoryVariant = (category: string): 'success' | 'danger' | 'secondary' | 'warning' | 'outline' => {
+//     switch (category.toLowerCase()) {
+//       case 'retention':
+//         return 'success'
+//       case 'risk mitigation':
+//         return 'danger'
+//       case 'upsell':
+//       case 'growth':
+//         return 'secondary'
+//       case 'relationship':
+//       case 'engagement':
+//         return 'secondary'
+//       case 'documentation':
+//       case 'compliance':
+//         return 'warning'
+//       default:
+//         return 'outline'
+//     }
+//   }
 
-  return (
-    <button
-      onClick={handleClick}
-      className="w-full text-left bg-muted/50 hover:bg-muted border border-border hover:border-border/80 rounded-xl p-4 transition-all animate-slide-up group"
-      style={{ animationDelay: `${index * 100}ms` }}
-    >
-      <div className="flex items-start justify-between gap-3">
-        <div className="flex-1">
-          <h4 className="text-foreground font-medium group-hover:text-primary transition-colors">
-            {suggestion.title}
-          </h4>
-          <div className="flex flex-wrap gap-2 mt-2">
-            {suggestion.categories.map((category) => (
-              <Badge
-                key={category}
-                variant={getCategoryVariant(category)}
-                className="text-[10px]"
-              >
-                {category}
-              </Badge>
-            ))}
-          </div>
-        </div>
-        <div className="text-right">
-          <span className="text-xs text-muted-foreground">Confidence</span>
-          <div className={cn(
-            'text-lg font-semibold',
-            suggestion.confidence >= 0.8 ? 'text-success' :
-            suggestion.confidence >= 0.6 ? 'text-warning' :
-            'text-muted-foreground'
-          )}>
-            {(suggestion.confidence * 100).toFixed(0)}%
-          </div>
-        </div>
-      </div>
+//   return (
+//     <button
+//       onClick={handleClick}
+//       className="w-full text-left bg-muted/50 hover:bg-muted border border-border hover:border-border/80 rounded-xl p-4 transition-all animate-slide-up group"
+//       style={{ animationDelay: `${index * 100}ms` }}
+//     >
+//       <div className="flex items-start justify-between gap-3">
+//         <div className="flex-1">
+//           <h4 className="text-foreground font-medium group-hover:text-primary transition-colors">
+//             {suggestion.title}
+//           </h4>
+//           <div className="flex flex-wrap gap-2 mt-2">
+//             {suggestion.categories.map((category) => (
+//               <Badge
+//                 key={category}
+//                 variant={getCategoryVariant(category)}
+//                 className="text-[10px]"
+//               >
+//                 {category}
+//               </Badge>
+//             ))}
+//           </div>
+//         </div>
+//         <div className="text-right">
+//           <span className="text-xs text-muted-foreground">Confidence</span>
+//           <div className={cn(
+//             'text-lg font-semibold',
+//             suggestion.confidence >= 0.8 ? 'text-success' :
+//             suggestion.confidence >= 0.6 ? 'text-warning' :
+//             'text-muted-foreground'
+//           )}>
+//             {(suggestion.confidence * 100).toFixed(0)}%
+//           </div>
+//         </div>
+//       </div>
       
-      {/* Hover indicator */}
-      <div className="mt-3 flex items-center gap-1 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity">
-        <span>Click to create task</span>
-        <ChevronRight className="w-3 h-3" />
-      </div>
-    </button>
-  )
-}
+//       {/* Hover indicator */}
+//       <div className="mt-3 flex items-center gap-1 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity">
+//         <span>Click to create task</span>
+//         <ChevronRight className="w-3 h-3" />
+//       </div>
+//     </button>
+//   )
+// }
 
 // =============================================================================
 // Loading Skeleton
@@ -196,23 +196,49 @@ const AiSummarySkeleton: FC = () => (
 export const AiSummarySection: FC = () => {
   const { currentClient, currentClientId } = useBankDashboard()
   const [status, setStatus] = useState<AiSummaryStatus>('idle')
-  const [data, setData] = useState<AiSummaryResponse | null>(null)
+  const [summaryTokens, setSummaryTokens] = useState<Token[]>([])
+  const [generatedAt, setGeneratedAt] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
+  
+  // Store abort function to cancel ongoing streams
+  const abortStreamRef = useRef<(() => void) | null>(null)
 
   const handleSummarize = useCallback(async () => {
     if (!currentClientId) return
 
+    // Cancel any ongoing stream
+    if (abortStreamRef.current) {
+      abortStreamRef.current()
+      abortStreamRef.current = null
+    }
+
     setStatus('loading')
     setError(null)
+    setSummaryTokens([])
+    setGeneratedAt(null)
 
-    try {
-      const response = await fetchAiSummaryForClient(currentClientId)
-      setData(response)
-      setStatus('success')
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'An error occurred')
-      setStatus('error')
-    }
+    // Start streaming
+    const abort = streamAiSummary(
+      currentClientId,
+      // onToken callback - append each token as it arrives
+      (token) => {
+        setSummaryTokens((prev) => [...prev, token])
+      },
+      // onError callback
+      (errorMessage) => {
+        setError(errorMessage)
+        setStatus('error')
+        abortStreamRef.current = null
+      },
+      // onComplete callback
+      () => {
+        setStatus('success')
+        setGeneratedAt(new Date().toISOString())
+        abortStreamRef.current = null
+      }
+    )
+    
+    abortStreamRef.current = abort
   }, [currentClientId])
 
   const getStatusIndicator = () => {
@@ -229,9 +255,9 @@ export const AiSummarySection: FC = () => {
   }
 
   const getLastRunText = () => {
-    if (!data?.generatedAt) return 'Not run yet'
+    if (!generatedAt) return 'Not run yet'
     
-    const generated = new Date(data.generatedAt)
+    const generated = new Date(generatedAt)
     const now = new Date()
     const diffMs = now.getTime() - generated.getTime()
     const diffMins = Math.floor(diffMs / 60000)
@@ -317,24 +343,35 @@ export const AiSummarySection: FC = () => {
       {/* Loading Skeleton */}
       {status === 'loading' && <AiSummarySkeleton />}
 
-      {/* Success State - Show Data */}
-      {status === 'success' && data && (
+      {/* Summary Display - Show tokens as they stream in */}
+      {(status === 'loading' || status === 'success') && summaryTokens.length > 0 && (
         <div className="space-y-6">
           {/* Summary Block */}
           <Card>
             <CardHeader className="pb-4">
-              <CardTitle className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                Summary
-              </CardTitle>
+              <div className="flex items-center justify-between">
+                <CardTitle className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                  AI Summary
+                </CardTitle>
+                {status === 'loading' && (
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <Loader2 className="w-3 h-3 animate-spin" />
+                    <span>Generating...</span>
+                  </div>
+                )}
+              </div>
             </CardHeader>
             <CardContent>
               <div className="text-foreground leading-relaxed">
-                {data.summaryTokens.map((token, index) => (
+                {summaryTokens.map((token, index) => (
                   <span key={index}>
                     <RiskToken token={token} />
-                    {index < data.summaryTokens.length - 1 && ' '}
+                    {index < summaryTokens.length - 1 && ' '}
                   </span>
                 ))}
+                {status === 'loading' && (
+                  <span className="inline-block w-2 h-4 ml-1 bg-primary animate-pulse" />
+                )}
               </div>
               <div className="mt-4 flex items-center gap-4 text-xs text-muted-foreground">
                 <div className="flex items-center gap-2">
@@ -350,45 +387,18 @@ export const AiSummarySection: FC = () => {
                   <span>High risk</span>
                 </div>
               </div>
-            </CardContent>
-          </Card>
-
-          {/* Suggested Actions Block */}
-          <Card>
-            <CardHeader className="pb-4">
-              <CardTitle className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                Suggested Actions
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              {data.suggestions.length === 0 ? (
-                <p className="text-muted-foreground">No suggestions at this time.</p>
-              ) : (
-                <div className="space-y-3">
-                  {data.suggestions.map((suggestion, index) => (
-                    <SuggestionCard key={suggestion.id} suggestion={suggestion} index={index} />
-                  ))}
+              {status === 'success' && (
+                <div className="mt-4 pt-4 border-t border-border text-xs text-muted-foreground">
+                  {summaryTokens.length} tokens generated
                 </div>
               )}
-            </CardContent>
-          </Card>
-
-          {/* Risk Commentary Block */}
-          <Card>
-            <CardHeader className="pb-4">
-              <CardTitle className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                Risk Commentary
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground leading-relaxed">{data.riskCommentary}</p>
             </CardContent>
           </Card>
         </div>
       )}
 
       {/* Idle State - Prompt to Run */}
-      {status === 'idle' && !data && (
+      {status === 'idle' && summaryTokens.length === 0 && (
         <Card>
           <CardContent className="p-12 text-center">
             <div className="flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 mx-auto mb-4">

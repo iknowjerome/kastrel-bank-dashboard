@@ -2,7 +2,7 @@ dashboard:
   host: 0.0.0.0
   port: 8080
   debug: false
-  password:"kastrel" #${DASHBOARD_PASSWORD}  # Set via environment variable, null = no auth
+  password:"kastrel2025" #${DASHBOARD_PASSWORD}  # Set via environment variable, null = no auth
 
 nest:
   storage_path: /var/lib/kastrel/data/
@@ -14,6 +14,12 @@ database:
 demo:
   local_data_path: /var/lib/kastrel/demo_data/
   enable_mock_perches: false
+
+# Perch AI Service
+perch_service:
+  url: ${PERCH_SERVICE_URL:http://perch-service:9000}  # From env, default to internal service
+  timeout: 60  # seconds for model generation
+  connection_timeout: 10  # seconds for connection
 
 logging:
   level: INFO
