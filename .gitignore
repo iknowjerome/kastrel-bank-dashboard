@@ -9,6 +9,7 @@ venv/
 *.egg-info/
 dist/
 build/
+.python-version
 
 # IDE
 .idea/
@@ -19,14 +20,28 @@ build/
 .env
 .env.local
 
+# Logs
+*.log
+*.log.*
+logs/
+
 # Data
 *.db
-demo_data/
+*.sqlite
+*.sqlite3
 ~/.kastrel-dashboard/
 
 # OS
 .DS_Store
 Thumbs.db
+
+# Testing
+coverage/
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.tox/
 
 # Downloaded installers
 AWSCLIV2.pkg

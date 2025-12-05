@@ -140,10 +140,10 @@ kastrel-dashboard/
 │       ├── __init__.py
 │       └── local_data.py     # Local data loading for demos
 ├── frontend/
-│   ├── index.html            # Dashboard UI
-│   └── static/
-│       ├── css/style.css
-│       └── js/dashboard.js
+│   ├── src/                  # React source code
+│   ├── dist/                 # Built frontend (generated)
+│   ├── package.json
+│   └── vite.config.ts
 ├── deployment/
 │   ├── Dockerfile
 │   ├── Dockerfile.perch-sim

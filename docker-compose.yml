@@ -24,7 +24,6 @@ services:
     volumes:
       # Live code reload - changes reflect immediately
       - ./app:/app/app:ro
-      - ./frontend:/app/frontend:ro
       - ./config:/app/config:ro
       # Persistent data
       - kastrel-data:/var/lib/kastrel

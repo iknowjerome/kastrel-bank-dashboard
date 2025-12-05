@@ -12,6 +12,8 @@ numpy>=1.24.0,<2.0.0  # numpy 2.x causes ABI incompatibility with torch
 # Web framework (kastrel-api already has FastAPI, but pin version)
 fastapi>=0.104.0
 uvicorn[standard]>=0.24.0
+itsdangerous>=2.0.0  # Required for session middleware (signs session cookies)
+python-multipart>=0.0.6  # Required for FastAPI form data handling (login form)
 
 # Real-time
 websockets>=12.0

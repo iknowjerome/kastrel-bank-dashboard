@@ -4,12 +4,14 @@ Kastrel Dashboard - Main Application
 Extends NestServer with dashboard UI and demo features.
 """
 import logging
+import secrets
 from pathlib import Path
 from typing import Dict, Any, Optional
 
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
+from starlette.middleware.sessions import SessionMiddleware
 
 # Import base Nest from kastrel-api
 # from services.nest.server import NestServer
@@ -18,6 +20,7 @@ from fastapi.responses import FileResponse
 from .config import load_config
 from .dashboard.routes import setup_dashboard_routes
 from .dashboard.websocket import ConnectionManager
+from .dashboard.auth import AuthMiddleware, setup_auth_routes
 from .demo.local_data import LocalDataLoader
 
 logging.basicConfig(level=logging.INFO)
@@ -155,6 +158,25 @@ class DashboardApp(NestServer):
         
         self.dashboard_config = config.get('dashboard', {})
         self.demo_config = config.get('demo', {})
+        self.dashboard_password = self.dashboard_config.get('password')
+        
+        # Add authentication middleware first (protects routes but allows /api/v1/*)
+        # Note: Middleware runs in reverse order, so this will run AFTER SessionMiddleware
+        if self.dashboard_password:
+            self.app.add_middleware(AuthMiddleware, dashboard_password=self.dashboard_password)
+            logger.info("Password protection enabled for dashboard")
+        else:
+            logger.info("Dashboard is publicly accessible (no password configured)")
+        
+        # Add session middleware last (required for authentication)
+        # This must be added AFTER AuthMiddleware so it runs FIRST (middleware is LIFO)
+        # SessionMiddleware sets up request.session, which AuthMiddleware needs
+        session_secret = self.dashboard_config.get('session_secret') or secrets.token_urlsafe(32)
+        self.app.add_middleware(
+            SessionMiddleware,
+            secret_key=session_secret,
+            max_age=86400  # 24 hours
+        )
         
         # Dashboard-specific components
         self.ws_manager = ConnectionManager()
@@ -170,6 +192,9 @@ class DashboardApp(NestServer):
     def _setup_dashboard(self):
         """Set up dashboard-specific routes and UI."""
         
+        # Set up authentication routes (login/logout)
+        setup_auth_routes(self.app, self.dashboard_password)
+        
         # Add dashboard API routes
         setup_dashboard_routes(
             app=self.app,
@@ -178,13 +203,14 @@ class DashboardApp(NestServer):
             local_data_loader=self.local_data_loader
         )
         
-        # Try to serve React build first, fall back to legacy frontend
-        react_frontend_path = Path(__file__).parent.parent / 'frontend-react' / 'dist'
-        legacy_frontend_path = Path(__file__).parent.parent / 'frontend'
+        # Serve React frontend build
+        react_frontend_path = Path(__file__).parent.parent / 'frontend' / 'dist'
         
-        # Determine which frontend to use
-        if react_frontend_path.exists():
-            # Serve React build (production)
+        if not react_frontend_path.exists():
+            logger.warning(f"React frontend build not found at {react_frontend_path}")
+            logger.warning("Run 'npm run build' in frontend/ directory")
+            frontend_path = None
+        else:
             frontend_path = react_frontend_path
             assets_path = react_frontend_path / "assets"
             
@@ -201,35 +227,20 @@ class DashboardApp(NestServer):
                 StaticFiles(directory=react_frontend_path),
                 name="static"
             )
-        elif legacy_frontend_path.exists():
-            # Fall back to legacy vanilla JS frontend
-            frontend_path = legacy_frontend_path
-            static_path = frontend_path / "static"
-            if static_path.exists():
-                self.app.mount(
-                    "/static",
-                    StaticFiles(directory=static_path),
-                    name="static"
-                )
-        else:
-            frontend_path = None
         
         # Dashboard home (serves index.html)
         @self.app.get("/")
         async def dashboard_home():
-            # Try React build first
-            if react_frontend_path.exists():
+            if frontend_path and react_frontend_path.exists():
                 index_path = react_frontend_path / "index.html"
                 if index_path.exists():
                     return FileResponse(index_path)
             
-            # Fall back to legacy frontend
-            if legacy_frontend_path.exists():
-                index_path = legacy_frontend_path / "index.html"
-                if index_path.exists():
-                    return FileResponse(index_path)
-            
-            return {"message": "Kastrel Dashboard", "status": "running"}
+            return {
+                "message": "Kastrel Dashboard",
+                "status": "running",
+                "error": "Frontend build not found. Run 'npm run build' in frontend/ directory"
+            }
         
         # Catch-all route for React Router (SPA support)
         @self.app.get("/{full_path:path}")
@@ -239,12 +250,12 @@ class DashboardApp(NestServer):
                 return {"error": "Not found"}, 404
             
             # Serve React app for all other routes (SPA routing)
-            if react_frontend_path.exists():
+            if frontend_path and react_frontend_path.exists():
                 index_path = react_frontend_path / "index.html"
                 if index_path.exists():
                     return FileResponse(index_path)
             
-            return {"message": "Kastrel Dashboard", "status": "running"}
+            return {"error": "Frontend not available", "status": 404}
         
         # Override health to include dashboard info
         @self.app.get("/health")

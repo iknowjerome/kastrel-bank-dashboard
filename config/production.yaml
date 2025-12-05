@@ -2,6 +2,7 @@ dashboard:
   host: 0.0.0.0
   port: 8080
   debug: false
+  password:"kastrel" #${DASHBOARD_PASSWORD}  # Set via environment variable, null = no auth
 
 nest:
   storage_path: /var/lib/kastrel/data/

@@ -1,4 +1,21 @@
 # Kastrel Dashboard Docker Image
+FROM node:20-slim AS frontend-builder
+
+WORKDIR /app/frontend
+
+# Copy frontend package files
+COPY frontend/package*.json ./
+
+# Install frontend dependencies
+RUN npm ci
+
+# Copy frontend source
+COPY frontend/ ./
+
+# Build React frontend
+RUN npm run build
+
+# Python runtime stage
 FROM python:3.11-slim
 
 WORKDIR /app
@@ -23,8 +40,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy dashboard application
 COPY app/ ./app/
-COPY frontend/ ./frontend/
 COPY config/ ./config/
+
+# Copy built React frontend from builder stage
+COPY --from=frontend-builder /app/frontend/dist ./frontend/dist
 
 # Create data directories
 RUN mkdir -p /var/lib/kastrel/data /var/lib/kastrel/demo_data

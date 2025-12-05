@@ -1,0 +1,1001 @@
+customer_id,business_name,segment,industry,annual_revenue,number_of_employees,loan_amount,loan_product,credit_score_bucket,risk_rating,relationship_length_years,region,is_collateralized,interest_rate,delinquency_count_12m,loan_outcome,churn_label,customer_persona
+C0001,Green Solutions,microbusiness,Retail,167026,3,73736,Government-Backed Loan,low,7,2.8,British Columbia,True,4.25,0,renewed,0,thoughtful_manager
+C0002,Summit Enterprises,SME,Retail,7590293,97,165684,Line of Credit,medium,6,8.1,Territories,True,6.54,0,approved,0,thoughtful_manager
+C0003,North Retail,SME,Manufacturing,6567228,157,120814,Term Loan,low,4,3.0,Alberta,False,11.38,2,closed_paid_off,1,busy_founder
+C0004,Green Consulting,SME,Hospitality,1697935,165,352911,Line of Credit,medium,4,2.7,British Columbia,True,6.54,5,renewed,0,impatient_owner
+C0005,Urban Builders,SME,Logistics,5779418,64,363638,Real Estate Loan,medium,8,0.8,Ontario,True,4.62,1,pending,0,thoughtful_manager
+C0006,Prime Tech,microbusiness,E-commerce,74702,2,100132,Line of Credit,high,7,1.0,Prairies,True,6.58,0,declined,0,impatient_owner
+C0007,North Tech,SME,Healthcare,3153446,126,21701,Equipment Loan,very_high,3,3.0,Atlantic,True,4.35,1,closed_paid_off,0,busy_founder
+C0008,Bright Tech,microbusiness,Healthcare,240306,5,145541,Term Loan,medium,10,0.3,Prairies,False,4.19,0,approved,0,formal_cfo
+C0009,Blue Services,microbusiness,Construction,271846,4,302746,Line of Credit,high,7,8.7,Alberta,False,8.7,0,pending,0,busy_founder
+C0010,Green Solutions,microbusiness,Hospitality,380879,1,140031,Term Loan,very_high,6,0.8,Atlantic,True,5.4,1,approved,0,thoughtful_manager
+C0011,Green Builders,SME,Hospitality,7731838,100,242077,Real Estate Loan,medium,1,1.1,Atlantic,False,11.37,0,declined,0,formal_cfo
+C0012,North Foods,SME,Professional Services,8261611,73,59523,Real Estate Loan,high,9,1.9,Prairies,True,8.72,0,approved,0,formal_cfo
+C0013,North Builders,SME,Tech Startup,1483738,52,218691,Term Loan,very_high,5,8.7,Quebec,False,9.78,0,renewed,0,thoughtful_manager
+C0014,Green Foods,SME,Hospitality,9596526,25,184419,Term Loan,low,8,5.8,Atlantic,True,10.32,0,refinanced_elsewhere,1,impatient_owner
+C0015,Bright Retail,microbusiness,Hospitality,374734,2,239794,Government-Backed Loan,medium,6,6.0,Alberta,False,5.13,1,approved,0,busy_founder
+C0016,Atlas Tech,microbusiness,Retail,345170,2,58409,Government-Backed Loan,medium,5,6.2,Prairies,True,6.29,0,approved,0,busy_founder
+C0017,Silver Consulting,microbusiness,E-commerce,104309,3,158656,Term Loan,high,9,9.3,Ontario,True,5.75,0,approved,0,thoughtful_manager
+C0018,Urban Services,microbusiness,Logistics,51858,6,88587,Equipment Loan,low,8,2.8,Territories,True,6.92,0,approved,0,impatient_owner
+C0019,North Logistics,microbusiness,Logistics,241182,1,207595,Line of Credit,high,2,0.5,Quebec,True,7.98,2,refinanced_elsewhere,0,formal_cfo
+C0020,Green Consulting,SME,Retail,6073147,210,235856,Line of Credit,medium,2,7.4,Quebec,True,3.81,0,approved,0,formal_cfo
+C0021,Prime Services,microbusiness,Logistics,86396,5,204101,Government-Backed Loan,medium,9,2.9,Ontario,True,3.72,2,approved,0,impatient_owner
+C0022,Urban Foods,SME,Healthcare,7821474,165,288132,Term Loan,medium,10,7.9,British Columbia,True,3.86,0,pending,0,formal_cfo
+C0023,Atlas Services,microbusiness,Healthcare,494604,2,397358,Equipment Loan,medium,7,3.2,Alberta,True,9.08,0,approved,0,formal_cfo
+C0024,Prime Studios,SME,Logistics,5598175,83,130196,Real Estate Loan,high,10,8.4,Alberta,False,7.22,0,approved,0,formal_cfo
+C0025,Pioneer Solutions,SME,Manufacturing,4440441,182,182749,Line of Credit,high,3,9.5,Territories,True,5.46,0,closed_paid_off,0,formal_cfo
+C0026,Bright Services,SME,Hospitality,593026,238,75882,Real Estate Loan,medium,9,6.6,Quebec,True,7.96,3,approved,0,busy_founder
+C0027,Urban Retail,SME,E-commerce,8463715,125,155891,Line of Credit,high,5,9.0,Prairies,False,7.67,1,approved,0,busy_founder
+C0028,Atlas Foods,microbusiness,Professional Services,413829,3,390367,Line of Credit,low,7,2.4,Quebec,True,7.23,0,closed_paid_off,0,impatient_owner
+C0029,North Solutions,SME,Retail,7042890,228,239687,Government-Backed Loan,high,9,3.1,Ontario,False,10.68,0,approved,0,thoughtful_manager
+C0030,Silver Foods,microbusiness,E-commerce,360322,10,367602,Term Loan,low,7,9.1,Atlantic,True,7.19,0,approved,1,thoughtful_manager
+C0031,Atlas Builders,SME,Manufacturing,9549949,23,203480,Line of Credit,high,1,0.3,Prairies,False,11.1,0,approved,1,impatient_owner
+C0032,Prime Studios,SME,Construction,2421542,209,105860,Equipment Loan,low,1,3.8,Territories,False,8.11,3,approved,1,formal_cfo
+C0033,Pioneer Logistics,microbusiness,Retail,396827,6,56153,Government-Backed Loan,high,1,5.4,Ontario,False,10.08,0,refinanced_elsewhere,0,formal_cfo
+C0034,Urban Consulting,SME,E-commerce,7807727,221,330627,Equipment Loan,medium,4,4.9,Territories,False,4.19,2,approved,0,thoughtful_manager
+C0035,Summit Builders,SME,Healthcare,6452975,214,155451,Equipment Loan,medium,10,4.9,Quebec,False,5.71,0,refinanced_elsewhere,0,thoughtful_manager
+C0036,Bright Studios,SME,Tech Startup,2061176,85,136180,Real Estate Loan,high,5,8.0,Prairies,False,6.45,0,approved,0,busy_founder
+C0037,Green Studios,SME,Construction,3731028,90,82681,Government-Backed Loan,very_high,3,1.3,Quebec,True,9.41,0,pending,0,impatient_owner
+C0038,Bright Solutions,microbusiness,Healthcare,421205,9,86365,Equipment Loan,low,1,3.1,Quebec,True,9.08,0,closed_paid_off,0,busy_founder
+C0039,Green Enterprises,SME,Healthcare,4735884,250,270467,Term Loan,high,7,9.7,Quebec,True,8.12,1,approved,0,impatient_owner
+C0040,Silver Enterprises,SME,Hospitality,8058378,242,252113,Equipment Loan,high,7,5.3,Territories,True,8.47,1,renewed,1,formal_cfo
+C0041,Atlas Builders,microbusiness,Hospitality,132068,1,234180,Real Estate Loan,high,8,5.6,Quebec,True,5.35,1,renewed,0,busy_founder
+C0042,Pioneer Studios,SME,Manufacturing,2999627,242,159267,Line of Credit,low,3,2.3,Alberta,False,8.26,2,refinanced_elsewhere,1,busy_founder
+C0043,Atlas Consulting,SME,Tech Startup,7748238,198,188989,Government-Backed Loan,medium,2,6.0,Atlantic,True,8.89,2,pending,0,busy_founder
+C0044,Bright Studios,microbusiness,Tech Startup,195834,3,326881,Real Estate Loan,high,8,6.5,Alberta,False,7.26,0,approved,0,thoughtful_manager
+C0045,Atlas Solutions,SME,E-commerce,5776722,74,189488,Term Loan,very_high,7,4.6,Atlantic,False,10.1,0,closed_paid_off,1,busy_founder
+C0046,Prime Builders,SME,Retail,2698037,247,171010,Real Estate Loan,high,8,2.7,Quebec,True,11.29,1,approved,0,thoughtful_manager
+C0047,Prime Studios,microbusiness,Tech Startup,130725,8,395706,Equipment Loan,medium,5,6.5,Atlantic,True,7.36,0,declined,1,formal_cfo
+C0048,Green Builders,SME,Healthcare,543037,82,176529,Government-Backed Loan,medium,8,5.1,Territories,False,7.07,0,approved,0,busy_founder
+C0049,Prime Tech,SME,Hospitality,1232280,91,267975,Real Estate Loan,medium,3,7.8,Territories,True,3.8,0,pending,0,thoughtful_manager
+C0050,Summit Consulting,SME,Retail,3089751,29,266148,Equipment Loan,medium,7,1.5,British Columbia,False,10.31,2,closed_paid_off,1,thoughtful_manager
+C0051,Pioneer Logistics,microbusiness,Hospitality,200669,4,67384,Real Estate Loan,very_high,2,6.9,British Columbia,True,9.05,3,approved,1,busy_founder
+C0052,Blue Solutions,microbusiness,E-commerce,465508,3,109120,Line of Credit,low,7,5.7,Prairies,False,5.43,3,approved,1,busy_founder
+C0053,Silver Consulting,SME,E-commerce,6297629,160,176842,Real Estate Loan,high,8,0.8,Quebec,False,5.09,0,declined,0,busy_founder
+C0054,Prime Consulting,SME,Construction,1322825,243,337931,Real Estate Loan,high,5,5.7,Atlantic,False,5.34,2,approved,0,formal_cfo
+C0055,Silver Solutions,SME,Tech Startup,2704724,33,174722,Equipment Loan,high,3,5.8,Atlantic,True,9.79,2,approved,1,formal_cfo
+C0056,Atlas Foods,SME,Healthcare,1763313,46,138287,Real Estate Loan,very_high,9,1.2,Territories,True,9.83,0,pending,0,busy_founder
+C0057,Blue Studios,SME,Manufacturing,919843,168,314339,Equipment Loan,very_high,4,2.4,British Columbia,False,8.58,0,renewed,0,impatient_owner
+C0058,Silver Consulting,SME,Manufacturing,9518535,44,223762,Real Estate Loan,medium,9,2.4,Atlantic,True,9.44,0,declined,1,thoughtful_manager
+C0059,Prime Builders,SME,Hospitality,4461312,228,210151,Term Loan,very_high,6,4.5,Prairies,True,11.32,0,approved,0,thoughtful_manager
+C0060,Silver Logistics,microbusiness,Retail,116020,10,127586,Term Loan,high,9,3.4,Territories,True,5.23,2,approved,0,impatient_owner
+C0061,Bright Solutions,microbusiness,E-commerce,107633,1,89102,Term Loan,medium,4,8.0,Ontario,True,3.63,0,approved,0,impatient_owner
+C0062,Bright Solutions,SME,E-commerce,8953010,66,342493,Term Loan,high,9,1.2,Alberta,True,8.65,0,refinanced_elsewhere,1,impatient_owner
+C0063,Summit Builders,microbusiness,Manufacturing,84436,3,164187,Government-Backed Loan,high,9,6.1,Ontario,False,6.55,0,approved,0,impatient_owner
+C0064,Pioneer Enterprises,SME,Tech Startup,8108449,112,238098,Term Loan,medium,6,4.2,Quebec,False,6.49,0,refinanced_elsewhere,0,impatient_owner
+C0065,North Solutions,SME,Professional Services,9921856,153,192829,Term Loan,medium,7,0.7,Alberta,False,9.27,4,renewed,1,formal_cfo
+C0066,Blue Logistics,microbusiness,Manufacturing,242707,2,166049,Government-Backed Loan,medium,7,8.5,Ontario,False,11.3,2,renewed,1,busy_founder
+C0067,North Retail,SME,Construction,3543480,232,95105,Government-Backed Loan,high,2,3.6,Ontario,True,8.57,0,renewed,0,busy_founder
+C0068,Summit Enterprises,SME,Healthcare,1925342,236,47582,Line of Credit,low,10,9.4,Territories,True,4.15,0,declined,1,formal_cfo
+C0069,Urban Enterprises,SME,Logistics,8664342,144,369769,Equipment Loan,low,7,2.9,Atlantic,False,3.94,0,refinanced_elsewhere,0,busy_founder
+C0070,Atlas Foods,microbusiness,Tech Startup,117730,7,299226,Line of Credit,medium,6,4.4,British Columbia,True,10.39,0,approved,0,thoughtful_manager
+C0071,Urban Builders,SME,Construction,5948705,53,344075,Real Estate Loan,high,6,4.1,Atlantic,True,10.26,0,pending,0,busy_founder
+C0072,Atlas Logistics,SME,Professional Services,2413049,145,287361,Line of Credit,very_high,6,5.2,Atlantic,True,11.17,1,approved,0,formal_cfo
+C0073,Bright Studios,microbusiness,Professional Services,293245,10,323808,Real Estate Loan,high,10,6.3,Territories,False,11.39,0,refinanced_elsewhere,1,thoughtful_manager
+C0074,Bright Services,SME,Retail,5707779,128,256933,Term Loan,low,5,5.1,Ontario,True,10.41,2,renewed,1,impatient_owner
+C0075,Urban Retail,microbusiness,Healthcare,129094,1,256203,Term Loan,high,6,4.8,Alberta,False,4.17,1,approved,0,formal_cfo
+C0076,Urban Enterprises,SME,Logistics,1378547,212,350766,Equipment Loan,low,2,7.8,Prairies,True,6.59,0,closed_paid_off,0,formal_cfo
+C0077,Pioneer Tech,microbusiness,Healthcare,416204,7,87607,Government-Backed Loan,high,2,9.7,Ontario,True,6.51,1,closed_paid_off,0,impatient_owner
+C0078,Urban Services,SME,Retail,4093556,97,274946,Line of Credit,medium,3,3.2,Ontario,True,5.87,1,pending,0,impatient_owner
+C0079,Silver Solutions,microbusiness,Logistics,485864,10,106790,Real Estate Loan,low,6,1.7,Quebec,False,5.4,0,approved,0,formal_cfo
+C0080,Summit Enterprises,microbusiness,Healthcare,280999,8,167729,Real Estate Loan,medium,7,9.5,British Columbia,False,10.04,2,approved,0,busy_founder
+C0081,Green Foods,microbusiness,Construction,193021,8,289144,Line of Credit,high,2,7.7,Atlantic,False,5.28,0,approved,0,busy_founder
+C0082,Green Logistics,microbusiness,Healthcare,101948,6,96571,Line of Credit,low,8,0.4,Quebec,False,4.61,1,declined,1,busy_founder
+C0083,North Studios,SME,Manufacturing,5552478,41,45034,Line of Credit,medium,10,3.0,Territories,True,4.39,3,pending,0,formal_cfo
+C0084,Blue Foods,SME,Retail,7488844,57,368321,Term Loan,medium,6,3.6,Alberta,True,7.71,0,refinanced_elsewhere,0,thoughtful_manager
+C0085,North Logistics,SME,Construction,1633461,98,146419,Term Loan,high,6,0.3,British Columbia,True,6.32,0,renewed,0,thoughtful_manager
+C0086,Urban Studios,microbusiness,Tech Startup,72967,4,41970,Equipment Loan,very_high,9,3.0,Atlantic,True,10.02,0,approved,1,impatient_owner
+C0087,Atlas Logistics,microbusiness,Healthcare,439707,8,222713,Equipment Loan,very_high,8,8.9,Prairies,False,6.44,1,approved,0,thoughtful_manager
+C0088,Blue Enterprises,SME,Healthcare,5460015,88,253788,Government-Backed Loan,high,3,0.9,Atlantic,False,6.31,0,closed_paid_off,0,busy_founder
+C0089,Bright Retail,SME,Healthcare,3184131,17,94857,Government-Backed Loan,high,8,8.0,Alberta,True,4.04,1,approved,0,formal_cfo
+C0090,Silver Solutions,SME,Tech Startup,2810140,145,212387,Real Estate Loan,medium,5,0.9,Territories,True,4.41,1,declined,0,busy_founder
+C0091,Prime Tech,microbusiness,Construction,307530,4,84297,Line of Credit,high,8,9.2,British Columbia,True,9.21,5,closed_paid_off,0,busy_founder
+C0092,Atlas Enterprises,SME,Construction,3420762,213,209526,Government-Backed Loan,medium,4,1.7,Territories,False,5.39,0,approved,0,formal_cfo
+C0093,North Foods,microbusiness,Construction,426894,8,295615,Real Estate Loan,high,10,10.0,Prairies,True,11.28,1,declined,1,formal_cfo
+C0094,Atlas Tech,microbusiness,Manufacturing,136327,3,189167,Line of Credit,medium,9,1.6,Alberta,False,10.27,0,renewed,1,busy_founder
+C0095,Green Services,microbusiness,E-commerce,354425,3,109758,Government-Backed Loan,high,10,1.8,British Columbia,True,10.89,0,closed_paid_off,0,busy_founder
+C0096,Urban Retail,SME,Retail,9653271,84,356544,Equipment Loan,medium,7,8.9,Prairies,True,4.08,0,declined,1,formal_cfo
+C0097,North Retail,SME,Logistics,9139932,153,75670,Equipment Loan,medium,2,7.6,Quebec,True,5.48,0,approved,0,formal_cfo
+C0098,Atlas Solutions,SME,Hospitality,9135649,129,281493,Equipment Loan,medium,2,1.7,Territories,False,7.54,4,approved,1,thoughtful_manager
+C0099,Summit Studios,SME,E-commerce,7729768,44,158659,Equipment Loan,high,6,8.5,Atlantic,True,3.91,0,approved,0,thoughtful_manager
+C0100,North Services,microbusiness,Professional Services,466755,6,312464,Equipment Loan,high,4,4.0,Atlantic,False,6.71,0,approved,0,thoughtful_manager
+C0101,Atlas Studios,microbusiness,Healthcare,256021,10,176884,Government-Backed Loan,medium,9,3.3,Alberta,True,9.17,0,closed_paid_off,0,thoughtful_manager
+C0102,Blue Services,microbusiness,Tech Startup,460467,10,322846,Line of Credit,high,10,9.7,Ontario,True,7.69,1,closed_paid_off,0,formal_cfo
+C0103,Bright Tech,microbusiness,Hospitality,269561,3,236510,Line of Credit,medium,10,4.5,Atlantic,False,10.48,1,approved,1,busy_founder
+C0104,Silver Builders,SME,Healthcare,9444387,97,306404,Equipment Loan,high,5,4.7,Quebec,False,5.04,0,pending,0,busy_founder
+C0105,Urban Solutions,SME,Healthcare,5087856,83,83897,Government-Backed Loan,high,7,3.6,Prairies,False,6.66,0,closed_paid_off,1,impatient_owner
+C0106,Pioneer Retail,SME,Tech Startup,9535838,79,314659,Equipment Loan,low,10,2.1,Quebec,False,5.41,0,refinanced_elsewhere,1,impatient_owner
+C0107,Atlas Builders,SME,Manufacturing,586930,150,102806,Real Estate Loan,high,8,7.7,British Columbia,True,5.1,4,approved,0,impatient_owner
+C0108,North Tech,microbusiness,Professional Services,142163,1,228139,Real Estate Loan,low,5,8.8,Prairies,False,3.57,0,approved,0,thoughtful_manager
+C0109,Pioneer Tech,SME,Construction,6047958,51,260603,Equipment Loan,high,1,8.1,Quebec,False,9.83,0,closed_paid_off,0,thoughtful_manager
+C0110,Silver Retail,SME,Manufacturing,3600114,45,270323,Equipment Loan,very_high,1,6.7,Prairies,True,5.38,1,refinanced_elsewhere,0,impatient_owner
+C0111,North Solutions,microbusiness,Retail,210854,3,232555,Government-Backed Loan,very_high,5,1.3,British Columbia,False,8.61,3,approved,0,thoughtful_manager
+C0112,Summit Tech,SME,Logistics,8399184,203,301814,Line of Credit,high,10,5.5,British Columbia,False,4.15,0,renewed,0,impatient_owner
+C0113,Summit Solutions,microbusiness,E-commerce,497996,9,251651,Term Loan,high,10,1.7,Quebec,True,10.69,0,approved,0,impatient_owner
+C0114,Silver Foods,SME,Retail,550591,200,134243,Government-Backed Loan,low,7,2.6,Prairies,True,4.01,5,refinanced_elsewhere,0,impatient_owner
+C0115,Summit Foods,microbusiness,Professional Services,432357,7,216325,Real Estate Loan,medium,7,6.5,Territories,True,8.96,1,pending,0,formal_cfo
+C0116,Blue Foods,microbusiness,Hospitality,61919,5,262747,Government-Backed Loan,medium,7,0.1,Territories,False,5.48,0,approved,0,impatient_owner
+C0117,Summit Studios,microbusiness,Hospitality,361397,1,254063,Government-Backed Loan,high,1,0.8,Quebec,True,3.85,0,pending,0,formal_cfo
+C0118,Summit Solutions,microbusiness,Healthcare,402600,6,144205,Equipment Loan,high,9,6.0,Alberta,True,5.9,0,refinanced_elsewhere,0,thoughtful_manager
+C0119,Blue Tech,microbusiness,Healthcare,461987,9,187108,Real Estate Loan,medium,5,6.7,British Columbia,True,9.54,0,closed_paid_off,0,thoughtful_manager
+C0120,Prime Builders,SME,Logistics,7016590,72,153691,Line of Credit,medium,2,5.3,Alberta,False,10.28,0,renewed,0,impatient_owner
+C0121,Summit Retail,microbusiness,Tech Startup,224569,5,28039,Line of Credit,very_high,2,8.7,Quebec,False,9.53,3,renewed,0,formal_cfo
+C0122,Pioneer Consulting,SME,Logistics,6527375,88,157133,Equipment Loan,medium,8,5.4,Prairies,True,9.92,1,closed_paid_off,1,busy_founder
+C0123,Bright Solutions,microbusiness,Professional Services,356200,10,397493,Real Estate Loan,medium,4,2.7,Atlantic,True,6.54,2,declined,0,busy_founder
+C0124,Blue Foods,SME,Professional Services,3339807,45,397651,Government-Backed Loan,medium,9,8.0,British Columbia,False,11.16,0,closed_paid_off,0,impatient_owner
+C0125,Blue Consulting,microbusiness,Hospitality,54792,4,285149,Real Estate Loan,medium,10,7.1,Atlantic,False,10.97,3,renewed,0,thoughtful_manager
+C0126,Pioneer Solutions,SME,E-commerce,7723819,216,113987,Term Loan,very_high,9,0.3,Ontario,True,5.04,0,closed_paid_off,0,busy_founder
+C0127,Atlas Enterprises,microbusiness,Hospitality,494526,2,362745,Term Loan,low,7,6.9,Ontario,True,7.31,1,renewed,0,busy_founder
+C0128,Green Services,microbusiness,Hospitality,412958,10,269299,Equipment Loan,low,2,9.0,Quebec,False,5.74,0,renewed,0,impatient_owner
+C0129,Blue Enterprises,microbusiness,Logistics,345676,4,317111,Real Estate Loan,high,9,3.1,Atlantic,True,9.54,0,refinanced_elsewhere,1,busy_founder
+C0130,Atlas Studios,SME,Hospitality,7155572,208,191115,Term Loan,high,8,0.9,Territories,True,6.35,3,declined,1,impatient_owner
+C0131,Summit Tech,microbusiness,Manufacturing,249229,3,224274,Equipment Loan,medium,2,2.8,Atlantic,True,5.97,0,approved,0,thoughtful_manager
+C0132,Atlas Tech,SME,Manufacturing,9798265,33,332960,Government-Backed Loan,high,7,1.0,Atlantic,True,6.81,1,renewed,0,formal_cfo
+C0133,Atlas Services,microbusiness,Logistics,207879,5,278538,Line of Credit,low,7,1.5,Quebec,True,5.9,1,approved,0,thoughtful_manager
+C0134,Bright Retail,microbusiness,Tech Startup,53548,7,194177,Government-Backed Loan,medium,6,1.4,Atlantic,True,6.94,2,renewed,0,formal_cfo
+C0135,Bright Builders,microbusiness,Logistics,414358,8,321926,Line of Credit,medium,5,3.0,Ontario,False,6.64,0,pending,0,impatient_owner
+C0136,Summit Tech,SME,Construction,7364256,182,281778,Line of Credit,high,4,7.0,Territories,True,4.73,0,approved,0,thoughtful_manager
+C0137,Urban Foods,SME,E-commerce,6531903,189,301493,Government-Backed Loan,high,2,7.9,Atlantic,True,5.49,1,approved,0,thoughtful_manager
+C0138,Bright Enterprises,microbusiness,Retail,317741,9,312549,Government-Backed Loan,high,4,2.7,Atlantic,True,6.63,1,pending,0,impatient_owner
+C0139,Prime Consulting,SME,Logistics,2876915,99,183520,Equipment Loan,medium,4,1.2,Atlantic,True,6.29,0,renewed,0,impatient_owner
+C0140,Blue Services,SME,Manufacturing,4592180,142,111463,Government-Backed Loan,low,9,8.0,British Columbia,True,7.2,1,renewed,0,thoughtful_manager
+C0141,Summit Retail,microbusiness,Tech Startup,52333,4,127890,Equipment Loan,high,2,4.4,Alberta,True,9.9,0,approved,0,thoughtful_manager
+C0142,North Tech,SME,Logistics,6405327,226,260050,Government-Backed Loan,low,5,1.2,Alberta,False,8.22,1,approved,1,busy_founder
+C0143,Blue Solutions,SME,Logistics,6937584,118,117388,Real Estate Loan,high,3,1.5,Alberta,True,7.42,0,approved,0,busy_founder
+C0144,Blue Studios,microbusiness,Hospitality,344430,9,362396,Real Estate Loan,medium,8,3.9,Territories,True,10.22,0,approved,0,busy_founder
+C0145,Summit Builders,microbusiness,E-commerce,289768,10,279686,Government-Backed Loan,medium,10,1.8,Ontario,True,9.7,2,approved,1,thoughtful_manager
+C0146,Atlas Foods,SME,Manufacturing,4652891,86,36898,Real Estate Loan,medium,2,8.3,British Columbia,True,11.45,1,approved,0,busy_founder
+C0147,North Foods,microbusiness,Professional Services,158497,1,318883,Equipment Loan,medium,10,2.1,Territories,True,6.09,1,approved,0,impatient_owner
+C0148,Prime Enterprises,microbusiness,Construction,417749,3,150902,Line of Credit,high,4,6.6,Territories,False,8.91,0,pending,0,thoughtful_manager
+C0149,Pioneer Builders,SME,E-commerce,6691986,126,275875,Equipment Loan,medium,2,2.9,British Columbia,False,7.17,1,approved,0,formal_cfo
+C0150,Prime Logistics,SME,Construction,6166591,150,323003,Line of Credit,medium,8,8.3,Ontario,False,10.65,1,approved,0,impatient_owner
+C0151,Blue Foods,SME,Tech Startup,7677281,61,381020,Line of Credit,high,5,9.9,Atlantic,True,10.96,0,renewed,0,formal_cfo
+C0152,North Solutions,SME,Hospitality,2096917,10,131894,Real Estate Loan,low,10,6.6,Prairies,True,8.94,0,renewed,0,thoughtful_manager
+C0153,Atlas Logistics,microbusiness,Hospitality,472553,2,74107,Equipment Loan,medium,5,1.0,Prairies,True,9.69,1,approved,1,impatient_owner
+C0154,North Builders,SME,Healthcare,3039636,245,235854,Government-Backed Loan,high,4,2.2,British Columbia,True,4.3,1,pending,0,busy_founder
+C0155,Bright Foods,SME,Manufacturing,5280177,209,382008,Term Loan,high,5,5.6,Quebec,True,8.36,0,approved,0,formal_cfo
+C0156,Blue Services,microbusiness,Hospitality,87230,9,26326,Equipment Loan,very_high,3,6.4,Prairies,True,10.21,0,pending,0,impatient_owner
+C0157,Silver Enterprises,microbusiness,Retail,81703,7,285609,Equipment Loan,high,9,2.2,Ontario,False,6.89,0,renewed,1,impatient_owner
+C0158,Prime Consulting,microbusiness,Professional Services,357461,2,182618,Real Estate Loan,high,4,3.3,Alberta,True,4.19,0,declined,0,formal_cfo
+C0159,Silver Tech,microbusiness,Retail,231773,9,291173,Equipment Loan,low,3,5.0,Quebec,False,10.49,1,approved,1,thoughtful_manager
+C0160,Green Tech,microbusiness,Construction,379007,2,280124,Real Estate Loan,medium,1,9.8,British Columbia,True,8.04,0,approved,0,impatient_owner
+C0161,Urban Builders,microbusiness,Retail,178215,1,267340,Equipment Loan,medium,3,8.6,Territories,True,11.18,0,closed_paid_off,0,formal_cfo
+C0162,Prime Tech,SME,Healthcare,6754683,40,283214,Term Loan,low,9,8.3,Ontario,False,11.13,0,declined,0,busy_founder
+C0163,North Consulting,SME,Retail,9959107,210,179336,Government-Backed Loan,medium,6,2.1,Ontario,True,7.45,1,approved,0,formal_cfo
+C0164,Prime Consulting,SME,Retail,660974,95,20766,Real Estate Loan,high,5,5.5,Quebec,True,7.74,0,declined,0,busy_founder
+C0165,Silver Retail,microbusiness,E-commerce,245293,8,64513,Government-Backed Loan,low,3,7.0,Prairies,False,6.65,0,approved,1,busy_founder
+C0166,Bright Studios,SME,Healthcare,4419346,29,126279,Line of Credit,high,10,4.6,Ontario,True,4.35,0,approved,0,formal_cfo
+C0167,Silver Studios,SME,Construction,3144347,216,379690,Equipment Loan,high,10,1.3,Territories,True,10.19,0,approved,0,impatient_owner
+C0168,Atlas Services,microbusiness,Retail,341479,9,150994,Term Loan,medium,3,8.6,Prairies,True,3.99,1,approved,0,impatient_owner
+C0169,Pioneer Solutions,SME,Manufacturing,3817700,241,358683,Real Estate Loan,high,2,10.0,Atlantic,False,10.13,0,approved,0,thoughtful_manager
+C0170,Prime Studios,microbusiness,Logistics,235568,4,118121,Equipment Loan,medium,3,4.3,British Columbia,True,8.45,0,approved,0,impatient_owner
+C0171,Silver Logistics,SME,Professional Services,9321696,73,350696,Government-Backed Loan,high,7,2.1,Prairies,False,6.37,0,declined,0,thoughtful_manager
+C0172,Green Services,microbusiness,Healthcare,475034,5,50718,Real Estate Loan,medium,10,2.3,Alberta,False,11.29,0,renewed,0,impatient_owner
+C0173,Bright Tech,SME,Healthcare,3414404,55,144020,Government-Backed Loan,medium,6,9.9,Territories,False,3.73,1,refinanced_elsewhere,0,formal_cfo
+C0174,Blue Consulting,SME,Professional Services,1442342,69,335444,Line of Credit,low,8,0.5,Prairies,True,10.84,0,approved,0,busy_founder
+C0175,Urban Logistics,microbusiness,Professional Services,325930,6,58027,Equipment Loan,high,7,1.2,Territories,True,6.19,0,refinanced_elsewhere,1,thoughtful_manager
+C0176,Atlas Builders,SME,Hospitality,3441912,106,180863,Equipment Loan,low,1,5.9,British Columbia,False,11.09,0,refinanced_elsewhere,1,busy_founder
+C0177,Urban Studios,microbusiness,Tech Startup,90793,4,201828,Equipment Loan,low,2,3.4,Quebec,False,8.86,1,approved,0,impatient_owner
+C0178,North Solutions,microbusiness,Retail,434085,7,107209,Real Estate Loan,medium,7,3.9,Atlantic,True,6.5,2,closed_paid_off,0,formal_cfo
+C0179,Blue Foods,microbusiness,Retail,186906,2,58902,Equipment Loan,low,7,0.3,Ontario,True,4.1,3,refinanced_elsewhere,0,thoughtful_manager
+C0180,Blue Retail,microbusiness,Logistics,223588,4,119606,Real Estate Loan,high,9,0.6,Quebec,True,5.75,0,approved,0,formal_cfo
+C0181,Silver Enterprises,microbusiness,Logistics,397089,10,271830,Line of Credit,low,4,3.0,Atlantic,True,5.83,0,closed_paid_off,0,thoughtful_manager
+C0182,Summit Foods,SME,Professional Services,6697531,57,253714,Term Loan,medium,8,8.9,Ontario,True,10.2,0,approved,1,busy_founder
+C0183,Prime Solutions,microbusiness,E-commerce,479080,9,239483,Government-Backed Loan,high,8,8.4,Atlantic,True,5.39,0,approved,1,formal_cfo
+C0184,Prime Foods,microbusiness,Professional Services,116157,1,241970,Term Loan,very_high,7,8.1,Quebec,True,10.08,0,pending,0,impatient_owner
+C0185,Atlas Enterprises,SME,E-commerce,9218920,127,26482,Government-Backed Loan,medium,7,8.6,Ontario,True,4.7,0,pending,1,impatient_owner
+C0186,Green Consulting,SME,E-commerce,4931477,108,363297,Real Estate Loan,medium,8,8.8,Ontario,True,5.7,0,renewed,1,busy_founder
+C0187,Atlas Enterprises,SME,Construction,5584418,89,166982,Real Estate Loan,high,2,0.3,Ontario,False,5.32,0,renewed,0,thoughtful_manager
+C0188,North Builders,microbusiness,Tech Startup,263474,8,290795,Equipment Loan,high,9,9.1,Quebec,False,4.02,1,declined,0,impatient_owner
+C0189,Bright Services,microbusiness,Retail,76507,6,389431,Line of Credit,medium,8,0.4,Quebec,True,8.58,0,approved,0,formal_cfo
+C0190,Silver Foods,SME,Healthcare,4839593,201,381156,Term Loan,medium,7,8.4,Quebec,True,10.33,1,approved,1,formal_cfo
+C0191,Bright Studios,microbusiness,Retail,389409,3,335171,Term Loan,medium,10,9.1,Prairies,False,5.94,4,renewed,1,busy_founder
+C0192,Bright Enterprises,microbusiness,Tech Startup,482176,10,228222,Government-Backed Loan,low,9,6.8,Ontario,False,11.23,2,pending,1,impatient_owner
+C0193,Blue Solutions,SME,Construction,5145358,76,363995,Equipment Loan,low,9,3.3,British Columbia,False,10.7,2,closed_paid_off,1,formal_cfo
+C0194,North Tech,SME,Construction,1092554,159,391232,Government-Backed Loan,high,6,4.1,Prairies,False,5.28,0,closed_paid_off,0,busy_founder
+C0195,Silver Services,microbusiness,Construction,438454,5,313093,Line of Credit,very_high,6,4.8,Atlantic,False,5.28,0,closed_paid_off,0,busy_founder
+C0196,North Logistics,SME,Tech Startup,1400549,231,352606,Government-Backed Loan,medium,10,1.3,Territories,True,10.62,0,closed_paid_off,0,impatient_owner
+C0197,Atlas Logistics,microbusiness,Healthcare,289899,3,185876,Line of Credit,high,8,9.9,Prairies,True,11.39,0,approved,1,formal_cfo
+C0198,Blue Builders,SME,Manufacturing,7704299,113,244932,Real Estate Loan,medium,1,6.2,Quebec,True,9.35,4,closed_paid_off,0,impatient_owner
+C0199,Urban Solutions,microbusiness,Healthcare,251090,9,328632,Equipment Loan,low,1,1.4,Ontario,True,5.83,1,pending,0,formal_cfo
+C0200,Silver Tech,SME,Hospitality,7267788,14,139756,Line of Credit,high,3,9.5,Quebec,True,3.68,0,approved,0,thoughtful_manager
+C0201,Prime Tech,microbusiness,Retail,488367,1,45289,Term Loan,medium,7,1.2,British Columbia,True,5.52,1,approved,1,thoughtful_manager
+C0202,Pioneer Studios,SME,Professional Services,2260168,140,396840,Government-Backed Loan,low,2,8.3,Prairies,False,7.48,1,closed_paid_off,0,busy_founder
+C0203,Silver Builders,microbusiness,Retail,158891,8,193331,Line of Credit,low,2,5.0,Alberta,False,10.18,1,approved,0,impatient_owner
+C0204,North Retail,SME,Construction,2174515,218,111594,Term Loan,high,6,4.7,Ontario,False,6.0,1,approved,0,formal_cfo
+C0205,Prime Logistics,SME,Tech Startup,2059464,105,199685,Line of Credit,low,7,2.8,Alberta,False,5.67,0,closed_paid_off,0,formal_cfo
+C0206,Bright Enterprises,microbusiness,Professional Services,359723,8,318290,Real Estate Loan,low,7,4.2,Atlantic,False,8.39,2,closed_paid_off,0,thoughtful_manager
+C0207,Pioneer Builders,SME,Tech Startup,5772037,13,389396,Government-Backed Loan,high,10,0.7,Atlantic,False,5.29,4,closed_paid_off,0,impatient_owner
+C0208,Silver Consulting,SME,Healthcare,6957158,48,312733,Government-Backed Loan,low,3,6.8,British Columbia,True,7.25,0,approved,0,busy_founder
+C0209,Pioneer Foods,microbusiness,E-commerce,478397,4,61329,Real Estate Loan,medium,10,3.8,British Columbia,True,10.35,0,approved,0,impatient_owner
+C0210,Urban Tech,microbusiness,E-commerce,97655,10,344568,Equipment Loan,high,9,0.1,Alberta,True,8.87,4,approved,1,thoughtful_manager
+C0211,Bright Logistics,SME,Healthcare,2134721,204,365458,Line of Credit,low,6,4.6,British Columbia,False,11.22,0,pending,1,formal_cfo
+C0212,Bright Services,SME,Manufacturing,3646456,40,225990,Line of Credit,medium,4,6.1,Ontario,False,4.36,0,refinanced_elsewhere,0,thoughtful_manager
+C0213,Summit Foods,microbusiness,Tech Startup,75465,9,246917,Government-Backed Loan,medium,9,5.4,Atlantic,False,10.78,1,approved,1,busy_founder
+C0214,Green Builders,SME,Hospitality,6252216,85,257421,Line of Credit,low,10,4.0,Ontario,False,9.49,0,renewed,0,formal_cfo
+C0215,Pioneer Consulting,SME,Healthcare,3483202,138,304421,Equipment Loan,high,6,1.4,British Columbia,True,8.16,3,renewed,0,busy_founder
+C0216,Urban Solutions,microbusiness,Retail,401406,1,124806,Equipment Loan,high,3,1.5,Prairies,False,8.97,0,approved,0,impatient_owner
+C0217,Blue Studios,microbusiness,E-commerce,389276,9,223888,Line of Credit,medium,5,2.3,Territories,False,3.88,0,declined,0,impatient_owner
+C0218,Summit Enterprises,microbusiness,Tech Startup,382287,6,328483,Government-Backed Loan,high,4,2.3,Territories,False,11.21,0,approved,0,formal_cfo
+C0219,Bright Services,SME,Retail,4933204,43,104373,Government-Backed Loan,high,1,2.9,Prairies,True,9.18,0,approved,1,busy_founder
+C0220,Urban Studios,SME,Manufacturing,9314666,66,116400,Government-Backed Loan,low,9,7.1,Territories,True,7.84,0,approved,0,busy_founder
+C0221,Pioneer Studios,microbusiness,E-commerce,481849,1,80147,Equipment Loan,medium,10,10.0,Prairies,False,5.45,0,closed_paid_off,0,impatient_owner
+C0222,Prime Builders,SME,Retail,6790752,141,286723,Real Estate Loan,medium,5,8.2,Alberta,False,5.04,0,refinanced_elsewhere,0,impatient_owner
+C0223,Atlas Builders,microbusiness,Logistics,331938,7,358984,Term Loan,high,3,1.1,Territories,True,9.23,0,approved,0,impatient_owner
+C0224,Urban Tech,SME,Logistics,7285511,120,185886,Term Loan,medium,2,4.6,Prairies,True,8.63,1,closed_paid_off,0,impatient_owner
+C0225,Silver Retail,microbusiness,Construction,368015,2,167596,Real Estate Loan,medium,1,6.9,Territories,True,7.77,0,approved,0,formal_cfo
+C0226,North Logistics,microbusiness,E-commerce,114610,1,22637,Government-Backed Loan,medium,9,5.6,Territories,True,4.18,0,renewed,1,formal_cfo
+C0227,North Builders,microbusiness,Construction,401785,10,48515,Government-Backed Loan,medium,9,1.2,Quebec,True,8.87,0,approved,0,busy_founder
+C0228,Green Builders,microbusiness,Construction,151448,6,274731,Real Estate Loan,medium,5,0.8,Alberta,False,4.72,0,closed_paid_off,0,busy_founder
+C0229,Silver Enterprises,SME,Construction,6062703,234,271634,Real Estate Loan,medium,5,3.7,Territories,True,4.37,1,approved,0,formal_cfo
+C0230,Pioneer Builders,microbusiness,Retail,66354,10,323510,Real Estate Loan,high,4,5.1,Territories,False,7.91,0,refinanced_elsewhere,0,busy_founder
+C0231,Atlas Services,SME,Professional Services,2019244,111,210770,Government-Backed Loan,low,4,5.1,Prairies,False,9.95,1,approved,0,formal_cfo
+C0232,Blue Retail,microbusiness,Tech Startup,449230,8,141503,Term Loan,medium,4,0.5,Ontario,True,5.15,3,approved,0,impatient_owner
+C0233,Summit Foods,microbusiness,E-commerce,487713,5,323369,Government-Backed Loan,medium,7,8.3,British Columbia,False,6.42,1,closed_paid_off,0,formal_cfo
+C0234,Pioneer Retail,SME,Healthcare,610690,138,92859,Real Estate Loan,low,2,7.9,Prairies,True,5.75,0,approved,0,formal_cfo
+C0235,Silver Logistics,microbusiness,Tech Startup,160469,10,104539,Real Estate Loan,low,1,4.8,British Columbia,True,8.24,0,pending,1,formal_cfo
+C0236,Atlas Tech,SME,Retail,5255579,31,133557,Real Estate Loan,high,8,7.3,British Columbia,False,4.86,2,renewed,0,formal_cfo
+C0237,North Solutions,SME,Professional Services,8107966,162,329642,Term Loan,medium,7,6.9,British Columbia,True,3.63,0,refinanced_elsewhere,0,impatient_owner
+C0238,Summit Foods,microbusiness,E-commerce,98858,8,365711,Line of Credit,very_high,9,7.5,Alberta,False,10.68,1,renewed,0,impatient_owner
+C0239,Green Consulting,microbusiness,Tech Startup,233772,10,385275,Government-Backed Loan,low,3,7.7,Territories,True,9.63,3,approved,0,busy_founder
+C0240,Pioneer Builders,microbusiness,E-commerce,246623,4,380587,Equipment Loan,medium,2,5.2,Atlantic,True,8.71,0,closed_paid_off,0,busy_founder
+C0241,Bright Logistics,SME,E-commerce,3498417,104,313126,Government-Backed Loan,medium,5,5.6,Territories,True,9.69,0,approved,1,formal_cfo
+C0242,Prime Services,microbusiness,Hospitality,227438,9,341926,Term Loan,low,1,4.1,Alberta,False,10.09,0,renewed,0,busy_founder
+C0243,Atlas Tech,microbusiness,Logistics,323156,5,393086,Government-Backed Loan,low,3,6.2,Prairies,False,7.01,0,renewed,0,impatient_owner
+C0244,Summit Studios,microbusiness,Professional Services,175439,1,102546,Term Loan,very_high,7,0.5,British Columbia,True,6.66,0,pending,1,impatient_owner
+C0245,Summit Services,SME,Healthcare,3763591,126,231789,Government-Backed Loan,low,3,2.8,Territories,True,4.35,0,approved,0,busy_founder
+C0246,Urban Foods,SME,Tech Startup,4581447,203,198080,Real Estate Loan,high,10,5.7,Prairies,False,7.36,0,approved,1,formal_cfo
+C0247,Bright Builders,SME,E-commerce,4918274,73,170622,Term Loan,medium,6,0.2,Alberta,True,10.95,0,approved,0,formal_cfo
+C0248,Bright Retail,microbusiness,Hospitality,170170,4,150912,Government-Backed Loan,medium,2,2.7,Territories,True,4.13,4,declined,0,impatient_owner
+C0249,Bright Enterprises,SME,Tech Startup,8734347,56,287981,Equipment Loan,medium,10,8.7,Alberta,True,7.71,0,refinanced_elsewhere,1,formal_cfo
+C0250,Bright Foods,SME,Healthcare,4035838,107,324615,Term Loan,medium,10,0.2,British Columbia,False,5.0,0,approved,1,formal_cfo
+C0251,Green Logistics,microbusiness,Logistics,241406,7,166606,Real Estate Loan,low,3,7.5,British Columbia,False,8.99,2,renewed,0,thoughtful_manager
+C0252,Green Studios,microbusiness,Tech Startup,270998,8,90501,Government-Backed Loan,medium,6,0.2,Territories,False,5.9,0,pending,0,impatient_owner
+C0253,Silver Retail,SME,Manufacturing,4858202,102,208904,Government-Backed Loan,medium,5,7.5,Prairies,True,6.79,0,renewed,0,formal_cfo
+C0254,Prime Enterprises,SME,E-commerce,7998243,237,61108,Real Estate Loan,high,8,7.8,Prairies,False,4.66,0,closed_paid_off,0,thoughtful_manager
+C0255,North Logistics,microbusiness,Healthcare,392366,5,392471,Equipment Loan,high,7,3.2,Quebec,True,7.06,2,approved,0,thoughtful_manager
+C0256,Prime Studios,microbusiness,Professional Services,181935,2,130400,Line of Credit,medium,2,2.4,British Columbia,True,10.53,0,approved,0,impatient_owner
+C0257,Bright Solutions,microbusiness,Manufacturing,254391,5,140248,Line of Credit,high,8,9.3,British Columbia,False,4.55,2,approved,0,busy_founder
+C0258,Bright Studios,SME,E-commerce,9547744,55,329765,Government-Backed Loan,medium,10,1.4,Prairies,True,8.62,0,refinanced_elsewhere,1,impatient_owner
+C0259,Atlas Builders,SME,Logistics,677097,10,294368,Line of Credit,medium,8,1.6,Ontario,True,9.0,0,closed_paid_off,0,busy_founder
+C0260,Silver Tech,microbusiness,E-commerce,343891,7,226963,Line of Credit,low,7,2.0,Ontario,False,5.26,0,renewed,0,busy_founder
+C0261,North Enterprises,SME,Logistics,3560284,44,171831,Term Loan,high,10,8.5,Quebec,True,9.1,0,approved,0,impatient_owner
+C0262,Prime Logistics,SME,Construction,637641,69,67289,Line of Credit,low,4,7.2,Quebec,True,5.99,1,refinanced_elsewhere,0,busy_founder
+C0263,Green Consulting,microbusiness,Construction,334789,8,115212,Line of Credit,high,5,4.0,Territories,False,10.13,0,closed_paid_off,0,thoughtful_manager
+C0264,Silver Builders,microbusiness,Tech Startup,323226,4,267896,Real Estate Loan,high,5,7.7,British Columbia,False,4.77,1,renewed,0,thoughtful_manager
+C0265,Atlas Logistics,SME,Retail,2394625,70,351826,Real Estate Loan,medium,3,6.7,Territories,False,8.18,0,approved,0,thoughtful_manager
+C0266,Bright Builders,SME,Manufacturing,2033463,185,344348,Equipment Loan,very_high,1,1.7,Quebec,True,8.66,1,closed_paid_off,0,busy_founder
+C0267,Prime Tech,microbusiness,Logistics,181437,1,274438,Real Estate Loan,medium,9,7.3,Ontario,False,5.02,0,approved,0,formal_cfo
+C0268,Summit Foods,microbusiness,Tech Startup,333957,6,258068,Term Loan,high,9,8.2,Ontario,True,4.98,0,closed_paid_off,0,impatient_owner
+C0269,Prime Solutions,microbusiness,E-commerce,339127,3,341409,Equipment Loan,medium,6,5.0,British Columbia,True,7.69,0,closed_paid_off,0,formal_cfo
+C0270,Prime Solutions,microbusiness,Manufacturing,488461,7,364940,Real Estate Loan,medium,10,5.8,Atlantic,True,6.43,1,approved,1,thoughtful_manager
+C0271,Green Tech,microbusiness,Healthcare,268079,6,391423,Term Loan,high,5,7.5,Alberta,True,9.37,2,approved,0,impatient_owner
+C0272,North Logistics,SME,Hospitality,4673551,155,347850,Line of Credit,medium,9,5.3,Quebec,True,4.34,1,approved,0,impatient_owner
+C0273,Atlas Tech,SME,E-commerce,9457363,163,252265,Equipment Loan,very_high,9,6.6,Ontario,False,6.1,0,closed_paid_off,0,formal_cfo
+C0274,Silver Builders,microbusiness,Logistics,440373,5,208748,Real Estate Loan,medium,7,5.5,Territories,True,3.78,0,approved,0,impatient_owner
+C0275,Silver Studios,microbusiness,Healthcare,411611,5,310278,Government-Backed Loan,medium,10,7.7,Atlantic,True,3.8,0,approved,0,formal_cfo
+C0276,Atlas Foods,microbusiness,Logistics,434966,2,399364,Equipment Loan,high,3,9.2,Alberta,True,10.69,1,closed_paid_off,0,impatient_owner
+C0277,Urban Tech,microbusiness,Retail,478417,7,238377,Term Loan,high,4,3.4,Territories,False,10.3,3,renewed,1,impatient_owner
+C0278,Atlas Consulting,microbusiness,Healthcare,130319,1,373178,Real Estate Loan,very_high,10,7.0,Alberta,True,4.22,0,closed_paid_off,0,thoughtful_manager
+C0279,Green Enterprises,SME,Construction,7789551,208,385885,Line of Credit,high,8,4.0,Atlantic,True,7.4,1,approved,0,formal_cfo
+C0280,Atlas Logistics,SME,Logistics,2003148,38,372189,Real Estate Loan,medium,6,6.9,Ontario,True,6.26,1,closed_paid_off,0,thoughtful_manager
+C0281,Silver Solutions,SME,Retail,6771672,49,64991,Term Loan,high,4,2.4,Territories,False,10.91,2,closed_paid_off,0,impatient_owner
+C0282,Silver Logistics,SME,Retail,9526233,64,126850,Government-Backed Loan,medium,5,2.2,Ontario,True,8.48,5,renewed,0,impatient_owner
+C0283,Pioneer Builders,microbusiness,Construction,373991,5,47831,Real Estate Loan,high,1,7.9,Quebec,True,8.78,1,refinanced_elsewhere,1,busy_founder
+C0284,Bright Foods,SME,E-commerce,5792472,134,333055,Government-Backed Loan,low,4,1.1,British Columbia,True,7.16,3,approved,0,busy_founder
+C0285,Green Logistics,microbusiness,Retail,236320,5,143839,Government-Backed Loan,medium,1,6.9,Ontario,False,10.53,2,closed_paid_off,0,busy_founder
+C0286,Green Logistics,SME,Logistics,6912371,143,375464,Government-Backed Loan,high,4,1.5,British Columbia,True,8.08,0,approved,0,formal_cfo
+C0287,Blue Retail,microbusiness,Professional Services,324624,3,245477,Line of Credit,high,10,6.9,Ontario,False,6.04,0,refinanced_elsewhere,1,formal_cfo
+C0288,Urban Enterprises,SME,Logistics,5093537,48,118531,Term Loan,low,1,4.5,Ontario,False,8.4,0,pending,0,impatient_owner
+C0289,Pioneer Builders,SME,Professional Services,8364546,192,360560,Equipment Loan,low,7,8.5,Alberta,True,4.6,0,approved,1,busy_founder
+C0290,Summit Enterprises,microbusiness,Hospitality,280311,10,276871,Equipment Loan,high,4,1.9,Atlantic,True,9.71,1,closed_paid_off,0,impatient_owner
+C0291,Silver Solutions,SME,Tech Startup,4622525,142,301998,Real Estate Loan,very_high,1,8.8,Territories,True,7.63,1,approved,0,busy_founder
+C0292,Pioneer Retail,microbusiness,Logistics,78598,9,94574,Real Estate Loan,high,8,6.2,Ontario,True,7.51,0,pending,0,thoughtful_manager
+C0293,Summit Services,SME,Retail,3887856,235,258384,Term Loan,medium,3,4.6,Quebec,False,4.49,0,declined,0,thoughtful_manager
+C0294,Silver Logistics,microbusiness,Logistics,452789,3,195737,Government-Backed Loan,high,3,3.9,Alberta,True,4.66,1,approved,0,thoughtful_manager
+C0295,Bright Enterprises,microbusiness,Professional Services,451287,5,26400,Real Estate Loan,medium,8,0.1,Quebec,True,3.55,2,approved,1,thoughtful_manager
+C0296,Blue Enterprises,microbusiness,Hospitality,379586,9,128861,Term Loan,low,1,2.9,Alberta,False,3.79,2,renewed,1,impatient_owner
+C0297,Silver Solutions,SME,Professional Services,9931768,55,258728,Government-Backed Loan,medium,1,6.8,Quebec,True,5.89,0,approved,0,impatient_owner
+C0298,Pioneer Services,microbusiness,Manufacturing,222600,9,236928,Government-Backed Loan,medium,4,8.6,British Columbia,False,4.37,1,renewed,0,busy_founder
+C0299,Blue Enterprises,SME,Construction,6436673,247,88007,Government-Backed Loan,medium,9,5.8,Alberta,False,7.48,2,closed_paid_off,1,formal_cfo
+C0300,Silver Studios,microbusiness,Tech Startup,436645,4,342598,Real Estate Loan,medium,6,8.0,British Columbia,True,9.95,0,renewed,0,impatient_owner
+C0301,North Solutions,SME,Retail,6227097,111,399792,Government-Backed Loan,high,1,6.9,Atlantic,False,5.05,2,refinanced_elsewhere,0,impatient_owner
+C0302,Prime Logistics,microbusiness,Tech Startup,225693,8,237030,Term Loan,high,5,5.4,Territories,True,8.93,0,approved,0,busy_founder
+C0303,Prime Solutions,SME,Retail,9463616,225,107015,Government-Backed Loan,high,3,9.8,Ontario,True,10.42,1,renewed,1,thoughtful_manager
+C0304,Green Retail,microbusiness,Healthcare,208664,4,295303,Equipment Loan,low,6,8.3,Prairies,False,9.72,3,declined,1,formal_cfo
+C0305,Atlas Enterprises,SME,E-commerce,2904091,206,71512,Government-Backed Loan,high,3,7.8,Ontario,True,3.79,0,closed_paid_off,0,impatient_owner
+C0306,North Studios,SME,Tech Startup,5742557,15,322807,Equipment Loan,high,4,1.1,Atlantic,True,5.04,0,approved,0,formal_cfo
+C0307,Summit Solutions,microbusiness,Retail,103674,4,304441,Equipment Loan,medium,5,5.6,Alberta,True,9.13,0,approved,0,busy_founder
+C0308,Silver Retail,microbusiness,Professional Services,404154,1,75536,Real Estate Loan,low,7,4.8,Atlantic,True,9.14,2,renewed,1,busy_founder
+C0309,Atlas Studios,microbusiness,E-commerce,446226,8,317685,Line of Credit,low,8,9.7,Atlantic,True,5.98,1,closed_paid_off,0,formal_cfo
+C0310,Summit Enterprises,SME,Logistics,6041983,211,190268,Real Estate Loan,medium,2,7.0,Quebec,True,6.31,0,approved,0,formal_cfo
+C0311,Pioneer Services,SME,Manufacturing,1689907,212,178396,Government-Backed Loan,medium,10,5.6,Ontario,True,8.47,0,refinanced_elsewhere,1,thoughtful_manager
+C0312,Atlas Enterprises,SME,E-commerce,1806851,199,393245,Government-Backed Loan,high,2,2.4,British Columbia,True,7.2,0,closed_paid_off,0,impatient_owner
+C0313,Urban Studios,SME,Healthcare,1531500,33,134091,Line of Credit,high,1,6.5,Prairies,False,8.79,0,approved,0,formal_cfo
+C0314,Prime Studios,SME,Logistics,6275801,32,325516,Term Loan,high,9,9.8,British Columbia,True,4.52,0,approved,1,busy_founder
+C0315,North Studios,microbusiness,Hospitality,256710,6,393174,Real Estate Loan,medium,7,7.1,Prairies,True,8.8,0,approved,0,thoughtful_manager
+C0316,Atlas Logistics,microbusiness,Professional Services,58235,3,398189,Real Estate Loan,high,3,0.8,Atlantic,True,8.64,0,declined,0,thoughtful_manager
+C0317,Blue Consulting,SME,E-commerce,8050515,108,206283,Line of Credit,low,10,5.6,Prairies,True,7.49,1,renewed,0,busy_founder
+C0318,Atlas Consulting,SME,Healthcare,1843236,46,295989,Equipment Loan,medium,2,5.8,Atlantic,True,8.38,0,renewed,0,busy_founder
+C0319,Atlas Studios,SME,E-commerce,8117439,141,266012,Government-Backed Loan,high,7,0.2,Territories,True,11.32,0,approved,0,busy_founder
+C0320,Blue Enterprises,microbusiness,Tech Startup,77063,5,347321,Term Loan,medium,2,1.8,Alberta,True,4.11,1,approved,0,busy_founder
+C0321,Pioneer Foods,microbusiness,Professional Services,473541,3,156971,Line of Credit,medium,9,4.5,British Columbia,False,6.24,0,approved,1,thoughtful_manager
+C0322,Pioneer Foods,microbusiness,Tech Startup,160549,10,200919,Term Loan,high,2,6.4,British Columbia,True,7.21,0,declined,0,formal_cfo
+C0323,Atlas Studios,SME,Construction,7793631,13,171410,Real Estate Loan,medium,6,5.4,Quebec,False,8.96,0,refinanced_elsewhere,0,thoughtful_manager
+C0324,Blue Enterprises,SME,Construction,4783960,177,326276,Real Estate Loan,medium,4,8.0,Ontario,False,8.21,0,approved,0,impatient_owner
+C0325,Prime Enterprises,microbusiness,Logistics,409399,8,204295,Line of Credit,high,5,5.3,Atlantic,True,3.69,0,refinanced_elsewhere,0,impatient_owner
+C0326,Silver Logistics,microbusiness,Logistics,389689,10,116871,Term Loan,high,5,7.7,British Columbia,True,8.78,0,declined,0,busy_founder
+C0327,North Tech,microbusiness,Construction,253733,6,51488,Equipment Loan,very_high,5,0.7,Territories,True,4.06,4,approved,0,impatient_owner
+C0328,Pioneer Studios,SME,Hospitality,7908511,193,155788,Term Loan,low,2,6.5,Alberta,True,5.5,0,closed_paid_off,0,impatient_owner
+C0329,Urban Studios,microbusiness,Healthcare,320209,8,270682,Real Estate Loan,medium,2,5.8,Prairies,True,3.53,4,closed_paid_off,0,busy_founder
+C0330,Pioneer Enterprises,SME,Retail,2021139,103,300298,Equipment Loan,low,8,10.0,British Columbia,False,5.82,0,pending,0,busy_founder
+C0331,Blue Consulting,SME,Tech Startup,7848147,198,119333,Line of Credit,low,1,8.9,Atlantic,False,8.24,0,approved,0,thoughtful_manager
+C0332,North Solutions,SME,Retail,1218308,113,81964,Line of Credit,high,9,7.9,Ontario,True,8.92,2,approved,0,impatient_owner
+C0333,Bright Services,microbusiness,Tech Startup,417681,3,27531,Line of Credit,high,5,0.6,Alberta,False,4.28,1,closed_paid_off,0,impatient_owner
+C0334,Prime Studios,microbusiness,Manufacturing,226864,7,189992,Term Loan,very_high,10,2.1,Territories,True,6.07,4,approved,1,impatient_owner
+C0335,Blue Consulting,microbusiness,Logistics,340145,3,249984,Line of Credit,very_high,1,7.0,Quebec,True,9.83,1,approved,0,impatient_owner
+C0336,Bright Services,microbusiness,Manufacturing,198757,7,383595,Real Estate Loan,high,4,6.6,British Columbia,True,5.67,0,approved,0,formal_cfo
+C0337,Silver Consulting,microbusiness,Construction,342400,4,120612,Term Loan,very_high,2,4.2,Ontario,False,10.4,5,pending,0,formal_cfo
+C0338,Blue Enterprises,microbusiness,Manufacturing,492384,8,280841,Line of Credit,low,1,1.6,Territories,True,6.41,0,approved,0,thoughtful_manager
+C0339,Urban Builders,microbusiness,E-commerce,65238,8,289957,Term Loan,low,4,1.7,Quebec,False,8.24,0,approved,0,impatient_owner
+C0340,Green Retail,microbusiness,Hospitality,154834,7,135690,Term Loan,medium,8,4.2,British Columbia,True,6.99,0,renewed,0,thoughtful_manager
+C0341,Atlas Tech,SME,Hospitality,1500789,81,91566,Term Loan,high,8,1.4,Ontario,True,9.58,0,approved,0,formal_cfo
+C0342,Atlas Consulting,microbusiness,Manufacturing,306488,4,330158,Real Estate Loan,high,5,8.6,Prairies,True,6.92,2,approved,0,formal_cfo
+C0343,Urban Studios,SME,Retail,8959346,18,243188,Government-Backed Loan,medium,2,9.9,Atlantic,True,5.42,0,approved,0,formal_cfo
+C0344,Bright Consulting,microbusiness,Manufacturing,209822,3,388734,Real Estate Loan,high,10,4.8,Atlantic,True,7.14,1,closed_paid_off,0,busy_founder
+C0345,Summit Retail,microbusiness,Logistics,67151,5,243295,Equipment Loan,high,10,3.4,British Columbia,True,9.86,1,approved,0,impatient_owner
+C0346,Atlas Builders,microbusiness,Manufacturing,374604,1,211664,Equipment Loan,low,9,3.7,Prairies,False,7.99,1,approved,0,thoughtful_manager
+C0347,Bright Services,microbusiness,Healthcare,314013,7,165303,Term Loan,low,6,9.0,Ontario,True,7.51,2,declined,0,busy_founder
+C0348,Summit Consulting,SME,Manufacturing,8181853,32,62032,Real Estate Loan,high,5,8.9,Quebec,False,4.12,0,approved,0,formal_cfo
+C0349,Atlas Retail,SME,Logistics,2715051,131,201770,Real Estate Loan,medium,1,5.5,British Columbia,True,4.0,2,approved,0,thoughtful_manager
+C0350,North Retail,SME,Tech Startup,9394713,225,307555,Real Estate Loan,medium,10,6.7,Alberta,True,9.81,0,approved,0,impatient_owner
+C0351,Atlas Logistics,SME,Tech Startup,3197606,192,300660,Equipment Loan,low,3,6.2,Quebec,False,9.04,1,approved,1,busy_founder
+C0352,North Solutions,SME,Construction,9936969,191,38187,Equipment Loan,very_high,3,1.9,Ontario,True,7.82,0,approved,0,thoughtful_manager
+C0353,Urban Enterprises,SME,Professional Services,9662802,139,193686,Equipment Loan,medium,5,9.7,Atlantic,False,9.53,5,renewed,0,thoughtful_manager
+C0354,Green Consulting,SME,Retail,2460855,88,33000,Real Estate Loan,high,4,6.8,Quebec,True,4.24,0,renewed,0,busy_founder
+C0355,Urban Foods,microbusiness,E-commerce,402089,2,288324,Real Estate Loan,low,6,4.5,Territories,False,7.59,0,renewed,0,thoughtful_manager
+C0356,North Services,SME,Retail,5668814,124,314142,Term Loan,medium,8,3.5,Ontario,False,6.82,0,approved,0,thoughtful_manager
+C0357,Green Logistics,microbusiness,Professional Services,325409,6,54663,Government-Backed Loan,high,2,3.1,Quebec,True,8.61,0,approved,0,formal_cfo
+C0358,Silver Foods,SME,Construction,5566600,223,326817,Equipment Loan,medium,8,5.0,Alberta,True,9.83,0,approved,0,impatient_owner
+C0359,Urban Tech,microbusiness,Tech Startup,64912,2,165341,Real Estate Loan,very_high,2,6.5,British Columbia,True,6.39,0,declined,0,impatient_owner
+C0360,Summit Builders,microbusiness,Construction,126617,6,261719,Line of Credit,medium,1,5.9,Quebec,True,6.86,3,approved,0,impatient_owner
+C0361,Pioneer Retail,microbusiness,Manufacturing,335061,6,185785,Equipment Loan,medium,6,7.6,Alberta,True,8.14,2,approved,0,thoughtful_manager
+C0362,North Consulting,microbusiness,Manufacturing,165927,4,312896,Government-Backed Loan,high,9,1.6,Quebec,False,9.2,1,closed_paid_off,0,impatient_owner
+C0363,Silver Logistics,SME,Healthcare,2832267,219,251702,Government-Backed Loan,medium,6,6.9,Ontario,True,5.94,1,approved,0,formal_cfo
+C0364,Blue Enterprises,microbusiness,Professional Services,450044,2,60755,Term Loan,high,7,4.3,Atlantic,True,4.36,1,pending,1,busy_founder
+C0365,Urban Logistics,SME,Retail,2576911,245,335512,Line of Credit,medium,4,1.1,Territories,True,6.31,0,closed_paid_off,0,busy_founder
+C0366,Urban Services,microbusiness,E-commerce,479699,10,27331,Government-Backed Loan,medium,4,0.8,Alberta,False,4.87,1,approved,0,thoughtful_manager
+C0367,Silver Tech,microbusiness,Tech Startup,144816,6,219027,Real Estate Loan,medium,4,9.6,British Columbia,True,9.59,0,declined,0,busy_founder
+C0368,Urban Logistics,microbusiness,Manufacturing,251736,5,259571,Government-Backed Loan,high,8,5.0,Ontario,True,6.76,5,declined,0,thoughtful_manager
+C0369,Urban Builders,microbusiness,Tech Startup,279668,9,365268,Term Loan,low,7,1.1,British Columbia,True,8.22,0,refinanced_elsewhere,1,formal_cfo
+C0370,Prime Enterprises,SME,Manufacturing,8873678,81,394076,Government-Backed Loan,medium,7,8.4,Quebec,True,8.83,4,refinanced_elsewhere,1,thoughtful_manager
+C0371,Prime Tech,SME,Tech Startup,2758353,17,72220,Term Loan,high,8,2.4,Prairies,False,11.28,0,renewed,0,impatient_owner
+C0372,Pioneer Solutions,SME,Tech Startup,8853359,135,284657,Equipment Loan,medium,9,3.0,Quebec,True,11.12,0,declined,1,busy_founder
+C0373,Bright Tech,SME,Retail,5584244,236,390178,Line of Credit,medium,3,1.9,Atlantic,True,6.61,1,pending,0,thoughtful_manager
+C0374,Urban Foods,microbusiness,E-commerce,309360,10,218074,Government-Backed Loan,high,5,4.0,Atlantic,True,3.73,0,closed_paid_off,0,impatient_owner
+C0375,Blue Solutions,microbusiness,Logistics,265969,6,49595,Line of Credit,medium,5,9.9,Ontario,True,10.78,0,approved,1,busy_founder
+C0376,North Services,SME,E-commerce,8380256,160,31658,Equipment Loan,medium,7,2.7,Prairies,True,4.28,0,renewed,0,busy_founder
+C0377,Atlas Retail,SME,Healthcare,1763679,225,300931,Line of Credit,medium,1,2.1,Prairies,True,8.09,2,renewed,0,impatient_owner
+C0378,Summit Logistics,SME,Manufacturing,8473680,119,129963,Equipment Loan,high,5,8.0,Alberta,True,5.9,1,approved,0,thoughtful_manager
+C0379,Urban Solutions,microbusiness,E-commerce,311726,4,366452,Real Estate Loan,medium,9,1.9,Territories,False,10.32,3,refinanced_elsewhere,1,formal_cfo
+C0380,Pioneer Builders,microbusiness,Hospitality,451358,5,248269,Real Estate Loan,medium,2,7.5,Quebec,False,10.27,0,approved,0,formal_cfo
+C0381,Summit Logistics,microbusiness,Professional Services,467881,5,263353,Real Estate Loan,medium,7,0.4,Quebec,True,10.75,0,approved,0,busy_founder
+C0382,Prime Services,microbusiness,Tech Startup,94003,6,335411,Equipment Loan,high,7,0.3,Territories,False,8.87,2,approved,0,formal_cfo
+C0383,Pioneer Builders,microbusiness,E-commerce,456383,9,152019,Real Estate Loan,high,4,8.3,British Columbia,True,9.69,0,closed_paid_off,0,formal_cfo
+C0384,North Retail,microbusiness,Manufacturing,193941,8,234106,Equipment Loan,high,1,2.2,Quebec,True,6.5,3,approved,0,busy_founder
+C0385,Bright Foods,SME,Healthcare,1084005,225,367195,Term Loan,high,4,3.2,Territories,True,6.58,1,renewed,0,formal_cfo
+C0386,Bright Solutions,microbusiness,Logistics,481335,4,175935,Line of Credit,high,3,3.1,Ontario,False,8.55,2,closed_paid_off,1,impatient_owner
+C0387,Bright Logistics,SME,Healthcare,2184358,221,104066,Equipment Loan,medium,6,4.3,British Columbia,True,9.33,0,approved,0,formal_cfo
+C0388,Bright Solutions,microbusiness,Logistics,214480,10,63113,Term Loan,low,9,6.3,Quebec,False,9.64,1,approved,1,busy_founder
+C0389,Prime Solutions,microbusiness,Construction,483464,6,167742,Line of Credit,low,6,6.9,Quebec,True,10.51,3,closed_paid_off,0,formal_cfo
+C0390,Bright Enterprises,microbusiness,Construction,76100,7,344012,Real Estate Loan,high,3,8.5,British Columbia,True,6.44,3,approved,0,thoughtful_manager
+C0391,North Consulting,microbusiness,Hospitality,476462,5,170975,Real Estate Loan,medium,7,9.5,Quebec,False,8.3,5,approved,0,thoughtful_manager
+C0392,Prime Enterprises,SME,Construction,4666084,104,325609,Real Estate Loan,low,8,6.2,Quebec,True,6.09,1,renewed,0,busy_founder
+C0393,Atlas Logistics,microbusiness,Retail,296904,6,337914,Government-Backed Loan,high,1,9.3,Ontario,True,7.54,0,refinanced_elsewhere,1,impatient_owner
+C0394,Urban Foods,SME,Professional Services,6190441,234,265411,Line of Credit,low,9,5.0,Alberta,True,5.58,0,refinanced_elsewhere,0,busy_founder
+C0395,Blue Builders,SME,Construction,4925123,142,184107,Real Estate Loan,high,6,8.3,Alberta,False,7.43,4,pending,0,thoughtful_manager
+C0396,Prime Retail,microbusiness,Retail,296545,5,105749,Real Estate Loan,medium,8,1.9,Quebec,True,6.35,1,declined,0,formal_cfo
+C0397,Bright Enterprises,microbusiness,Hospitality,487756,3,286725,Equipment Loan,medium,10,2.9,Territories,True,11.48,0,closed_paid_off,0,formal_cfo
+C0398,Atlas Consulting,SME,Retail,2546668,110,215852,Government-Backed Loan,very_high,2,6.8,Ontario,False,4.73,0,closed_paid_off,0,busy_founder
+C0399,Pioneer Studios,SME,Retail,8101790,93,318402,Line of Credit,medium,1,6.3,British Columbia,False,5.76,1,renewed,0,impatient_owner
+C0400,Atlas Logistics,microbusiness,Hospitality,96760,1,129168,Line of Credit,medium,7,8.7,Territories,True,9.52,1,approved,0,busy_founder
+C0401,Blue Tech,SME,Manufacturing,3853283,135,253540,Real Estate Loan,medium,10,3.7,Territories,False,4.22,0,approved,0,impatient_owner
+C0402,Green Tech,SME,Tech Startup,3101637,248,279691,Government-Backed Loan,high,9,2.3,British Columbia,True,7.25,0,closed_paid_off,0,busy_founder
+C0403,Prime Solutions,SME,Construction,1784002,244,43642,Government-Backed Loan,low,7,0.6,Alberta,True,7.22,1,closed_paid_off,0,impatient_owner
+C0404,North Enterprises,microbusiness,Professional Services,93668,7,389297,Equipment Loan,medium,8,4.0,Territories,False,7.1,2,approved,0,formal_cfo
+C0405,Pioneer Studios,SME,Manufacturing,598097,111,81173,Term Loan,low,8,5.4,Prairies,True,6.74,1,renewed,1,busy_founder
+C0406,Silver Solutions,microbusiness,Professional Services,108674,1,384921,Line of Credit,high,4,0.2,Quebec,True,4.66,0,closed_paid_off,0,impatient_owner
+C0407,Blue Enterprises,microbusiness,Tech Startup,137087,3,388363,Real Estate Loan,very_high,8,0.3,Prairies,True,7.1,0,approved,0,busy_founder
+C0408,Pioneer Services,SME,Logistics,9799686,84,39407,Real Estate Loan,medium,9,5.0,Territories,True,8.39,1,closed_paid_off,0,impatient_owner
+C0409,Atlas Retail,SME,E-commerce,7498405,237,268165,Term Loan,medium,6,2.8,Atlantic,True,6.99,0,renewed,0,formal_cfo
+C0410,Prime Foods,SME,Professional Services,7049342,116,372902,Equipment Loan,high,3,7.3,Ontario,False,5.76,1,renewed,0,thoughtful_manager
+C0411,Prime Tech,SME,Construction,1289356,14,208107,Equipment Loan,medium,3,2.2,Quebec,True,10.38,0,closed_paid_off,0,formal_cfo
+C0412,Prime Enterprises,microbusiness,Tech Startup,461506,6,44471,Government-Backed Loan,medium,3,9.9,Ontario,False,10.49,1,approved,0,thoughtful_manager
+C0413,Prime Builders,microbusiness,E-commerce,137580,2,127681,Equipment Loan,low,5,5.1,Atlantic,False,9.6,0,closed_paid_off,0,formal_cfo
+C0414,Green Logistics,SME,Logistics,4615720,223,268336,Equipment Loan,medium,3,7.7,Territories,True,6.48,1,approved,0,thoughtful_manager
+C0415,Pioneer Consulting,SME,Logistics,9159648,213,377668,Equipment Loan,very_high,8,9.0,Prairies,True,3.58,2,refinanced_elsewhere,1,formal_cfo
+C0416,Urban Consulting,SME,Retail,3032555,241,321233,Term Loan,very_high,9,9.2,British Columbia,False,6.85,2,renewed,0,busy_founder
+C0417,Silver Enterprises,SME,E-commerce,7276956,124,357578,Line of Credit,high,10,9.2,Alberta,False,8.72,1,closed_paid_off,0,formal_cfo
+C0418,Green Studios,microbusiness,E-commerce,426900,3,292876,Government-Backed Loan,medium,2,4.0,Ontario,True,6.0,0,renewed,0,busy_founder
+C0419,Atlas Services,SME,E-commerce,6757547,76,348723,Government-Backed Loan,medium,1,7.3,Atlantic,False,11.03,0,pending,0,formal_cfo
+C0420,Pioneer Foods,microbusiness,Healthcare,461455,10,372548,Line of Credit,high,9,2.9,Ontario,False,4.34,0,approved,0,formal_cfo
+C0421,Bright Foods,microbusiness,Manufacturing,118190,8,132608,Real Estate Loan,low,9,4.3,Atlantic,True,7.97,1,closed_paid_off,0,thoughtful_manager
+C0422,Atlas Foods,microbusiness,Professional Services,422847,8,87835,Government-Backed Loan,high,2,1.4,Alberta,False,7.14,0,approved,0,impatient_owner
+C0423,Silver Builders,microbusiness,Manufacturing,71119,9,100375,Term Loan,medium,6,5.8,Ontario,True,7.39,1,approved,0,busy_founder
+C0424,Summit Solutions,microbusiness,Tech Startup,232792,2,43426,Real Estate Loan,medium,5,1.3,Atlantic,True,10.7,1,declined,0,formal_cfo
+C0425,North Consulting,SME,Tech Startup,5956223,32,347559,Government-Backed Loan,medium,4,8.7,Quebec,False,6.21,0,renewed,0,impatient_owner
+C0426,Blue Studios,SME,E-commerce,9884383,31,120887,Government-Backed Loan,medium,1,1.3,British Columbia,False,7.67,1,pending,0,formal_cfo
+C0427,Pioneer Studios,microbusiness,Hospitality,353852,8,64379,Government-Backed Loan,high,7,7.1,Territories,True,7.43,3,approved,1,busy_founder
+C0428,Silver Foods,microbusiness,Manufacturing,199606,3,115771,Equipment Loan,high,3,5.5,Atlantic,True,6.76,0,renewed,0,impatient_owner
+C0429,Urban Solutions,microbusiness,Healthcare,219983,5,216877,Term Loan,low,4,4.2,Quebec,False,8.19,0,closed_paid_off,1,impatient_owner
+C0430,Summit Builders,SME,Manufacturing,4421514,243,29763,Equipment Loan,medium,10,0.4,Prairies,False,5.47,0,closed_paid_off,0,impatient_owner
+C0431,Blue Solutions,microbusiness,Healthcare,460005,4,301823,Real Estate Loan,very_high,9,9.9,Alberta,True,3.51,0,closed_paid_off,0,impatient_owner
+C0432,Summit Studios,SME,Construction,6395814,225,351458,Line of Credit,medium,9,6.8,Territories,True,4.79,0,approved,0,formal_cfo
+C0433,Blue Services,SME,Hospitality,5840253,236,377617,Equipment Loan,high,8,5.1,Alberta,True,8.8,0,approved,0,formal_cfo
+C0434,Prime Retail,SME,Retail,7431725,152,385161,Real Estate Loan,high,9,6.8,Atlantic,True,10.51,1,pending,0,thoughtful_manager
+C0435,Green Builders,SME,Healthcare,641455,41,262584,Equipment Loan,very_high,8,1.9,Prairies,True,9.45,1,renewed,1,busy_founder
+C0436,Prime Services,SME,Healthcare,4007886,11,122805,Real Estate Loan,low,5,2.9,Atlantic,True,7.45,0,renewed,0,formal_cfo
+C0437,Blue Retail,microbusiness,Manufacturing,348793,4,294244,Equipment Loan,low,1,2.7,Quebec,False,9.04,0,approved,0,thoughtful_manager
+C0438,Urban Enterprises,SME,Logistics,9195551,129,279823,Equipment Loan,medium,1,1.3,Ontario,False,5.3,0,declined,1,formal_cfo
+C0439,Silver Builders,microbusiness,Hospitality,89028,4,123220,Line of Credit,medium,2,4.3,British Columbia,False,4.27,0,closed_paid_off,0,busy_founder
+C0440,Blue Foods,microbusiness,Tech Startup,486478,1,194896,Government-Backed Loan,high,2,9.6,Quebec,False,8.46,1,renewed,0,impatient_owner
+C0441,Green Services,SME,Manufacturing,7914160,24,178057,Government-Backed Loan,high,2,1.4,Territories,True,3.95,0,closed_paid_off,0,thoughtful_manager
+C0442,Atlas Logistics,microbusiness,Tech Startup,274450,10,344655,Term Loan,medium,1,4.7,Prairies,True,6.13,0,approved,0,formal_cfo
+C0443,North Solutions,SME,Healthcare,7959558,57,147481,Line of Credit,high,1,4.9,Prairies,True,8.18,0,renewed,0,formal_cfo
+C0444,Prime Retail,SME,Healthcare,635590,142,327463,Line of Credit,low,9,3.8,Ontario,False,7.98,0,approved,0,formal_cfo
+C0445,Bright Builders,microbusiness,Tech Startup,295053,10,383024,Equipment Loan,high,10,6.9,British Columbia,False,8.43,0,approved,0,impatient_owner
+C0446,Blue Tech,microbusiness,Hospitality,377113,4,145314,Real Estate Loan,high,6,2.4,British Columbia,False,6.51,0,closed_paid_off,0,busy_founder
+C0447,Green Consulting,microbusiness,Professional Services,381001,10,208696,Term Loan,very_high,4,4.5,Ontario,True,4.89,2,renewed,0,formal_cfo
+C0448,Prime Enterprises,microbusiness,Construction,405180,3,218664,Term Loan,medium,4,0.3,Atlantic,True,5.42,2,renewed,0,thoughtful_manager
+C0449,Urban Builders,microbusiness,Professional Services,329212,7,384041,Equipment Loan,medium,7,2.0,Territories,False,5.46,0,renewed,0,formal_cfo
+C0450,Bright Tech,microbusiness,Construction,316479,10,276371,Line of Credit,high,8,1.4,Territories,False,8.42,0,approved,0,busy_founder
+C0451,Pioneer Builders,SME,Professional Services,9316018,187,273386,Real Estate Loan,medium,10,7.2,Ontario,True,10.87,0,approved,1,formal_cfo
+C0452,Bright Foods,SME,Logistics,6776479,75,308647,Term Loan,low,2,5.8,Prairies,True,7.65,0,approved,0,thoughtful_manager
+C0453,Green Enterprises,SME,Healthcare,5080506,107,32959,Line of Credit,medium,5,5.0,Territories,False,6.37,0,closed_paid_off,0,busy_founder
+C0454,Blue Studios,microbusiness,Manufacturing,155018,6,123099,Equipment Loan,medium,5,0.5,Ontario,True,8.33,0,closed_paid_off,0,busy_founder
+C0455,Summit Services,SME,Healthcare,7307497,220,324062,Term Loan,medium,9,10.0,Territories,False,11.11,2,approved,1,formal_cfo
+C0456,Bright Retail,SME,Tech Startup,5752524,226,118485,Real Estate Loan,high,7,7.9,Ontario,True,7.1,0,approved,1,impatient_owner
+C0457,Pioneer Builders,SME,Hospitality,7267404,205,382030,Government-Backed Loan,medium,10,4.3,Prairies,True,9.78,3,approved,1,thoughtful_manager
+C0458,Green Enterprises,SME,Manufacturing,8465447,37,192407,Government-Backed Loan,very_high,5,3.9,Alberta,True,4.33,0,approved,0,formal_cfo
+C0459,Prime Foods,SME,Construction,9297899,27,258374,Term Loan,medium,1,2.4,Quebec,True,10.38,0,approved,0,thoughtful_manager
+C0460,Pioneer Services,microbusiness,Professional Services,276597,8,103247,Government-Backed Loan,medium,5,2.1,Territories,True,7.52,1,approved,0,impatient_owner
+C0461,Pioneer Builders,microbusiness,E-commerce,307403,8,262585,Government-Backed Loan,low,2,9.1,Ontario,True,10.55,0,renewed,1,formal_cfo
+C0462,Bright Foods,microbusiness,Logistics,395547,3,386226,Government-Backed Loan,low,1,3.9,Prairies,True,10.46,0,renewed,0,formal_cfo
+C0463,Green Foods,microbusiness,Healthcare,314448,6,235008,Real Estate Loan,low,4,7.6,Atlantic,True,7.2,0,renewed,0,thoughtful_manager
+C0464,North Consulting,microbusiness,Retail,121555,6,371427,Real Estate Loan,medium,2,1.2,Ontario,True,8.76,1,declined,0,formal_cfo
+C0465,Bright Consulting,microbusiness,Professional Services,438731,7,108318,Term Loan,high,1,1.3,Ontario,False,4.73,0,approved,0,formal_cfo
+C0466,Green Enterprises,microbusiness,Logistics,77480,10,22446,Term Loan,high,4,3.2,British Columbia,False,6.5,0,approved,0,busy_founder
+C0467,Prime Builders,microbusiness,Manufacturing,398184,3,399590,Line of Credit,low,9,8.4,Territories,True,6.12,0,approved,0,thoughtful_manager
+C0468,Pioneer Studios,microbusiness,Manufacturing,57861,7,362880,Equipment Loan,low,4,3.3,Ontario,True,4.03,2,renewed,1,formal_cfo
+C0469,Bright Enterprises,SME,Manufacturing,3376606,74,69673,Government-Backed Loan,medium,7,5.4,British Columbia,False,11.28,1,approved,0,busy_founder
+C0470,Blue Logistics,SME,Retail,8031486,107,287924,Line of Credit,medium,1,9.1,Alberta,True,8.43,2,approved,0,impatient_owner
+C0471,Summit Foods,SME,Tech Startup,6804004,62,356613,Term Loan,medium,10,2.1,Ontario,False,7.05,2,approved,0,impatient_owner
+C0472,Prime Solutions,SME,Retail,6057792,97,147008,Line of Credit,medium,4,8.5,Quebec,False,9.07,0,closed_paid_off,0,impatient_owner
+C0473,Green Foods,microbusiness,Hospitality,124203,4,85830,Term Loan,low,9,6.4,Atlantic,False,10.95,0,approved,1,formal_cfo
+C0474,Blue Foods,microbusiness,Hospitality,285023,4,162533,Real Estate Loan,low,6,2.9,Ontario,True,4.84,0,pending,0,thoughtful_manager
+C0475,Bright Builders,SME,Manufacturing,5537049,162,301646,Line of Credit,medium,3,9.1,Territories,True,7.21,0,approved,0,formal_cfo
+C0476,Prime Foods,microbusiness,Hospitality,312510,6,277663,Real Estate Loan,very_high,7,0.2,Atlantic,False,6.49,0,renewed,0,impatient_owner
+C0477,Blue Logistics,microbusiness,Hospitality,183828,6,287181,Real Estate Loan,high,6,4.4,Territories,False,8.71,3,renewed,1,busy_founder
+C0478,Pioneer Logistics,SME,Tech Startup,4650931,164,323217,Line of Credit,low,2,1.6,British Columbia,False,10.84,0,pending,0,formal_cfo
+C0479,Silver Builders,SME,Construction,9445633,178,220691,Government-Backed Loan,medium,7,3.1,British Columbia,False,10.89,2,approved,0,formal_cfo
+C0480,Bright Logistics,SME,Construction,8749747,10,70788,Term Loan,high,7,9.9,Atlantic,True,8.74,1,approved,0,formal_cfo
+C0481,Prime Studios,microbusiness,Tech Startup,147327,4,50923,Line of Credit,high,4,8.2,Alberta,True,10.72,0,renewed,0,formal_cfo
+C0482,Summit Consulting,microbusiness,Logistics,229386,1,327047,Line of Credit,medium,2,2.8,Atlantic,True,5.63,4,renewed,1,formal_cfo
+C0483,Urban Retail,SME,E-commerce,8652488,131,196700,Government-Backed Loan,medium,6,2.7,Territories,False,6.24,0,approved,0,impatient_owner
+C0484,Summit Foods,microbusiness,Retail,260663,3,33463,Government-Backed Loan,low,9,8.7,Prairies,True,9.09,2,approved,1,thoughtful_manager
+C0485,Prime Foods,microbusiness,Retail,476046,6,28719,Equipment Loan,high,6,9.6,British Columbia,False,5.37,0,renewed,0,thoughtful_manager
+C0486,Prime Solutions,SME,Hospitality,9225065,234,319836,Government-Backed Loan,low,8,1.5,British Columbia,False,5.91,1,pending,1,thoughtful_manager
+C0487,Prime Logistics,microbusiness,Hospitality,395896,2,75296,Real Estate Loan,very_high,1,1.8,Quebec,True,10.93,3,closed_paid_off,1,thoughtful_manager
+C0488,Green Builders,SME,Manufacturing,4254845,248,321975,Government-Backed Loan,low,6,6.9,Territories,True,9.24,1,approved,0,thoughtful_manager
+C0489,Pioneer Foods,SME,Manufacturing,1995511,97,330483,Line of Credit,high,2,1.0,Ontario,True,4.52,0,approved,0,formal_cfo
+C0490,Bright Logistics,SME,Healthcare,2619085,143,367992,Government-Backed Loan,medium,2,6.8,Territories,True,7.81,0,approved,0,thoughtful_manager
+C0491,Blue Retail,SME,Professional Services,1076194,163,187845,Equipment Loan,medium,2,6.7,British Columbia,True,10.28,0,renewed,0,thoughtful_manager
+C0492,Summit Foods,microbusiness,Hospitality,474892,4,387215,Term Loan,very_high,3,7.4,Territories,False,9.32,0,closed_paid_off,0,impatient_owner
+C0493,Silver Solutions,SME,Logistics,6343624,203,225186,Real Estate Loan,low,5,4.8,British Columbia,True,10.88,1,pending,0,impatient_owner
+C0494,Pioneer Foods,microbusiness,Professional Services,202610,3,129977,Line of Credit,high,4,7.0,Prairies,False,3.57,1,pending,0,formal_cfo
+C0495,Silver Services,microbusiness,Retail,298447,3,47510,Term Loan,very_high,6,3.6,Atlantic,True,11.26,1,declined,1,thoughtful_manager
+C0496,Atlas Services,microbusiness,Logistics,466979,2,263098,Real Estate Loan,medium,8,6.9,Territories,True,4.46,0,declined,0,impatient_owner
+C0497,Pioneer Tech,SME,Construction,3538296,108,273855,Real Estate Loan,medium,3,7.5,British Columbia,True,4.01,3,closed_paid_off,0,impatient_owner
+C0498,Prime Consulting,SME,Manufacturing,9542613,192,361678,Term Loan,high,4,8.4,Alberta,False,10.68,0,pending,0,busy_founder
+C0499,Summit Studios,microbusiness,Hospitality,344910,5,38352,Term Loan,very_high,9,1.7,British Columbia,True,11.23,0,refinanced_elsewhere,1,impatient_owner
+C0500,North Services,SME,Professional Services,5750195,143,204610,Government-Backed Loan,medium,4,5.0,Alberta,False,8.8,0,approved,0,formal_cfo
+C0501,Summit Builders,microbusiness,Healthcare,376271,7,58985,Government-Backed Loan,medium,7,1.4,Ontario,False,4.81,0,refinanced_elsewhere,0,formal_cfo
+C0502,Prime Tech,microbusiness,Construction,150992,6,315510,Government-Backed Loan,high,7,7.0,British Columbia,False,6.03,1,approved,0,busy_founder
+C0503,Prime Logistics,microbusiness,E-commerce,385637,2,210221,Equipment Loan,high,3,0.8,Prairies,False,5.31,0,approved,0,impatient_owner
+C0504,Bright Services,SME,Tech Startup,5231119,151,162110,Government-Backed Loan,low,1,5.3,Atlantic,True,11.07,0,approved,0,thoughtful_manager
+C0505,Bright Logistics,microbusiness,Construction,423934,3,364752,Line of Credit,low,10,6.9,Atlantic,False,3.92,1,refinanced_elsewhere,1,thoughtful_manager
+C0506,Prime Builders,SME,Healthcare,5312035,80,244272,Government-Backed Loan,very_high,4,4.7,Territories,True,10.36,3,declined,1,impatient_owner
+C0507,Pioneer Consulting,microbusiness,Professional Services,439760,5,310539,Real Estate Loan,high,1,0.7,Alberta,False,6.89,0,renewed,0,impatient_owner
+C0508,Urban Logistics,microbusiness,Retail,330140,6,148044,Government-Backed Loan,high,1,4.3,British Columbia,False,11.22,1,closed_paid_off,0,impatient_owner
+C0509,Atlas Foods,SME,Retail,3360246,105,79366,Equipment Loan,very_high,4,5.0,Prairies,False,10.31,2,approved,1,impatient_owner
+C0510,Blue Enterprises,microbusiness,Construction,68575,8,343878,Real Estate Loan,low,1,5.2,British Columbia,False,6.13,0,approved,1,busy_founder
+C0511,Summit Studios,SME,Tech Startup,9128834,240,100588,Real Estate Loan,low,8,0.9,Quebec,True,9.66,0,declined,1,formal_cfo
+C0512,Bright Studios,microbusiness,Tech Startup,134847,3,205460,Real Estate Loan,low,4,8.4,British Columbia,True,5.78,0,declined,1,formal_cfo
+C0513,Blue Retail,microbusiness,Logistics,469336,3,190334,Real Estate Loan,medium,7,5.5,Prairies,True,11.16,1,approved,1,formal_cfo
+C0514,Green Solutions,SME,Retail,5234922,134,63313,Real Estate Loan,medium,3,4.9,Prairies,False,4.99,0,approved,0,thoughtful_manager
+C0515,Pioneer Foods,microbusiness,E-commerce,498199,10,349728,Line of Credit,medium,3,1.9,Alberta,True,5.69,0,approved,0,impatient_owner
+C0516,Blue Consulting,SME,Hospitality,8539562,25,287315,Real Estate Loan,high,5,3.4,Quebec,True,6.41,3,renewed,0,formal_cfo
+C0517,Urban Retail,microbusiness,Healthcare,196884,10,72828,Real Estate Loan,low,8,2.9,Quebec,True,5.93,0,approved,0,busy_founder
+C0518,Prime Tech,SME,Hospitality,6943279,32,75766,Line of Credit,high,10,2.8,British Columbia,True,8.19,3,renewed,0,impatient_owner
+C0519,Urban Solutions,SME,Construction,3888982,146,397890,Line of Credit,low,4,4.8,British Columbia,True,9.19,2,closed_paid_off,0,busy_founder
+C0520,Summit Tech,microbusiness,Logistics,324602,9,31468,Line of Credit,medium,3,4.9,Atlantic,True,11.15,0,refinanced_elsewhere,0,thoughtful_manager
+C0521,Summit Tech,microbusiness,Professional Services,251405,9,224601,Real Estate Loan,high,4,7.5,Prairies,True,4.78,0,renewed,0,thoughtful_manager
+C0522,Green Builders,SME,Construction,5004928,151,82444,Line of Credit,medium,9,2.3,Territories,True,3.81,0,closed_paid_off,0,impatient_owner
+C0523,Urban Builders,microbusiness,Retail,367277,6,190163,Term Loan,very_high,9,3.5,British Columbia,True,4.57,2,approved,0,impatient_owner
+C0524,Silver Builders,SME,Professional Services,9515886,178,325796,Term Loan,high,7,9.7,Ontario,False,5.56,1,renewed,0,busy_founder
+C0525,Blue Studios,SME,Professional Services,7779693,104,97769,Real Estate Loan,low,3,2.4,Prairies,True,10.02,0,pending,1,busy_founder
+C0526,Atlas Enterprises,microbusiness,Professional Services,368673,4,56413,Line of Credit,low,4,4.0,Territories,True,8.66,0,renewed,0,impatient_owner
+C0527,Prime Builders,SME,Logistics,727365,205,357894,Term Loan,low,2,1.2,Atlantic,True,11.01,0,closed_paid_off,0,busy_founder
+C0528,Prime Tech,microbusiness,Tech Startup,282954,3,181158,Equipment Loan,medium,4,5.7,Territories,True,9.04,1,approved,1,busy_founder
+C0529,Prime Builders,SME,Professional Services,902667,68,243941,Real Estate Loan,low,5,9.1,Atlantic,True,10.53,0,closed_paid_off,1,formal_cfo
+C0530,Atlas Studios,microbusiness,Construction,224967,2,209002,Term Loan,high,10,0.9,Ontario,True,6.93,0,approved,0,busy_founder
+C0531,Prime Services,SME,Manufacturing,6692680,248,159146,Term Loan,high,3,9.2,Ontario,False,4.67,0,declined,0,impatient_owner
+C0532,Pioneer Foods,SME,Construction,2639694,56,221860,Equipment Loan,medium,7,1.0,Quebec,True,11.28,1,renewed,0,formal_cfo
+C0533,Blue Retail,SME,E-commerce,9496153,220,140646,Real Estate Loan,low,7,5.0,Alberta,True,9.71,2,approved,1,formal_cfo
+C0534,Pioneer Consulting,SME,Professional Services,6361079,102,93059,Equipment Loan,medium,9,0.7,Atlantic,False,10.8,0,closed_paid_off,1,formal_cfo
+C0535,North Tech,SME,Healthcare,1737660,132,331388,Line of Credit,low,6,7.0,Atlantic,True,5.46,0,closed_paid_off,0,thoughtful_manager
+C0536,Bright Tech,SME,Tech Startup,7948641,210,358085,Term Loan,medium,3,7.3,Prairies,True,8.64,1,approved,0,thoughtful_manager
+C0537,Bright Solutions,SME,E-commerce,7608007,248,102208,Equipment Loan,very_high,9,7.1,Ontario,True,11.11,1,declined,1,impatient_owner
+C0538,Prime Builders,SME,Logistics,1417238,215,214761,Real Estate Loan,low,2,3.9,Territories,True,6.4,1,approved,1,impatient_owner
+C0539,Urban Studios,microbusiness,Construction,384699,1,146004,Equipment Loan,low,10,5.6,Quebec,True,8.01,1,approved,0,impatient_owner
+C0540,Bright Services,SME,E-commerce,7053873,195,206561,Line of Credit,high,2,3.2,Quebec,True,10.67,0,pending,1,thoughtful_manager
+C0541,Bright Logistics,microbusiness,Construction,292801,2,348179,Term Loan,very_high,4,1.6,Quebec,False,9.96,1,closed_paid_off,0,busy_founder
+C0542,Summit Enterprises,SME,Construction,7729326,20,393692,Real Estate Loan,medium,10,6.3,Ontario,False,11.16,0,refinanced_elsewhere,1,busy_founder
+C0543,North Enterprises,SME,Manufacturing,5459482,51,55736,Equipment Loan,medium,6,3.2,Prairies,True,4.93,1,approved,0,thoughtful_manager
+C0544,Atlas Consulting,SME,Retail,7226643,114,344892,Line of Credit,medium,9,8.6,Ontario,False,11.12,0,renewed,1,impatient_owner
+C0545,Prime Enterprises,microbusiness,E-commerce,105206,5,217038,Line of Credit,medium,2,1.6,Atlantic,True,10.49,1,approved,0,thoughtful_manager
+C0546,North Builders,microbusiness,Manufacturing,154580,7,192344,Term Loan,medium,10,7.7,Prairies,True,9.12,0,approved,1,thoughtful_manager
+C0547,North Enterprises,SME,Retail,1546902,249,209526,Real Estate Loan,very_high,4,7.8,Alberta,True,10.44,4,renewed,0,impatient_owner
+C0548,Urban Foods,SME,Logistics,8073586,233,240055,Government-Backed Loan,medium,5,3.1,Atlantic,True,3.93,2,declined,1,formal_cfo
+C0549,Urban Retail,SME,Tech Startup,3195916,188,249000,Equipment Loan,very_high,10,6.9,Alberta,True,3.58,1,pending,0,formal_cfo
+C0550,Green Builders,microbusiness,Professional Services,311853,6,79562,Real Estate Loan,medium,1,9.3,Prairies,False,11.05,2,renewed,0,impatient_owner
+C0551,Bright Solutions,SME,E-commerce,6834348,65,202497,Line of Credit,very_high,10,1.7,Territories,False,6.46,0,approved,0,impatient_owner
+C0552,Silver Services,SME,Logistics,9601086,119,294291,Equipment Loan,low,3,3.6,Ontario,True,6.48,0,approved,0,thoughtful_manager
+C0553,Green Builders,microbusiness,Manufacturing,96996,1,343097,Real Estate Loan,low,10,8.4,Territories,False,4.3,0,pending,1,thoughtful_manager
+C0554,Green Consulting,SME,E-commerce,8378148,41,203822,Real Estate Loan,medium,7,1.2,Prairies,True,6.5,0,approved,0,thoughtful_manager
+C0555,Atlas Foods,SME,Retail,6781485,225,292086,Government-Backed Loan,medium,3,0.4,Atlantic,False,11.44,0,refinanced_elsewhere,0,impatient_owner
+C0556,Urban Builders,microbusiness,Logistics,216789,9,103070,Real Estate Loan,medium,3,1.8,British Columbia,True,8.55,1,closed_paid_off,0,formal_cfo
+C0557,North Builders,microbusiness,Manufacturing,379721,10,100241,Term Loan,high,9,4.4,Atlantic,False,4.13,0,renewed,0,busy_founder
+C0558,North Studios,microbusiness,Construction,178583,7,156566,Term Loan,medium,3,5.4,Quebec,False,8.61,0,approved,0,impatient_owner
+C0559,North Logistics,SME,Professional Services,6563240,243,129037,Real Estate Loan,low,1,0.9,Atlantic,True,7.39,1,approved,0,thoughtful_manager
+C0560,Summit Tech,SME,Retail,1027651,40,199731,Equipment Loan,medium,10,6.6,Quebec,True,3.54,0,approved,0,impatient_owner
+C0561,Pioneer Tech,microbusiness,Hospitality,163748,1,191725,Line of Credit,medium,3,3.7,Territories,True,7.35,4,approved,0,thoughtful_manager
+C0562,Urban Services,SME,Hospitality,5215786,110,73946,Government-Backed Loan,high,10,1.8,Ontario,True,9.85,4,declined,1,busy_founder
+C0563,Pioneer Consulting,microbusiness,Logistics,235029,6,351716,Term Loan,medium,1,2.1,Prairies,False,5.52,0,renewed,0,busy_founder
+C0564,Atlas Retail,microbusiness,Professional Services,464657,3,207561,Line of Credit,low,6,3.3,Territories,True,9.74,0,approved,0,thoughtful_manager
+C0565,Urban Retail,microbusiness,E-commerce,365517,4,296437,Line of Credit,low,5,3.9,Atlantic,False,11.07,2,renewed,0,thoughtful_manager
+C0566,Bright Studios,microbusiness,Hospitality,311436,1,163872,Real Estate Loan,low,8,8.0,Atlantic,True,6.11,0,pending,0,impatient_owner
+C0567,Bright Services,microbusiness,Logistics,326569,1,196889,Term Loan,low,2,9.0,Atlantic,False,6.82,0,approved,1,busy_founder
+C0568,Green Logistics,microbusiness,Logistics,288331,8,356119,Term Loan,high,10,7.0,Ontario,True,5.29,2,approved,0,thoughtful_manager
+C0569,North Logistics,microbusiness,Hospitality,243399,9,22590,Term Loan,medium,1,9.0,British Columbia,True,11.08,0,approved,0,busy_founder
+C0570,Green Enterprises,SME,Manufacturing,2983052,202,326252,Real Estate Loan,high,2,3.3,Quebec,True,5.42,0,declined,0,thoughtful_manager
+C0571,Urban Builders,SME,Construction,9870330,223,147074,Line of Credit,high,2,0.9,British Columbia,False,3.98,0,approved,0,impatient_owner
+C0572,Silver Foods,SME,Construction,3083673,227,284509,Term Loan,very_high,4,4.6,British Columbia,False,6.58,0,renewed,0,impatient_owner
+C0573,Summit Enterprises,microbusiness,Construction,103511,3,261672,Term Loan,high,4,5.8,Territories,True,7.19,0,declined,0,impatient_owner
+C0574,Atlas Studios,SME,Logistics,8925356,120,286299,Equipment Loan,low,5,1.6,Quebec,True,3.89,0,refinanced_elsewhere,1,formal_cfo
+C0575,Pioneer Foods,SME,E-commerce,1336704,175,150518,Term Loan,medium,1,1.2,Prairies,False,8.1,0,pending,0,thoughtful_manager
+C0576,Silver Builders,microbusiness,Hospitality,412641,5,279612,Line of Credit,low,4,8.3,British Columbia,True,5.8,0,renewed,0,thoughtful_manager
+C0577,Atlas Retail,microbusiness,Healthcare,148222,6,258664,Line of Credit,very_high,8,0.8,British Columbia,True,3.67,4,closed_paid_off,0,impatient_owner
+C0578,Bright Solutions,SME,Retail,8428379,38,43685,Term Loan,medium,5,8.7,Prairies,False,7.7,0,approved,0,busy_founder
+C0579,Silver Tech,SME,E-commerce,4753642,103,260517,Term Loan,high,5,6.7,Ontario,False,10.63,1,closed_paid_off,0,impatient_owner
+C0580,Silver Tech,microbusiness,Professional Services,395698,3,207272,Real Estate Loan,low,10,8.6,Prairies,False,11.29,0,renewed,0,impatient_owner
+C0581,Atlas Retail,SME,E-commerce,6352648,237,193641,Real Estate Loan,medium,5,2.7,Quebec,True,3.83,0,approved,0,thoughtful_manager
+C0582,Green Studios,SME,Manufacturing,2968450,129,376999,Line of Credit,medium,5,5.0,Atlantic,False,8.81,0,approved,1,impatient_owner
+C0583,Silver Logistics,microbusiness,Retail,275613,6,366162,Term Loan,low,3,3.1,Prairies,True,5.77,2,renewed,1,impatient_owner
+C0584,Atlas Studios,microbusiness,Logistics,202464,4,36848,Real Estate Loan,very_high,4,9.2,Alberta,False,8.6,0,refinanced_elsewhere,0,busy_founder
+C0585,Pioneer Enterprises,microbusiness,Logistics,471726,10,92968,Line of Credit,medium,7,8.8,British Columbia,True,5.91,0,pending,0,thoughtful_manager
+C0586,Atlas Studios,microbusiness,E-commerce,314144,6,265565,Equipment Loan,medium,7,7.0,Prairies,False,7.19,3,approved,1,formal_cfo
+C0587,Blue Studios,microbusiness,E-commerce,334829,10,173796,Term Loan,high,7,1.4,Ontario,True,8.86,0,closed_paid_off,0,impatient_owner
+C0588,North Builders,microbusiness,Healthcare,202345,10,272427,Equipment Loan,high,2,1.1,Alberta,False,8.9,1,approved,0,thoughtful_manager
+C0589,Pioneer Consulting,microbusiness,Construction,53382,8,346979,Line of Credit,low,1,3.2,British Columbia,True,10.54,0,approved,1,thoughtful_manager
+C0590,North Tech,microbusiness,Construction,146492,4,306638,Equipment Loan,high,8,4.9,Prairies,False,8.44,0,renewed,0,formal_cfo
+C0591,Prime Services,microbusiness,Tech Startup,399980,2,328681,Real Estate Loan,medium,5,3.0,Prairies,True,9.08,0,declined,1,thoughtful_manager
+C0592,Summit Enterprises,SME,Retail,7957126,20,205979,Line of Credit,medium,8,3.1,Alberta,True,11.35,0,closed_paid_off,0,thoughtful_manager
+C0593,Atlas Tech,microbusiness,Professional Services,345251,6,260900,Line of Credit,medium,5,6.6,Ontario,False,4.05,2,declined,0,formal_cfo
+C0594,Green Enterprises,SME,Professional Services,6340068,159,343734,Real Estate Loan,low,1,3.3,British Columbia,False,4.77,0,approved,0,formal_cfo
+C0595,Pioneer Logistics,microbusiness,Logistics,83748,1,340813,Equipment Loan,low,2,9.7,Territories,True,6.49,1,approved,1,thoughtful_manager
+C0596,Blue Logistics,microbusiness,Hospitality,405912,5,138225,Line of Credit,high,7,5.0,Ontario,False,9.97,0,pending,0,formal_cfo
+C0597,Prime Solutions,microbusiness,Healthcare,336565,2,198630,Line of Credit,high,9,4.1,Territories,True,10.16,0,declined,0,formal_cfo
+C0598,Pioneer Retail,SME,Logistics,1811035,42,291186,Equipment Loan,low,8,0.8,Territories,True,8.31,0,approved,0,busy_founder
+C0599,Blue Retail,microbusiness,Professional Services,351652,4,291455,Government-Backed Loan,medium,7,0.8,Ontario,False,7.87,2,pending,0,impatient_owner
+C0600,Urban Enterprises,SME,Construction,1496431,45,127077,Government-Backed Loan,high,6,3.4,Quebec,False,8.81,2,approved,0,impatient_owner
+C0601,Blue Consulting,SME,Manufacturing,2672055,79,399233,Term Loan,low,8,4.8,Alberta,True,8.7,0,approved,0,impatient_owner
+C0602,Urban Builders,microbusiness,E-commerce,407533,1,309667,Real Estate Loan,low,7,8.6,Alberta,False,6.94,0,approved,0,busy_founder
+C0603,Bright Logistics,SME,Logistics,2043349,160,25268,Line of Credit,medium,9,2.5,Atlantic,True,11.43,0,renewed,1,formal_cfo
+C0604,Bright Studios,SME,Retail,4597740,84,88008,Government-Backed Loan,medium,2,3.6,Ontario,False,4.11,3,approved,0,formal_cfo
+C0605,Summit Builders,SME,E-commerce,4597093,144,160265,Equipment Loan,high,9,8.7,Ontario,True,6.27,0,refinanced_elsewhere,1,formal_cfo
+C0606,Blue Studios,SME,E-commerce,2881714,19,143262,Real Estate Loan,high,8,1.3,Quebec,False,3.67,2,approved,1,impatient_owner
+C0607,Silver Services,SME,Tech Startup,6953578,123,43286,Line of Credit,medium,3,8.6,Atlantic,False,7.76,1,approved,0,busy_founder
+C0608,North Foods,microbusiness,Retail,375860,7,244158,Term Loan,high,9,7.3,Ontario,True,9.27,1,closed_paid_off,0,busy_founder
+C0609,Atlas Consulting,SME,Hospitality,5209366,214,377878,Equipment Loan,low,4,9.1,Quebec,False,5.87,0,approved,0,busy_founder
+C0610,Silver Services,microbusiness,Construction,488304,5,113734,Real Estate Loan,medium,8,6.6,Alberta,True,3.8,0,renewed,0,impatient_owner
+C0611,Atlas Retail,SME,Manufacturing,5132933,76,279485,Line of Credit,medium,3,1.9,Prairies,True,8.44,0,approved,0,thoughtful_manager
+C0612,Green Builders,microbusiness,E-commerce,424629,5,154975,Term Loan,high,6,2.4,British Columbia,True,3.86,0,approved,0,impatient_owner
+C0613,Atlas Consulting,SME,Healthcare,7478813,28,356533,Real Estate Loan,high,3,8.2,Territories,True,8.36,0,refinanced_elsewhere,0,busy_founder
+C0614,North Foods,microbusiness,Healthcare,128676,10,33387,Term Loan,high,6,3.0,Atlantic,True,9.75,0,pending,0,impatient_owner
+C0615,Green Retail,microbusiness,Manufacturing,351171,9,239194,Government-Backed Loan,high,9,5.7,Quebec,False,8.36,1,pending,0,busy_founder
+C0616,Pioneer Builders,microbusiness,Healthcare,442266,2,383369,Line of Credit,medium,7,4.6,Quebec,True,6.32,0,refinanced_elsewhere,0,thoughtful_manager
+C0617,North Solutions,microbusiness,E-commerce,263708,10,369124,Line of Credit,high,5,7.8,Quebec,True,4.44,0,pending,0,formal_cfo
+C0618,Pioneer Retail,microbusiness,Professional Services,451347,9,392968,Real Estate Loan,high,3,4.2,Atlantic,False,10.17,0,approved,0,thoughtful_manager
+C0619,Pioneer Solutions,microbusiness,Logistics,423284,5,82405,Equipment Loan,high,6,5.6,British Columbia,True,8.43,5,approved,0,thoughtful_manager
+C0620,North Tech,SME,Construction,2758306,197,116181,Government-Backed Loan,very_high,9,4.8,Territories,True,10.66,0,approved,0,thoughtful_manager
+C0621,Green Foods,SME,Manufacturing,6222997,22,315767,Government-Backed Loan,high,10,3.0,Quebec,True,10.92,0,approved,0,impatient_owner
+C0622,North Enterprises,SME,Healthcare,3278181,40,170912,Equipment Loan,medium,4,3.5,Atlantic,False,5.81,3,refinanced_elsewhere,0,busy_founder
+C0623,Bright Tech,microbusiness,E-commerce,138527,1,333729,Term Loan,very_high,9,5.1,Territories,True,5.06,0,closed_paid_off,0,thoughtful_manager
+C0624,Prime Retail,microbusiness,Tech Startup,425521,2,252996,Real Estate Loan,medium,2,9.2,Ontario,False,11.44,1,approved,1,formal_cfo
+C0625,Blue Builders,microbusiness,E-commerce,380628,9,372364,Term Loan,high,6,2.8,Ontario,False,3.81,0,renewed,0,impatient_owner
+C0626,Blue Foods,microbusiness,Logistics,403028,4,159086,Real Estate Loan,low,3,9.4,Territories,False,5.76,0,closed_paid_off,0,formal_cfo
+C0627,Green Studios,microbusiness,Tech Startup,422239,3,40349,Real Estate Loan,high,10,6.2,Alberta,True,8.17,1,declined,1,busy_founder
+C0628,Prime Logistics,SME,Tech Startup,6491611,149,272161,Equipment Loan,low,2,6.3,Territories,False,10.67,1,declined,1,thoughtful_manager
+C0629,Blue Tech,SME,Healthcare,7178830,190,87139,Real Estate Loan,high,8,1.2,British Columbia,False,9.0,0,approved,0,thoughtful_manager
+C0630,Summit Builders,SME,Construction,7066239,217,251709,Real Estate Loan,medium,1,3.2,British Columbia,True,9.33,0,closed_paid_off,0,formal_cfo
+C0631,North Tech,microbusiness,Healthcare,60443,1,218803,Term Loan,high,6,6.1,Quebec,False,9.63,0,renewed,0,formal_cfo
+C0632,Blue Logistics,SME,Hospitality,6772664,94,236738,Line of Credit,medium,4,8.0,Ontario,False,3.79,0,refinanced_elsewhere,0,thoughtful_manager
+C0633,Blue Consulting,SME,Construction,4649152,18,162846,Term Loan,high,7,2.4,Atlantic,False,4.55,1,approved,1,thoughtful_manager
+C0634,Pioneer Studios,microbusiness,Manufacturing,255061,4,337556,Equipment Loan,high,7,5.9,British Columbia,True,3.69,0,approved,0,thoughtful_manager
+C0635,Bright Builders,SME,Manufacturing,9911955,81,273414,Equipment Loan,very_high,9,9.7,Quebec,True,6.56,5,renewed,0,impatient_owner
+C0636,Prime Logistics,microbusiness,Logistics,243893,8,315254,Term Loan,high,6,2.4,Territories,True,8.54,0,pending,0,formal_cfo
+C0637,Summit Solutions,SME,Tech Startup,4399524,25,278693,Equipment Loan,medium,6,7.3,Alberta,False,3.79,1,pending,0,formal_cfo
+C0638,North Builders,SME,Healthcare,8240538,191,273229,Government-Backed Loan,medium,2,2.4,British Columbia,False,6.91,0,approved,0,impatient_owner
+C0639,Summit Retail,SME,Manufacturing,8807817,53,348290,Government-Backed Loan,medium,9,8.9,Atlantic,True,3.57,0,refinanced_elsewhere,0,busy_founder
+C0640,Summit Solutions,SME,Professional Services,3930300,215,341912,Equipment Loan,medium,5,3.0,Quebec,True,5.18,0,renewed,0,formal_cfo
+C0641,Summit Builders,microbusiness,Healthcare,296674,2,22937,Equipment Loan,high,4,1.9,Prairies,False,7.8,0,approved,0,busy_founder
+C0642,Silver Logistics,SME,Retail,7649873,159,180301,Equipment Loan,high,7,2.8,Quebec,False,7.99,1,approved,1,formal_cfo
+C0643,North Logistics,SME,Manufacturing,6924776,94,321809,Government-Backed Loan,high,10,8.0,Quebec,False,7.29,0,closed_paid_off,1,formal_cfo
+C0644,Urban Studios,SME,Retail,1375589,45,288280,Real Estate Loan,medium,8,0.9,Ontario,True,7.5,0,pending,0,thoughtful_manager
+C0645,North Consulting,SME,E-commerce,4088635,52,352277,Equipment Loan,high,7,8.8,Atlantic,True,7.42,1,renewed,0,busy_founder
+C0646,Atlas Studios,SME,Tech Startup,7614847,64,343472,Government-Backed Loan,high,4,6.7,Territories,True,4.93,1,approved,0,impatient_owner
+C0647,Bright Services,SME,Manufacturing,8935472,245,26812,Government-Backed Loan,medium,5,9.2,Ontario,False,6.69,5,renewed,1,impatient_owner
+C0648,Blue Solutions,SME,Tech Startup,9653436,216,74466,Term Loan,medium,10,4.8,Quebec,False,4.73,1,closed_paid_off,0,impatient_owner
+C0649,Summit Consulting,microbusiness,Healthcare,195478,4,363463,Government-Backed Loan,high,6,8.6,Atlantic,False,10.29,0,renewed,0,busy_founder
+C0650,Silver Studios,SME,Logistics,1531520,26,121156,Government-Backed Loan,low,5,6.7,Territories,True,7.05,0,approved,1,impatient_owner
+C0651,Green Retail,SME,Manufacturing,1944438,154,262748,Term Loan,low,2,4.7,Ontario,True,4.19,0,renewed,0,impatient_owner
+C0652,Silver Builders,SME,Manufacturing,5663730,224,376982,Line of Credit,high,3,9.4,British Columbia,True,6.53,0,approved,0,formal_cfo
+C0653,North Tech,microbusiness,Construction,188697,2,276841,Equipment Loan,medium,6,7.0,Ontario,False,7.68,2,renewed,0,thoughtful_manager
+C0654,Blue Enterprises,microbusiness,Logistics,407573,5,128761,Equipment Loan,high,9,6.5,Ontario,True,9.45,0,pending,1,busy_founder
+C0655,Prime Logistics,microbusiness,Tech Startup,219340,6,315577,Real Estate Loan,high,1,4.7,Quebec,True,4.34,0,refinanced_elsewhere,0,busy_founder
+C0656,Bright Foods,SME,Construction,3623258,202,31403,Real Estate Loan,high,8,4.7,Quebec,True,9.06,1,declined,0,busy_founder
+C0657,Atlas Logistics,SME,Retail,9005390,37,240717,Real Estate Loan,high,10,7.7,Quebec,True,3.73,0,refinanced_elsewhere,0,formal_cfo
+C0658,Pioneer Enterprises,microbusiness,Healthcare,97394,5,94166,Equipment Loan,medium,3,9.6,Territories,True,8.77,0,approved,0,formal_cfo
+C0659,Prime Foods,microbusiness,Professional Services,456642,6,22592,Real Estate Loan,low,2,5.6,British Columbia,True,8.99,1,refinanced_elsewhere,0,formal_cfo
+C0660,Urban Retail,microbusiness,Healthcare,259654,6,168475,Real Estate Loan,medium,9,9.4,Territories,True,7.41,1,pending,0,formal_cfo
+C0661,Pioneer Solutions,SME,E-commerce,7180364,244,60511,Line of Credit,low,4,0.1,Territories,True,5.92,0,approved,1,busy_founder
+C0662,Bright Consulting,microbusiness,Construction,258779,9,75800,Real Estate Loan,high,6,1.9,Prairies,False,4.31,2,closed_paid_off,0,thoughtful_manager
+C0663,Pioneer Tech,SME,Logistics,5582733,118,155606,Term Loan,high,8,7.7,Prairies,True,9.75,1,closed_paid_off,1,formal_cfo
+C0664,Silver Foods,SME,Manufacturing,4825779,60,289953,Government-Backed Loan,high,8,0.2,Quebec,True,7.22,0,closed_paid_off,1,busy_founder
+C0665,Green Logistics,SME,Construction,9605808,78,113705,Equipment Loan,medium,1,8.2,Territories,True,5.88,0,approved,0,thoughtful_manager
+C0666,Blue Enterprises,microbusiness,E-commerce,125835,8,246020,Equipment Loan,medium,8,1.3,Atlantic,False,5.45,2,closed_paid_off,0,thoughtful_manager
+C0667,Prime Builders,SME,Healthcare,2196557,107,288766,Term Loan,medium,5,1.6,Atlantic,True,3.68,4,approved,0,thoughtful_manager
+C0668,North Studios,SME,Construction,4589486,187,45601,Equipment Loan,medium,4,5.2,Alberta,False,7.0,1,closed_paid_off,0,thoughtful_manager
+C0669,Atlas Solutions,SME,Retail,7451217,178,88035,Equipment Loan,medium,10,2.2,Prairies,False,8.58,0,approved,0,busy_founder
+C0670,Blue Services,SME,Healthcare,9855934,13,199804,Equipment Loan,medium,8,4.0,Alberta,True,10.33,0,pending,0,thoughtful_manager
+C0671,Blue Studios,microbusiness,Tech Startup,93564,4,297658,Equipment Loan,medium,6,9.9,Alberta,True,7.24,0,pending,0,thoughtful_manager
+C0672,Summit Foods,SME,Hospitality,2709515,106,338306,Term Loan,low,4,9.2,Prairies,True,4.39,0,closed_paid_off,0,thoughtful_manager
+C0673,North Logistics,SME,Hospitality,5178825,91,210408,Term Loan,high,6,9.0,Prairies,True,7.76,0,declined,0,thoughtful_manager
+C0674,Atlas Services,SME,Construction,6104510,205,263280,Line of Credit,high,2,5.4,Atlantic,True,8.72,4,declined,0,formal_cfo
+C0675,Bright Retail,microbusiness,Logistics,181040,3,318480,Real Estate Loan,high,6,3.3,Atlantic,True,8.31,1,approved,0,formal_cfo
+C0676,Summit Enterprises,microbusiness,Professional Services,154745,6,89546,Equipment Loan,low,1,9.4,Prairies,True,7.19,0,renewed,0,thoughtful_manager
+C0677,Bright Solutions,SME,Professional Services,1671758,11,36946,Real Estate Loan,high,8,4.7,Quebec,False,4.06,0,approved,1,impatient_owner
+C0678,North Retail,microbusiness,Construction,481130,1,210512,Real Estate Loan,high,9,4.0,Territories,False,7.02,1,approved,0,impatient_owner
+C0679,Bright Studios,SME,Healthcare,8596533,63,158678,Term Loan,medium,2,9.1,Quebec,True,9.17,1,closed_paid_off,0,busy_founder
+C0680,Silver Logistics,SME,Retail,9254003,83,33600,Line of Credit,high,10,1.5,Territories,True,5.83,3,approved,0,thoughtful_manager
+C0681,Bright Services,microbusiness,Professional Services,251445,5,353846,Line of Credit,low,4,3.0,Alberta,True,4.69,0,approved,0,thoughtful_manager
+C0682,Urban Builders,microbusiness,Healthcare,497013,9,184781,Government-Backed Loan,medium,8,1.6,British Columbia,False,10.47,0,declined,0,impatient_owner
+C0683,Green Retail,SME,Hospitality,2506411,176,123254,Equipment Loan,medium,10,1.6,Quebec,False,10.75,2,closed_paid_off,1,formal_cfo
+C0684,Silver Logistics,microbusiness,Logistics,222760,9,55230,Equipment Loan,medium,9,1.1,British Columbia,False,7.8,0,closed_paid_off,0,formal_cfo
+C0685,Green Builders,microbusiness,Hospitality,143024,1,339363,Equipment Loan,medium,2,7.2,British Columbia,False,9.37,3,refinanced_elsewhere,1,formal_cfo
+C0686,Atlas Foods,SME,Tech Startup,1357027,91,352349,Term Loan,low,2,5.4,Atlantic,True,7.31,0,pending,0,impatient_owner
+C0687,Silver Tech,microbusiness,Tech Startup,358772,10,259208,Term Loan,medium,7,6.5,Territories,False,7.44,0,pending,0,busy_founder
+C0688,Silver Enterprises,microbusiness,Healthcare,313749,5,348163,Real Estate Loan,low,3,6.8,Ontario,True,6.05,4,declined,1,thoughtful_manager
+C0689,Urban Logistics,SME,Healthcare,3564453,59,76996,Line of Credit,medium,9,6.9,British Columbia,True,9.63,0,renewed,1,formal_cfo
+C0690,Silver Retail,microbusiness,Logistics,132807,10,367388,Line of Credit,medium,9,1.8,Territories,False,8.73,1,closed_paid_off,0,thoughtful_manager
+C0691,Bright Studios,microbusiness,Construction,484756,6,255776,Equipment Loan,medium,7,7.3,Ontario,False,3.55,3,approved,0,formal_cfo
+C0692,Prime Builders,microbusiness,Hospitality,184180,5,215808,Term Loan,medium,7,6.7,Quebec,True,7.98,0,approved,0,impatient_owner
+C0693,Blue Retail,microbusiness,Healthcare,428150,10,266348,Term Loan,high,7,4.8,British Columbia,False,10.77,0,approved,0,impatient_owner
+C0694,Summit Enterprises,SME,E-commerce,5268677,38,267380,Line of Credit,high,2,4.4,Ontario,True,9.7,0,approved,0,formal_cfo
+C0695,Green Logistics,SME,Hospitality,4874141,152,298411,Equipment Loan,high,3,5.8,Ontario,False,4.04,1,renewed,0,thoughtful_manager
+C0696,Summit Retail,SME,Tech Startup,6087015,60,375293,Equipment Loan,medium,1,4.7,Quebec,True,8.64,0,closed_paid_off,0,impatient_owner
+C0697,Atlas Solutions,microbusiness,Logistics,468527,6,302491,Real Estate Loan,medium,6,9.6,Atlantic,False,9.38,0,refinanced_elsewhere,0,impatient_owner
+C0698,Blue Foods,microbusiness,Manufacturing,478739,5,264168,Real Estate Loan,high,3,6.9,Territories,False,4.08,1,approved,0,thoughtful_manager
+C0699,Atlas Logistics,SME,Retail,816613,12,138085,Equipment Loan,medium,5,8.3,Alberta,False,8.18,1,pending,0,busy_founder
+C0700,Green Studios,microbusiness,Professional Services,102898,1,299666,Government-Backed Loan,very_high,1,3.2,Quebec,False,7.82,4,approved,0,formal_cfo
+C0701,Bright Solutions,microbusiness,Logistics,163894,6,34311,Line of Credit,high,8,2.4,Ontario,True,11.08,0,closed_paid_off,1,impatient_owner
+C0702,Pioneer Builders,SME,Hospitality,2591268,33,111801,Government-Backed Loan,very_high,9,7.7,Quebec,True,9.55,0,declined,0,busy_founder
+C0703,Pioneer Studios,microbusiness,Manufacturing,300598,5,286723,Term Loan,very_high,1,5.1,Territories,True,9.93,0,closed_paid_off,0,impatient_owner
+C0704,Blue Consulting,microbusiness,Manufacturing,254307,8,28309,Equipment Loan,high,6,6.5,British Columbia,True,10.28,0,approved,0,thoughtful_manager
+C0705,Blue Solutions,microbusiness,Construction,481620,3,239802,Line of Credit,low,9,6.2,Ontario,False,9.44,2,approved,1,formal_cfo
+C0706,Atlas Tech,microbusiness,Construction,491149,5,346061,Equipment Loan,low,1,6.3,Prairies,True,10.61,0,closed_paid_off,1,thoughtful_manager
+C0707,Silver Solutions,microbusiness,Professional Services,166758,2,240139,Term Loan,low,8,0.2,Atlantic,True,6.82,2,declined,1,impatient_owner
+C0708,Pioneer Studios,SME,Construction,9559463,103,341708,Term Loan,medium,10,3.3,Quebec,True,5.25,0,refinanced_elsewhere,1,impatient_owner
+C0709,Atlas Consulting,microbusiness,Hospitality,432746,5,192294,Real Estate Loan,high,9,2.6,Quebec,True,11.4,0,closed_paid_off,0,formal_cfo
+C0710,Bright Builders,SME,Retail,3556346,13,94949,Term Loan,high,4,2.1,Territories,True,6.08,0,declined,0,thoughtful_manager
+C0711,Summit Studios,SME,Construction,5185963,177,289741,Equipment Loan,medium,3,4.5,Alberta,True,9.96,0,pending,0,busy_founder
+C0712,Summit Logistics,microbusiness,Healthcare,334855,3,69589,Line of Credit,very_high,2,6.5,Prairies,True,9.2,0,approved,0,impatient_owner
+C0713,Summit Logistics,SME,E-commerce,4222144,208,28765,Line of Credit,high,6,1.5,Quebec,True,9.74,0,pending,0,formal_cfo
+C0714,Bright Solutions,SME,Professional Services,4295970,225,395435,Line of Credit,medium,10,6.8,Atlantic,True,5.12,0,refinanced_elsewhere,1,thoughtful_manager
+C0715,Green Foods,SME,Professional Services,505932,29,151768,Government-Backed Loan,high,4,9.4,British Columbia,False,8.4,4,approved,1,formal_cfo
+C0716,Silver Retail,microbusiness,Logistics,180323,6,56978,Line of Credit,very_high,5,6.0,Prairies,True,6.71,1,pending,0,formal_cfo
+C0717,Silver Consulting,microbusiness,Manufacturing,103798,10,266996,Line of Credit,high,5,3.2,Alberta,False,7.83,1,approved,0,busy_founder
+C0718,Pioneer Foods,SME,Construction,7645593,159,108319,Real Estate Loan,high,4,6.3,Atlantic,True,4.21,1,refinanced_elsewhere,1,thoughtful_manager
+C0719,Silver Enterprises,microbusiness,Manufacturing,491620,5,151947,Government-Backed Loan,medium,5,7.7,Territories,False,4.16,0,closed_paid_off,0,thoughtful_manager
+C0720,Atlas Services,SME,E-commerce,6805252,165,292088,Real Estate Loan,low,2,8.4,Alberta,True,9.85,4,pending,0,busy_founder
+C0721,Atlas Logistics,SME,Logistics,6326801,175,250815,Real Estate Loan,medium,9,7.5,British Columbia,True,6.69,2,renewed,0,formal_cfo
+C0722,North Builders,microbusiness,Healthcare,266082,1,259402,Equipment Loan,medium,6,3.0,Atlantic,True,11.22,0,closed_paid_off,0,busy_founder
+C0723,Pioneer Retail,SME,Logistics,3386654,226,282058,Term Loan,medium,10,3.6,Territories,True,9.94,4,approved,0,impatient_owner
+C0724,Summit Tech,SME,Professional Services,4940600,229,390879,Real Estate Loan,medium,8,3.9,Territories,False,9.54,4,approved,0,busy_founder
+C0725,Atlas Services,microbusiness,Logistics,154133,2,67470,Government-Backed Loan,very_high,7,7.0,Alberta,False,4.67,0,approved,0,busy_founder
+C0726,North Consulting,microbusiness,Healthcare,71376,4,307303,Line of Credit,high,5,4.5,Quebec,True,5.3,1,approved,0,formal_cfo
+C0727,Silver Retail,SME,Hospitality,8607980,224,250136,Real Estate Loan,medium,10,8.6,Atlantic,True,4.99,0,approved,0,thoughtful_manager
+C0728,Summit Retail,SME,Logistics,4437710,91,303309,Equipment Loan,low,3,3.7,Ontario,True,10.12,1,closed_paid_off,1,thoughtful_manager
+C0729,Summit Consulting,microbusiness,Hospitality,418125,9,137421,Real Estate Loan,medium,1,3.5,British Columbia,True,7.0,0,approved,1,thoughtful_manager
+C0730,Pioneer Builders,SME,Tech Startup,1569997,184,205814,Term Loan,very_high,5,7.1,Territories,True,11.08,1,renewed,0,formal_cfo
+C0731,Urban Services,SME,Construction,5611364,94,141930,Government-Backed Loan,high,9,7.0,Alberta,False,4.65,0,renewed,1,impatient_owner
+C0732,Atlas Foods,microbusiness,Manufacturing,266903,3,122036,Line of Credit,very_high,3,0.7,Alberta,False,3.74,3,renewed,1,thoughtful_manager
+C0733,Urban Solutions,SME,Logistics,6259540,56,70259,Equipment Loan,medium,7,4.8,British Columbia,False,7.5,0,declined,0,impatient_owner
+C0734,Prime Logistics,microbusiness,E-commerce,367802,1,312095,Term Loan,high,2,0.3,Ontario,True,11.21,0,approved,1,busy_founder
+C0735,Blue Services,microbusiness,Tech Startup,231009,2,378183,Line of Credit,medium,10,5.4,Quebec,True,7.03,2,closed_paid_off,0,thoughtful_manager
+C0736,Bright Tech,microbusiness,E-commerce,473207,5,172793,Term Loan,medium,3,9.4,Territories,True,4.84,0,approved,0,busy_founder
+C0737,Summit Enterprises,SME,Tech Startup,1598296,96,149091,Equipment Loan,low,8,6.7,Atlantic,True,6.73,0,refinanced_elsewhere,0,impatient_owner
+C0738,Bright Consulting,SME,E-commerce,9424232,143,226666,Government-Backed Loan,high,5,5.8,Alberta,True,7.08,0,refinanced_elsewhere,0,impatient_owner
+C0739,Urban Consulting,SME,Manufacturing,7023126,88,280893,Equipment Loan,high,1,5.7,Ontario,True,3.83,3,approved,0,formal_cfo
+C0740,Green Retail,microbusiness,Retail,234426,9,47491,Real Estate Loan,high,9,3.9,Ontario,False,7.57,1,approved,0,formal_cfo
+C0741,North Foods,microbusiness,Hospitality,385765,10,28175,Term Loan,very_high,4,2.1,Prairies,False,4.43,0,refinanced_elsewhere,0,busy_founder
+C0742,Pioneer Consulting,microbusiness,Healthcare,131751,3,333918,Line of Credit,high,5,4.1,Territories,False,6.88,0,closed_paid_off,0,busy_founder
+C0743,Bright Enterprises,SME,Logistics,3679223,219,275966,Equipment Loan,high,7,2.9,Prairies,True,9.64,0,renewed,1,formal_cfo
+C0744,Summit Solutions,microbusiness,E-commerce,438021,5,376990,Real Estate Loan,medium,5,1.8,Ontario,True,8.06,0,approved,0,impatient_owner
+C0745,Bright Services,microbusiness,Professional Services,295868,8,77327,Term Loan,medium,7,10.0,Alberta,True,9.6,2,approved,1,formal_cfo
+C0746,Pioneer Logistics,microbusiness,E-commerce,452941,4,186682,Term Loan,medium,3,9.7,Territories,True,11.1,3,approved,0,thoughtful_manager
+C0747,Prime Enterprises,SME,E-commerce,3760468,95,364987,Real Estate Loan,low,8,2.3,Atlantic,True,5.47,0,pending,0,impatient_owner
+C0748,Blue Services,SME,E-commerce,3350704,195,188640,Equipment Loan,low,2,0.3,Alberta,False,3.55,0,approved,0,formal_cfo
+C0749,Bright Logistics,microbusiness,Retail,299785,10,358055,Real Estate Loan,medium,10,8.3,British Columbia,True,10.78,0,declined,0,thoughtful_manager
+C0750,Pioneer Logistics,SME,E-commerce,5312771,173,111411,Real Estate Loan,very_high,3,2.3,Ontario,True,3.67,2,approved,0,formal_cfo
+C0751,Atlas Builders,SME,Hospitality,7508273,127,257141,Real Estate Loan,very_high,8,4.3,Prairies,True,6.11,0,renewed,0,formal_cfo
+C0752,Blue Builders,SME,Tech Startup,7348595,105,357641,Equipment Loan,medium,3,8.6,Alberta,True,7.84,0,refinanced_elsewhere,0,thoughtful_manager
+C0753,Pioneer Services,microbusiness,Healthcare,395847,7,291319,Real Estate Loan,low,8,8.9,Alberta,True,5.15,0,approved,0,formal_cfo
+C0754,Urban Enterprises,microbusiness,Professional Services,178816,3,275163,Equipment Loan,high,10,3.2,Prairies,True,8.52,0,approved,1,impatient_owner
+C0755,North Logistics,SME,Healthcare,4073745,88,54615,Equipment Loan,high,6,7.5,Quebec,True,10.13,0,renewed,0,formal_cfo
+C0756,North Foods,SME,Manufacturing,7373288,50,314473,Government-Backed Loan,high,5,9.1,Alberta,False,10.73,4,renewed,0,impatient_owner
+C0757,Prime Retail,SME,Logistics,834774,160,380773,Equipment Loan,very_high,10,1.8,Prairies,True,7.08,0,declined,1,busy_founder
+C0758,Blue Services,microbusiness,Professional Services,405138,7,98373,Term Loan,very_high,4,6.3,Quebec,False,6.07,1,refinanced_elsewhere,0,thoughtful_manager
+C0759,Urban Consulting,SME,Professional Services,3721613,141,166929,Government-Backed Loan,very_high,1,8.5,Ontario,True,10.75,0,approved,0,thoughtful_manager
+C0760,Urban Retail,SME,Tech Startup,9748844,18,88498,Government-Backed Loan,low,10,0.9,British Columbia,True,6.55,3,approved,0,thoughtful_manager
+C0761,Blue Logistics,SME,Logistics,6308928,194,157147,Government-Backed Loan,low,5,3.5,British Columbia,True,10.81,3,approved,1,impatient_owner
+C0762,Urban Enterprises,microbusiness,Hospitality,84057,3,319844,Line of Credit,high,2,1.9,Atlantic,True,3.61,2,closed_paid_off,1,thoughtful_manager
+C0763,Bright Builders,microbusiness,Retail,441152,2,117294,Term Loan,high,2,1.5,British Columbia,True,9.83,0,approved,0,formal_cfo
+C0764,Green Logistics,SME,Professional Services,1527878,123,116955,Government-Backed Loan,low,3,3.0,Prairies,False,5.61,2,pending,1,impatient_owner
+C0765,Silver Logistics,SME,Hospitality,5478127,163,236154,Government-Backed Loan,high,4,4.0,Quebec,True,10.1,1,pending,0,busy_founder
+C0766,Atlas Studios,microbusiness,Retail,434258,1,344977,Real Estate Loan,low,8,5.0,Atlantic,True,9.45,0,pending,1,impatient_owner
+C0767,Urban Foods,SME,Tech Startup,8560593,104,281984,Equipment Loan,high,6,7.4,Ontario,True,9.46,0,approved,0,thoughtful_manager
+C0768,North Services,SME,Tech Startup,6968693,117,32834,Line of Credit,high,7,1.6,Prairies,False,8.56,0,approved,0,formal_cfo
+C0769,Pioneer Foods,microbusiness,Hospitality,297615,3,162024,Equipment Loan,low,8,0.3,Atlantic,True,5.93,4,pending,1,thoughtful_manager
+C0770,Urban Studios,microbusiness,Tech Startup,105580,2,189493,Real Estate Loan,high,3,0.7,British Columbia,True,11.05,2,declined,1,formal_cfo
+C0771,Green Retail,SME,Manufacturing,5229448,97,399981,Equipment Loan,high,3,1.4,Alberta,True,11.26,0,declined,1,busy_founder
+C0772,Blue Retail,SME,Construction,6054277,188,121909,Line of Credit,very_high,10,3.5,Alberta,False,5.33,0,approved,0,thoughtful_manager
+C0773,Bright Builders,microbusiness,Logistics,218639,2,297471,Real Estate Loan,medium,5,1.6,Territories,True,6.62,0,closed_paid_off,0,impatient_owner
+C0774,Silver Consulting,microbusiness,Retail,375400,8,314585,Line of Credit,high,6,3.6,Ontario,True,6.01,2,approved,1,impatient_owner
+C0775,Bright Foods,microbusiness,E-commerce,180142,7,241769,Term Loan,medium,4,5.1,Territories,True,3.7,1,closed_paid_off,0,formal_cfo
+C0776,Urban Logistics,microbusiness,Tech Startup,193420,8,164676,Line of Credit,high,8,3.2,Territories,True,8.19,0,approved,0,thoughtful_manager
+C0777,North Solutions,SME,Logistics,7785667,175,189808,Real Estate Loan,low,10,0.4,Alberta,False,3.78,0,pending,0,impatient_owner
+C0778,Pioneer Logistics,microbusiness,Manufacturing,324087,3,394264,Line of Credit,low,6,1.6,Quebec,False,6.21,0,closed_paid_off,0,thoughtful_manager
+C0779,North Tech,microbusiness,Hospitality,449908,5,139221,Line of Credit,low,9,1.7,Prairies,True,8.64,1,declined,0,formal_cfo
+C0780,Atlas Retail,SME,Healthcare,7140569,14,287516,Equipment Loan,medium,7,7.6,Prairies,True,3.82,0,approved,1,impatient_owner
+C0781,Prime Studios,microbusiness,Logistics,53853,10,167543,Equipment Loan,medium,9,1.6,Quebec,True,10.18,1,approved,0,thoughtful_manager
+C0782,Green Services,SME,Retail,9086664,207,232698,Line of Credit,low,1,6.1,Prairies,True,4.35,3,approved,0,busy_founder
+C0783,Bright Foods,SME,Healthcare,4355572,155,152294,Line of Credit,medium,5,0.6,Prairies,True,10.14,2,approved,1,busy_founder
+C0784,Atlas Logistics,microbusiness,Tech Startup,199601,4,60723,Government-Backed Loan,low,1,5.7,Prairies,False,8.45,2,refinanced_elsewhere,1,thoughtful_manager
+C0785,Prime Consulting,microbusiness,Retail,150026,7,215465,Term Loan,medium,1,2.2,Ontario,True,3.78,0,approved,0,formal_cfo
+C0786,Blue Solutions,SME,Professional Services,4439337,126,323970,Government-Backed Loan,medium,1,1.2,Atlantic,False,7.34,1,approved,0,impatient_owner
+C0787,Green Solutions,SME,Tech Startup,722617,157,43086,Term Loan,very_high,5,1.8,Prairies,False,9.25,0,approved,0,formal_cfo
+C0788,Summit Tech,microbusiness,Retail,499313,7,313047,Real Estate Loan,high,1,5.7,Territories,True,4.21,0,closed_paid_off,0,busy_founder
+C0789,Prime Services,microbusiness,Healthcare,263386,3,324198,Real Estate Loan,medium,6,6.4,British Columbia,False,4.68,1,closed_paid_off,0,thoughtful_manager
+C0790,Atlas Logistics,SME,Professional Services,8327496,125,302702,Line of Credit,high,6,9.3,Ontario,True,10.38,1,pending,0,formal_cfo
+C0791,Bright Enterprises,microbusiness,Logistics,108657,9,305210,Term Loan,medium,10,8.3,Atlantic,True,10.98,1,approved,0,busy_founder
+C0792,Blue Tech,SME,Healthcare,9276514,178,225940,Line of Credit,medium,7,9.4,Alberta,False,11.4,0,renewed,0,formal_cfo
+C0793,Prime Enterprises,microbusiness,Tech Startup,414347,5,146790,Real Estate Loan,medium,4,9.2,Quebec,True,4.27,2,approved,1,formal_cfo
+C0794,Bright Consulting,SME,Tech Startup,6498094,179,231288,Term Loan,high,5,4.3,Atlantic,True,6.5,0,renewed,0,impatient_owner
+C0795,Bright Enterprises,SME,Healthcare,8445647,230,221198,Government-Backed Loan,high,7,0.4,Ontario,False,8.46,0,refinanced_elsewhere,1,impatient_owner
+C0796,Atlas Foods,SME,Construction,4616952,195,395184,Term Loan,medium,6,1.0,Alberta,True,11.37,0,approved,0,formal_cfo
+C0797,Summit Solutions,microbusiness,Retail,404021,1,285444,Real Estate Loan,low,3,1.4,British Columbia,True,9.08,0,refinanced_elsewhere,1,impatient_owner
+C0798,Pioneer Consulting,microbusiness,Tech Startup,70875,5,335160,Equipment Loan,medium,3,8.6,Ontario,False,4.11,0,approved,0,formal_cfo
+C0799,Pioneer Consulting,SME,Professional Services,8777057,68,394251,Real Estate Loan,high,2,3.5,Quebec,True,4.61,1,refinanced_elsewhere,0,busy_founder
+C0800,Prime Consulting,SME,E-commerce,1062655,81,248742,Government-Backed Loan,high,2,4.2,Atlantic,True,5.6,3,approved,0,formal_cfo
+C0801,North Studios,microbusiness,Manufacturing,153031,8,365957,Government-Backed Loan,medium,5,1.9,Alberta,True,11.27,1,pending,1,formal_cfo
+C0802,Green Solutions,microbusiness,Logistics,317489,1,79114,Government-Backed Loan,high,10,3.8,Atlantic,True,5.93,2,approved,0,formal_cfo
+C0803,Atlas Logistics,SME,Tech Startup,7007169,151,352082,Government-Backed Loan,high,2,1.1,Quebec,True,4.52,0,closed_paid_off,0,impatient_owner
+C0804,North Solutions,microbusiness,Logistics,168144,5,233066,Term Loan,high,1,6.3,Territories,False,9.75,0,renewed,0,formal_cfo
+C0805,Silver Solutions,SME,Professional Services,5325591,137,59350,Real Estate Loan,medium,7,6.0,Quebec,True,4.18,2,approved,1,thoughtful_manager
+C0806,Bright Retail,SME,Construction,5987622,245,181555,Real Estate Loan,medium,7,5.4,Territories,False,10.22,0,pending,0,formal_cfo
+C0807,Green Retail,microbusiness,Tech Startup,373153,2,151907,Equipment Loan,very_high,5,5.4,Ontario,True,5.32,3,approved,0,busy_founder
+C0808,Prime Studios,SME,Construction,3660035,206,341416,Line of Credit,high,5,6.0,Ontario,True,8.99,1,pending,0,formal_cfo
+C0809,Prime Foods,microbusiness,Hospitality,485363,6,115985,Real Estate Loan,medium,7,7.9,Alberta,True,5.67,0,pending,0,busy_founder
+C0810,Atlas Enterprises,SME,Retail,4775016,247,279551,Real Estate Loan,very_high,9,2.0,Atlantic,True,5.72,0,approved,0,thoughtful_manager
+C0811,Green Consulting,SME,Logistics,2844236,56,84443,Equipment Loan,high,1,3.2,Prairies,True,4.06,0,pending,0,thoughtful_manager
+C0812,Green Logistics,microbusiness,Retail,377344,5,168996,Real Estate Loan,medium,4,3.4,Atlantic,False,8.06,0,pending,0,busy_founder
+C0813,Green Studios,SME,Hospitality,3190994,33,319494,Government-Backed Loan,very_high,5,6.2,Alberta,False,4.5,0,declined,0,formal_cfo
+C0814,Blue Tech,microbusiness,Retail,278166,10,334424,Real Estate Loan,medium,4,6.7,Quebec,True,4.16,1,declined,0,thoughtful_manager
+C0815,North Foods,SME,Hospitality,9290177,97,188862,Term Loan,medium,10,5.0,British Columbia,True,7.04,0,approved,0,thoughtful_manager
+C0816,Blue Foods,microbusiness,Hospitality,193729,4,394831,Equipment Loan,high,7,3.6,Ontario,False,7.26,0,refinanced_elsewhere,0,thoughtful_manager
+C0817,Blue Foods,SME,Healthcare,7819762,195,253479,Real Estate Loan,low,5,0.3,Prairies,True,5.65,3,approved,1,formal_cfo
+C0818,Green Foods,SME,Retail,3163444,33,342673,Government-Backed Loan,low,2,2.4,Territories,True,5.54,0,approved,0,formal_cfo
+C0819,Prime Enterprises,SME,Professional Services,2048050,168,47339,Government-Backed Loan,high,3,0.8,Alberta,True,7.26,0,approved,0,impatient_owner
+C0820,Pioneer Logistics,SME,Professional Services,8260085,151,213425,Line of Credit,low,3,1.3,Alberta,True,3.57,2,closed_paid_off,1,impatient_owner
+C0821,Prime Foods,microbusiness,Retail,119358,4,339275,Equipment Loan,medium,5,1.6,Prairies,True,7.14,1,renewed,0,impatient_owner
+C0822,Silver Tech,microbusiness,Retail,468821,8,375218,Real Estate Loan,medium,7,4.7,Ontario,False,7.23,1,pending,0,thoughtful_manager
+C0823,Green Consulting,SME,Professional Services,2617953,216,39092,Line of Credit,low,6,8.6,Alberta,False,4.42,3,approved,1,thoughtful_manager
+C0824,Urban Builders,microbusiness,Logistics,127159,8,329555,Line of Credit,high,5,6.4,Territories,True,4.64,3,refinanced_elsewhere,1,thoughtful_manager
+C0825,Blue Solutions,SME,Professional Services,4616558,47,355556,Term Loan,medium,1,9.6,Prairies,True,10.78,2,closed_paid_off,0,thoughtful_manager
+C0826,Urban Services,microbusiness,Healthcare,315665,3,25796,Term Loan,low,9,2.0,Ontario,True,3.7,0,pending,0,thoughtful_manager
+C0827,Pioneer Retail,SME,Construction,9173779,159,84643,Real Estate Loan,high,7,0.6,Ontario,False,3.79,1,renewed,1,formal_cfo
+C0828,Pioneer Tech,SME,Construction,3793942,33,343419,Real Estate Loan,medium,4,1.5,Quebec,True,5.92,4,approved,0,formal_cfo
+C0829,Atlas Retail,SME,Hospitality,3241253,229,39640,Equipment Loan,high,2,9.9,Atlantic,True,10.82,0,renewed,0,busy_founder
+C0830,Silver Retail,SME,Construction,6046545,171,368620,Equipment Loan,medium,10,5.6,Alberta,True,5.73,0,closed_paid_off,1,thoughtful_manager
+C0831,Summit Tech,SME,Tech Startup,1360445,161,177465,Equipment Loan,low,3,9.9,British Columbia,True,10.26,0,refinanced_elsewhere,1,impatient_owner
+C0832,North Foods,SME,Logistics,6056834,86,62535,Line of Credit,low,8,4.1,British Columbia,False,8.8,1,refinanced_elsewhere,1,thoughtful_manager
+C0833,Urban Logistics,SME,Retail,2483509,88,143565,Real Estate Loan,high,8,9.4,Ontario,False,6.67,0,declined,1,formal_cfo
+C0834,North Consulting,SME,Logistics,1877323,31,24451,Line of Credit,medium,8,0.9,Territories,False,10.97,1,renewed,1,thoughtful_manager
+C0835,North Foods,microbusiness,Construction,409484,6,369206,Government-Backed Loan,low,3,3.7,Territories,False,6.14,0,pending,0,formal_cfo
+C0836,Blue Foods,SME,Manufacturing,9326283,28,341250,Equipment Loan,low,8,6.0,Ontario,False,5.58,1,renewed,0,busy_founder
+C0837,North Logistics,SME,Professional Services,8091832,101,286797,Equipment Loan,medium,7,4.8,British Columbia,True,10.94,1,closed_paid_off,1,thoughtful_manager
+C0838,Green Solutions,microbusiness,Manufacturing,111718,3,76452,Real Estate Loan,low,2,5.9,Atlantic,True,6.16,0,approved,0,busy_founder
+C0839,North Retail,microbusiness,Healthcare,230924,2,45644,Term Loan,high,5,4.0,Quebec,True,10.0,0,refinanced_elsewhere,0,thoughtful_manager
+C0840,Green Logistics,SME,Healthcare,3586368,11,106077,Equipment Loan,medium,8,5.7,Territories,False,6.18,0,approved,0,busy_founder
+C0841,Summit Foods,SME,Retail,6552003,192,199811,Government-Backed Loan,medium,1,0.2,Territories,True,9.67,4,approved,0,busy_founder
+C0842,Bright Foods,microbusiness,Logistics,469576,1,258526,Government-Backed Loan,medium,9,9.5,Territories,False,7.15,0,approved,0,impatient_owner
+C0843,Bright Builders,SME,Hospitality,4239633,125,158779,Equipment Loan,high,1,8.4,Ontario,False,8.85,0,approved,0,formal_cfo
+C0844,Bright Services,SME,Retail,1776841,215,163463,Government-Backed Loan,high,9,0.6,Prairies,False,3.63,2,renewed,0,impatient_owner
+C0845,Blue Enterprises,microbusiness,E-commerce,458774,2,143120,Real Estate Loan,medium,6,5.6,British Columbia,True,8.75,0,declined,0,thoughtful_manager
+C0846,Prime Logistics,microbusiness,Construction,402222,5,237881,Line of Credit,very_high,4,6.6,Quebec,False,6.39,1,approved,0,impatient_owner
+C0847,Prime Retail,microbusiness,Retail,453879,5,113832,Term Loan,high,6,0.8,Quebec,True,9.63,1,declined,0,busy_founder
+C0848,Bright Retail,microbusiness,Healthcare,149247,9,151216,Term Loan,very_high,10,3.9,Quebec,False,9.85,0,approved,1,formal_cfo
+C0849,Bright Tech,microbusiness,Healthcare,446758,7,74300,Government-Backed Loan,high,7,4.0,Territories,True,5.02,1,closed_paid_off,1,formal_cfo
+C0850,Urban Solutions,SME,Logistics,3840563,240,42001,Term Loan,medium,1,6.5,Ontario,True,3.64,1,approved,0,impatient_owner
+C0851,Green Studios,microbusiness,Professional Services,322899,9,81076,Government-Backed Loan,low,8,1.1,Territories,True,7.91,1,approved,0,busy_founder
+C0852,Silver Studios,SME,Construction,1421287,250,177393,Line of Credit,high,7,8.6,Atlantic,False,5.75,2,refinanced_elsewhere,1,thoughtful_manager
+C0853,North Services,SME,Retail,5998797,57,393188,Term Loan,high,9,9.8,Atlantic,False,10.31,0,approved,0,impatient_owner
+C0854,Blue Studios,microbusiness,Manufacturing,213309,9,303800,Term Loan,high,9,0.6,Quebec,False,10.46,0,refinanced_elsewhere,1,thoughtful_manager
+C0855,Atlas Tech,SME,Manufacturing,1373312,45,56043,Term Loan,very_high,10,3.4,British Columbia,True,10.63,0,closed_paid_off,1,formal_cfo
+C0856,Pioneer Consulting,microbusiness,Manufacturing,389993,10,387367,Term Loan,high,1,1.8,Ontario,True,9.33,0,renewed,0,formal_cfo
+C0857,Green Services,SME,Hospitality,1496091,120,130628,Government-Backed Loan,high,4,5.5,Prairies,False,5.84,0,refinanced_elsewhere,0,busy_founder
+C0858,Green Builders,microbusiness,Logistics,310926,1,80089,Real Estate Loan,medium,5,6.5,Ontario,False,8.11,2,pending,0,impatient_owner
+C0859,Urban Retail,microbusiness,Manufacturing,164365,5,79041,Government-Backed Loan,low,4,4.0,British Columbia,False,10.14,0,approved,1,impatient_owner
+C0860,Pioneer Consulting,SME,Logistics,5114818,123,367665,Line of Credit,high,3,5.2,British Columbia,True,6.33,2,closed_paid_off,0,busy_founder
+C0861,Atlas Solutions,SME,Retail,1530198,210,51243,Real Estate Loan,medium,4,4.7,Prairies,True,10.55,0,approved,1,impatient_owner
+C0862,Summit Tech,SME,Construction,3870945,186,164501,Real Estate Loan,very_high,5,2.3,British Columbia,True,5.26,3,approved,0,formal_cfo
+C0863,Silver Builders,microbusiness,Manufacturing,323693,5,381710,Term Loan,medium,9,7.2,Ontario,False,9.47,0,pending,1,busy_founder
+C0864,Atlas Builders,microbusiness,Tech Startup,60260,6,381568,Government-Backed Loan,medium,6,0.1,Alberta,True,5.05,0,approved,0,busy_founder
+C0865,Prime Services,SME,Healthcare,3792843,237,148389,Equipment Loan,low,6,3.9,Atlantic,True,9.57,0,declined,0,impatient_owner
+C0866,Prime Consulting,microbusiness,Hospitality,157457,8,236195,Government-Backed Loan,very_high,2,8.7,Prairies,True,11.42,0,renewed,0,busy_founder
+C0867,Blue Solutions,SME,Retail,5204514,174,328609,Real Estate Loan,high,2,4.2,Alberta,True,5.39,0,closed_paid_off,0,formal_cfo
+C0868,Bright Tech,SME,E-commerce,606646,247,276664,Line of Credit,high,6,6.6,Quebec,True,7.53,0,pending,0,busy_founder
+C0869,Bright Builders,microbusiness,Retail,378836,10,31199,Equipment Loan,low,3,1.1,British Columbia,True,3.86,0,closed_paid_off,0,impatient_owner
+C0870,Pioneer Enterprises,microbusiness,Retail,429616,4,212226,Equipment Loan,high,7,7.3,Atlantic,True,4.01,3,declined,1,formal_cfo
+C0871,Bright Logistics,microbusiness,Professional Services,267607,2,247865,Line of Credit,high,3,0.8,Quebec,True,7.66,0,renewed,0,busy_founder
+C0872,Prime Services,microbusiness,Tech Startup,488666,8,166368,Equipment Loan,medium,4,1.8,Prairies,False,9.89,2,approved,0,thoughtful_manager
+C0873,Blue Tech,microbusiness,Professional Services,417142,9,79330,Government-Backed Loan,medium,10,2.4,Atlantic,False,10.03,0,approved,0,formal_cfo
+C0874,Prime Tech,microbusiness,Hospitality,227792,9,301839,Term Loan,medium,6,5.6,Alberta,True,10.12,0,declined,1,formal_cfo
+C0875,Blue Enterprises,microbusiness,Tech Startup,382322,9,62025,Equipment Loan,medium,5,4.3,Atlantic,False,6.2,0,approved,0,impatient_owner
+C0876,North Retail,SME,Professional Services,1860014,31,380687,Line of Credit,medium,2,7.4,Territories,True,10.65,1,approved,0,impatient_owner
+C0877,North Logistics,SME,Logistics,8956053,175,171971,Equipment Loan,medium,2,1.2,British Columbia,True,4.68,1,pending,0,impatient_owner
+C0878,Prime Retail,SME,E-commerce,5769952,107,265825,Term Loan,medium,8,7.9,Alberta,True,8.29,0,approved,0,busy_founder
+C0879,Blue Tech,SME,E-commerce,9945597,41,143628,Real Estate Loan,low,5,4.1,Quebec,True,11.43,0,approved,1,thoughtful_manager
+C0880,North Enterprises,microbusiness,Tech Startup,176033,7,335675,Government-Backed Loan,medium,10,4.1,Atlantic,True,11.49,1,closed_paid_off,0,formal_cfo
+C0881,Bright Builders,microbusiness,Construction,114178,7,152547,Government-Backed Loan,low,9,0.6,Territories,False,9.41,0,renewed,1,thoughtful_manager
+C0882,Pioneer Studios,microbusiness,Logistics,326992,2,229562,Equipment Loan,medium,2,7.7,British Columbia,True,6.7,1,renewed,0,busy_founder
+C0883,North Retail,microbusiness,Retail,446613,3,213072,Government-Backed Loan,medium,2,8.8,Quebec,True,9.73,0,closed_paid_off,0,thoughtful_manager
+C0884,Silver Studios,SME,Construction,3630445,113,140103,Equipment Loan,medium,3,8.7,Territories,True,11.17,3,approved,0,thoughtful_manager
+C0885,Silver Consulting,microbusiness,Hospitality,176585,9,385641,Government-Backed Loan,medium,5,1.2,British Columbia,True,11.28,0,closed_paid_off,0,impatient_owner
+C0886,Prime Services,SME,Hospitality,4005384,205,206155,Line of Credit,high,5,9.2,Quebec,True,10.57,0,renewed,0,impatient_owner
+C0887,Blue Foods,SME,E-commerce,2576663,149,45339,Government-Backed Loan,very_high,4,7.2,Prairies,True,8.55,0,approved,0,formal_cfo
+C0888,North Builders,microbusiness,Manufacturing,370798,9,280396,Equipment Loan,very_high,2,9.2,Atlantic,True,7.51,0,pending,0,impatient_owner
+C0889,Atlas Enterprises,microbusiness,Retail,458227,7,78727,Government-Backed Loan,low,10,1.2,Alberta,True,3.6,1,approved,0,busy_founder
+C0890,Summit Studios,SME,Retail,7072665,104,339680,Equipment Loan,low,1,6.8,Alberta,True,8.33,2,closed_paid_off,0,impatient_owner
+C0891,Bright Studios,microbusiness,Hospitality,229804,1,327524,Line of Credit,high,7,5.3,Prairies,True,10.02,0,approved,1,formal_cfo
+C0892,Pioneer Foods,SME,Healthcare,4780661,249,39127,Equipment Loan,low,9,0.9,Prairies,True,9.48,2,renewed,1,thoughtful_manager
+C0893,Atlas Enterprises,SME,Retail,2454757,201,87521,Real Estate Loan,high,1,7.0,Alberta,False,11.05,2,approved,0,thoughtful_manager
+C0894,Bright Solutions,microbusiness,Logistics,88104,6,131596,Term Loan,very_high,4,6.9,Quebec,True,6.22,0,declined,0,impatient_owner
+C0895,Silver Builders,SME,E-commerce,4037620,144,158298,Equipment Loan,high,1,9.0,British Columbia,True,5.93,0,closed_paid_off,0,busy_founder
+C0896,Summit Retail,SME,E-commerce,2790010,114,44180,Line of Credit,medium,6,8.9,British Columbia,False,4.49,0,approved,1,impatient_owner
+C0897,Silver Tech,microbusiness,Construction,58269,8,153821,Government-Backed Loan,high,7,5.8,Ontario,False,9.15,1,renewed,0,thoughtful_manager
+C0898,North Builders,SME,Manufacturing,9480249,210,211984,Government-Backed Loan,medium,10,3.0,Alberta,True,6.14,0,approved,0,formal_cfo
+C0899,North Foods,microbusiness,Professional Services,479583,4,174366,Line of Credit,high,7,7.8,Territories,True,7.98,3,declined,0,thoughtful_manager
+C0900,Summit Consulting,microbusiness,Tech Startup,66001,8,111181,Line of Credit,medium,4,4.2,Territories,True,5.26,1,renewed,0,formal_cfo
+C0901,Pioneer Studios,SME,Retail,2476444,46,384455,Government-Backed Loan,high,6,9.6,Ontario,True,9.94,1,declined,0,formal_cfo
+C0902,Summit Retail,microbusiness,E-commerce,230731,7,350486,Term Loan,very_high,4,5.8,Prairies,True,7.36,0,renewed,0,formal_cfo
+C0903,Blue Consulting,SME,Manufacturing,4980306,112,303885,Line of Credit,medium,5,8.4,Ontario,False,5.68,2,closed_paid_off,1,formal_cfo
+C0904,Pioneer Tech,SME,Logistics,1425278,39,222997,Government-Backed Loan,medium,2,0.7,Prairies,False,10.01,0,refinanced_elsewhere,1,impatient_owner
+C0905,Urban Builders,microbusiness,Construction,367998,2,188502,Term Loan,medium,3,3.0,Atlantic,False,7.67,2,refinanced_elsewhere,0,impatient_owner
+C0906,Urban Consulting,SME,Construction,7892872,123,333962,Equipment Loan,medium,1,9.0,Atlantic,False,7.09,0,declined,0,formal_cfo
+C0907,Green Builders,microbusiness,Tech Startup,298585,7,45005,Line of Credit,medium,10,6.3,British Columbia,True,9.72,0,refinanced_elsewhere,1,formal_cfo
+C0908,Prime Enterprises,SME,Hospitality,5771403,101,394823,Line of Credit,medium,7,9.4,Atlantic,True,7.86,0,approved,0,formal_cfo
+C0909,Summit Studios,microbusiness,Retail,443393,7,144766,Government-Backed Loan,very_high,6,1.2,Prairies,True,7.47,0,approved,0,impatient_owner
+C0910,Green Studios,SME,Construction,3330208,231,323461,Equipment Loan,low,7,0.6,Alberta,True,3.84,2,declined,1,thoughtful_manager
+C0911,Prime Builders,microbusiness,Logistics,124330,8,281964,Government-Backed Loan,low,3,5.4,Prairies,True,10.17,1,closed_paid_off,0,formal_cfo
+C0912,Pioneer Consulting,SME,E-commerce,9662458,97,277585,Government-Backed Loan,medium,7,1.8,Prairies,False,5.35,2,approved,0,busy_founder
+C0913,Green Foods,SME,Hospitality,884511,136,388479,Government-Backed Loan,medium,7,7.5,Alberta,True,10.92,0,declined,0,thoughtful_manager
+C0914,Blue Retail,microbusiness,Retail,247193,9,95303,Term Loan,high,3,7.7,Ontario,True,8.53,0,approved,0,busy_founder
+C0915,Summit Services,SME,Manufacturing,3022295,197,58200,Government-Backed Loan,high,3,2.7,British Columbia,True,8.06,0,approved,0,impatient_owner
+C0916,Atlas Studios,SME,Hospitality,9590862,83,306641,Term Loan,very_high,3,6.3,Prairies,False,3.8,0,approved,0,thoughtful_manager
+C0917,Bright Enterprises,SME,Professional Services,6166017,226,339674,Government-Backed Loan,medium,2,8.8,Ontario,False,5.77,0,pending,0,impatient_owner
+C0918,Bright Services,SME,Professional Services,7238624,124,224732,Real Estate Loan,low,3,9.0,Quebec,True,8.42,0,closed_paid_off,1,thoughtful_manager
+C0919,Pioneer Logistics,SME,Logistics,7822660,139,280689,Line of Credit,high,3,1.6,Alberta,True,8.11,0,renewed,0,impatient_owner
+C0920,Urban Studios,microbusiness,Healthcare,65675,6,224553,Real Estate Loan,high,6,7.0,Atlantic,False,8.05,0,approved,0,busy_founder
+C0921,Pioneer Builders,SME,Professional Services,7111347,60,93586,Equipment Loan,high,10,4.0,Alberta,True,8.61,1,approved,0,busy_founder
+C0922,North Services,microbusiness,E-commerce,228355,7,106204,Equipment Loan,low,6,9.4,Alberta,True,9.59,1,refinanced_elsewhere,0,thoughtful_manager
+C0923,Bright Tech,microbusiness,Logistics,414169,4,200001,Government-Backed Loan,high,6,2.3,Alberta,True,10.38,3,approved,0,impatient_owner
+C0924,Prime Solutions,SME,Logistics,762268,166,188003,Real Estate Loan,high,5,5.6,Territories,False,5.29,0,renewed,0,impatient_owner
+C0925,Green Enterprises,SME,Professional Services,6097133,158,143741,Equipment Loan,high,2,2.1,Atlantic,False,5.18,0,approved,0,busy_founder
+C0926,Silver Enterprises,microbusiness,Professional Services,162442,7,269485,Government-Backed Loan,low,7,6.2,Ontario,True,6.04,0,renewed,1,impatient_owner
+C0927,Pioneer Logistics,microbusiness,Healthcare,372813,9,83970,Government-Backed Loan,medium,9,4.6,Quebec,True,9.36,0,declined,1,busy_founder
+C0928,Urban Tech,microbusiness,Healthcare,474354,7,238147,Term Loan,very_high,10,8.1,Alberta,True,9.84,0,declined,1,thoughtful_manager
+C0929,Blue Logistics,SME,Construction,7579391,103,186370,Government-Backed Loan,medium,9,6.4,Alberta,True,11.16,3,refinanced_elsewhere,1,busy_founder
+C0930,Urban Enterprises,microbusiness,Retail,210873,6,355106,Line of Credit,medium,4,1.6,Atlantic,True,5.39,1,closed_paid_off,0,busy_founder
+C0931,North Solutions,microbusiness,Retail,67715,9,127002,Real Estate Loan,medium,3,3.5,Ontario,False,5.77,0,pending,0,thoughtful_manager
+C0932,Green Enterprises,microbusiness,Logistics,463572,8,397152,Equipment Loan,high,3,9.0,Prairies,False,4.54,2,refinanced_elsewhere,0,busy_founder
+C0933,Blue Enterprises,microbusiness,Professional Services,478005,2,90110,Line of Credit,high,3,5.5,British Columbia,True,4.65,2,approved,1,thoughtful_manager
+C0934,Bright Solutions,microbusiness,Logistics,156932,9,262842,Equipment Loan,low,3,4.9,Ontario,False,6.73,1,renewed,0,busy_founder
+C0935,Pioneer Tech,SME,Construction,9929488,170,159266,Real Estate Loan,low,3,9.7,British Columbia,False,11.04,0,renewed,0,thoughtful_manager
+C0936,Blue Retail,microbusiness,Manufacturing,145238,8,83402,Real Estate Loan,low,8,0.6,Prairies,False,5.09,1,renewed,0,formal_cfo
+C0937,Green Logistics,microbusiness,Professional Services,347205,10,132249,Real Estate Loan,high,2,5.8,Quebec,False,9.9,1,pending,0,formal_cfo
+C0938,Silver Builders,SME,Healthcare,9562440,62,187878,Government-Backed Loan,very_high,5,9.6,British Columbia,True,7.41,1,renewed,0,thoughtful_manager
+C0939,Blue Retail,microbusiness,Healthcare,352833,8,340451,Term Loan,low,8,8.7,Ontario,False,10.28,0,approved,1,formal_cfo
+C0940,North Retail,microbusiness,Tech Startup,310938,2,132321,Real Estate Loan,high,6,5.3,Territories,True,11.11,3,pending,1,impatient_owner
+C0941,Green Retail,SME,Retail,1131781,236,43312,Equipment Loan,high,8,2.0,Alberta,False,11.02,2,pending,0,busy_founder
+C0942,Prime Solutions,SME,Professional Services,7116024,246,51919,Term Loan,medium,5,6.4,Quebec,False,5.39,0,approved,0,busy_founder
+C0943,Bright Studios,microbusiness,Healthcare,160127,10,69057,Term Loan,high,10,8.7,Territories,True,10.91,3,renewed,1,formal_cfo
+C0944,Green Logistics,microbusiness,Retail,52575,10,237885,Real Estate Loan,low,10,8.3,Alberta,True,8.37,0,approved,0,impatient_owner
+C0945,Bright Logistics,microbusiness,Tech Startup,396125,3,48051,Term Loan,high,2,4.7,Prairies,True,6.56,0,refinanced_elsewhere,0,impatient_owner
+C0946,Summit Enterprises,SME,E-commerce,4672054,60,346617,Line of Credit,low,10,4.4,Territories,True,6.54,0,approved,0,busy_founder
+C0947,North Consulting,microbusiness,Construction,199133,1,312755,Real Estate Loan,high,3,1.1,Quebec,False,10.38,0,approved,0,thoughtful_manager
+C0948,Green Solutions,microbusiness,Healthcare,490216,2,363490,Term Loan,high,4,7.2,Ontario,False,8.05,0,closed_paid_off,0,impatient_owner
+C0949,Blue Logistics,microbusiness,Professional Services,238227,9,191252,Government-Backed Loan,medium,5,2.0,Ontario,False,4.54,2,approved,0,formal_cfo
+C0950,Pioneer Builders,SME,Retail,3217134,132,141009,Government-Backed Loan,medium,1,1.3,Prairies,True,8.46,0,renewed,0,impatient_owner
+C0951,Blue Enterprises,microbusiness,Professional Services,390836,2,199511,Equipment Loan,medium,3,2.9,Territories,False,8.98,1,approved,0,formal_cfo
+C0952,Green Studios,microbusiness,Healthcare,345922,8,213234,Real Estate Loan,high,5,9.6,Prairies,False,6.47,0,closed_paid_off,0,formal_cfo
+C0953,Summit Builders,SME,Manufacturing,4712751,128,247637,Term Loan,low,9,8.4,Quebec,True,4.45,1,approved,0,thoughtful_manager
+C0954,Urban Consulting,microbusiness,Tech Startup,97175,8,104868,Real Estate Loan,medium,9,2.8,Prairies,True,4.28,1,approved,0,impatient_owner
+C0955,Silver Builders,SME,Manufacturing,7354949,125,73302,Line of Credit,low,4,5.1,Quebec,True,11.25,2,approved,0,thoughtful_manager
+C0956,Prime Tech,SME,Professional Services,915909,14,316291,Real Estate Loan,low,9,7.1,Atlantic,False,8.91,0,renewed,0,formal_cfo
+C0957,Summit Builders,microbusiness,Healthcare,471345,4,338223,Real Estate Loan,low,8,10.0,Quebec,False,10.21,2,declined,1,impatient_owner
+C0958,Prime Studios,microbusiness,Tech Startup,189462,7,237476,Real Estate Loan,low,6,0.4,Atlantic,False,3.7,0,approved,0,thoughtful_manager
+C0959,Urban Logistics,microbusiness,Retail,357004,4,305148,Government-Backed Loan,low,10,6.6,British Columbia,False,10.36,1,approved,1,impatient_owner
+C0960,Prime Foods,microbusiness,Construction,69869,10,176043,Government-Backed Loan,high,7,6.1,Alberta,False,7.73,0,approved,0,thoughtful_manager
+C0961,Pioneer Logistics,SME,E-commerce,7393543,242,220280,Term Loan,low,8,3.0,British Columbia,True,3.89,0,approved,1,busy_founder
+C0962,Blue Builders,microbusiness,E-commerce,201574,10,318038,Term Loan,very_high,8,6.0,British Columbia,False,4.04,2,approved,0,formal_cfo
+C0963,Green Retail,SME,Retail,9568929,226,109930,Term Loan,low,1,4.7,Alberta,False,8.79,1,renewed,0,impatient_owner
+C0964,Silver Tech,SME,Professional Services,7956747,15,301805,Government-Backed Loan,high,5,0.9,Atlantic,False,7.57,2,closed_paid_off,0,busy_founder
+C0965,Pioneer Solutions,microbusiness,Professional Services,236673,9,289035,Line of Credit,medium,8,1.3,Territories,False,6.49,3,pending,1,impatient_owner
+C0966,North Services,SME,Tech Startup,3517046,225,119045,Real Estate Loan,medium,5,1.0,British Columbia,True,4.23,1,approved,0,busy_founder
+C0967,Prime Retail,SME,E-commerce,7078422,158,371417,Real Estate Loan,high,1,1.6,Alberta,True,8.21,0,approved,0,thoughtful_manager
+C0968,North Studios,SME,Retail,4662620,55,275593,Equipment Loan,high,9,9.0,Prairies,True,6.17,0,approved,0,thoughtful_manager
+C0969,Summit Retail,microbusiness,Logistics,487825,10,217297,Real Estate Loan,medium,5,6.4,British Columbia,False,6.93,0,pending,0,formal_cfo
+C0970,Atlas Consulting,microbusiness,Logistics,236421,10,147484,Real Estate Loan,medium,9,1.7,Quebec,True,7.52,0,closed_paid_off,0,formal_cfo
+C0971,Urban Services,SME,Professional Services,3039041,202,296409,Real Estate Loan,high,2,4.0,Ontario,True,8.49,0,approved,0,formal_cfo
+C0972,North Retail,microbusiness,Hospitality,171975,4,269094,Real Estate Loan,high,6,4.1,British Columbia,True,5.49,3,approved,0,impatient_owner
+C0973,Bright Enterprises,SME,Construction,2589926,167,71045,Real Estate Loan,medium,1,1.5,Prairies,False,9.08,0,closed_paid_off,0,thoughtful_manager
+C0974,Green Retail,microbusiness,Construction,444793,9,350556,Term Loan,medium,1,5.4,Alberta,False,7.19,0,approved,0,impatient_owner
+C0975,Atlas Studios,microbusiness,Logistics,188950,9,241346,Government-Backed Loan,high,10,3.8,British Columbia,False,5.49,4,approved,0,thoughtful_manager
+C0976,Blue Retail,microbusiness,Healthcare,214393,1,78010,Term Loan,high,10,5.9,Ontario,False,3.97,1,declined,0,thoughtful_manager
+C0977,Urban Retail,microbusiness,Manufacturing,407966,1,139049,Government-Backed Loan,medium,9,0.9,Prairies,False,5.16,0,declined,1,busy_founder
+C0978,Summit Services,microbusiness,Logistics,62988,10,363966,Government-Backed Loan,medium,3,0.2,Prairies,True,11.27,0,approved,0,busy_founder
+C0979,Silver Retail,SME,Logistics,5984043,212,248486,Equipment Loan,low,5,4.2,Prairies,True,10.42,0,declined,1,thoughtful_manager
+C0980,Silver Consulting,microbusiness,Hospitality,369087,1,242901,Line of Credit,medium,6,5.1,Territories,True,6.74,0,approved,0,busy_founder
+C0981,Bright Solutions,microbusiness,Logistics,368893,6,140010,Term Loan,low,7,3.4,British Columbia,True,4.99,0,approved,0,thoughtful_manager
+C0982,Blue Consulting,SME,Logistics,1629648,109,34548,Term Loan,low,5,7.7,Quebec,False,4.3,0,refinanced_elsewhere,0,thoughtful_manager
+C0983,Silver Solutions,microbusiness,Manufacturing,257660,8,392751,Real Estate Loan,very_high,3,5.9,Prairies,True,4.13,0,closed_paid_off,0,impatient_owner
+C0984,Atlas Foods,microbusiness,Logistics,136040,7,59919,Line of Credit,high,3,2.7,Territories,True,7.73,0,closed_paid_off,0,busy_founder
+C0985,Silver Consulting,microbusiness,Tech Startup,479392,3,213197,Equipment Loan,very_high,3,3.6,Alberta,True,4.49,0,closed_paid_off,0,busy_founder
+C0986,Silver Tech,microbusiness,Logistics,242637,5,361944,Real Estate Loan,medium,3,3.1,Ontario,False,10.26,0,approved,0,thoughtful_manager
+C0987,Bright Retail,SME,Manufacturing,7179747,205,128150,Line of Credit,high,3,4.4,Prairies,True,3.75,2,pending,1,impatient_owner
+C0988,Silver Services,microbusiness,E-commerce,85269,10,222912,Line of Credit,high,5,8.0,Atlantic,True,8.58,0,renewed,0,formal_cfo
+C0989,Silver Studios,microbusiness,Healthcare,210213,1,38750,Term Loan,medium,7,2.4,Territories,True,7.54,0,approved,0,busy_founder
+C0990,Green Services,SME,Construction,9421066,63,300536,Equipment Loan,high,8,4.3,Ontario,False,5.24,1,pending,0,busy_founder
+C0991,Silver Retail,microbusiness,Professional Services,313370,9,366591,Equipment Loan,high,7,4.6,Alberta,False,8.04,0,pending,1,impatient_owner
+C0992,North Studios,SME,Professional Services,5100997,224,255622,Line of Credit,medium,4,4.8,Territories,True,4.22,1,pending,0,busy_founder
+C0993,North Services,microbusiness,Hospitality,168690,10,255683,Line of Credit,medium,4,5.6,Territories,True,4.33,4,refinanced_elsewhere,0,thoughtful_manager
+C0994,Bright Foods,microbusiness,Professional Services,75887,10,312052,Line of Credit,low,2,8.7,Alberta,True,4.44,0,approved,1,thoughtful_manager
+C0995,Urban Foods,SME,Manufacturing,9021536,225,351024,Government-Backed Loan,high,9,9.1,Atlantic,False,8.91,1,approved,0,formal_cfo
+C0996,Green Retail,microbusiness,Construction,173329,9,171709,Equipment Loan,high,2,9.2,Atlantic,True,9.54,1,approved,0,formal_cfo
+C0997,Urban Services,SME,Logistics,5808180,223,374566,Term Loan,low,4,9.8,Territories,False,11.46,0,closed_paid_off,1,busy_founder
+C0998,Prime Builders,SME,Tech Startup,827913,241,381251,Term Loan,medium,7,0.8,Territories,True,4.24,0,renewed,1,impatient_owner
+C0999,Pioneer Foods,SME,Retail,5934660,35,229098,Government-Backed Loan,high,10,4.5,Territories,True,8.45,0,renewed,0,formal_cfo
+C1000,Bright Tech,microbusiness,Construction,330124,10,316013,Government-Backed Loan,medium,7,1.5,Alberta,False,9.78,0,pending,0,impatient_owner

@@ -43,7 +43,7 @@ docker compose build --no-cache
 docker compose up
 ```
 
-**Live reload:** Edit files in `app/` or `frontend/` → changes reflect immediately.
+**Live reload:** Edit files in `app/` → changes reflect immediately. For frontend changes, rebuild React app.
 
 ### VS Code Dev Container
 
@@ -162,7 +162,8 @@ docker compose up
 ### Changes not reflecting
 
 ```bash
-# For Docker: changes to app/ and frontend/ should auto-reflect
+# For Docker: changes to app/ should auto-reflect
+# For frontend changes, rebuild React app in frontend/
 # For Python changes, restart the container:
 docker compose restart dashboard
 ```
